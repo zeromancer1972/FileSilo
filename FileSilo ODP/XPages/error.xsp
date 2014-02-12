@@ -6,12 +6,15 @@
 			<xp:div xp:key="facetMiddle">
 				<div class="panel panel-default">
 					<div class="panel-heading">
-						<h4 class="panel-title">Error messages</h4>
+						<h4 class="panel-title">What went wrong here?</h4>
 					</div>
 					<div class="panel-body">
-						<xp:text styleClass="alert alert-warning msg" escape="true" id="computedField1" value="#{requestScope.error}">
+						<h4>Error message</h4>
+						<xp:text styleClass="alert alert-warning msg" escape="true"
+							id="computedField1" value="#{requestScope.error}">
 						</xp:text>
-						<xp:section id="section1" initClosed="true" header="Click here for details">
+						<xp:section id="section1" initClosed="true"
+							header="Click here for details">
 							<pre>
 								<xp:text escape="false" id="computedField" styleClass="code">
 									<xp:this.value>
