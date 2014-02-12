@@ -9,7 +9,7 @@
 						<h4 class="panel-title">Error messages</h4>
 					</div>
 					<div class="panel-body">
-						<xp:text styleClass="alert alert-danger msg" escape="true" id="computedField1" value="#{requestScope.error}">
+						<xp:text styleClass="alert alert-warning msg" escape="true" id="computedField1" value="#{requestScope.error}">
 						</xp:text>
 						<xp:section id="section1" initClosed="true" header="Click here for details">
 							<code>
