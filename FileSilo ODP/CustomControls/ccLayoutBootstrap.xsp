@@ -162,11 +162,10 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li>
-						<a>
-							<xp:label id="label1">
-								<xp:this.value><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']+" | © 2013, 2014 Oliver Busse, Apache License 2.0"}]]></xp:this.value>
-							</xp:label>
-						</a>
+						<xp:link target="_blank"
+							value="http://about.me/oliverbusse">
+							<xp:this.text><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']+" | © 2013, 2014 Oliver Busse, Apache License 2.0"}]]></xp:this.text>
+						</xp:link>
 					</li>
 				</ul>
 			</div>

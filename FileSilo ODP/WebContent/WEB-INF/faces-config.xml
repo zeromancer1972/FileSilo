@@ -10,10 +10,16 @@
 			<supported-locale>en</supported-locale>
 		</locale-config>
 	</application>
-
+	<managed-bean>
+		<managed-bean-name>upload</managed-bean-name>
+		<managed-bean-class>org.openntf.filesilo.Upload
+		</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>log</managed-bean-name>
-		<managed-bean-class>com.olb.Log</managed-bean-class>
+		<managed-bean-class>org.openntf.filesilo.Log
+		</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
 	<!--AUTOGEN-END-BUILDER: End of automatically generated section-->
