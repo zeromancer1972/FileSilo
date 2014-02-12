@@ -129,18 +129,13 @@
 										refreshMode="partial" refreshId="list">
 										<xp:this.action>
 											<xp:actionGroup>
-												<xp:confirm
-													message="Do you really want to delete this collection?">
+												<xp:confirm message="Do you really want to delete this collection?">
 												</xp:confirm>
-
-
-
-
 												<xp:executeScript>
 
 													<xp:this.script><![CDATA[#{javascript:var collectionname = doc.getItemValueString("fileID");
 doc.getDocument().remove(false);
-log.add("Deletion", session.getEffectiveUserName()+" deleted collection "+collectionname)}]]></xp:this.script>
+log.add("Deletion", log.getUserName()+" deleted collection "+collectionname)}]]></xp:this.script>
 												</xp:executeScript>
 											</xp:actionGroup>
 										</xp:this.action>
