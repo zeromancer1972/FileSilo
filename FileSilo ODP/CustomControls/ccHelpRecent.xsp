@@ -2,6 +2,6 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 	<h4>Recent activities</h4>
 	<div>
-	See what's happened in this application recently.
+	See what happened in this application recently.
 	</div>
 </xp:view>
