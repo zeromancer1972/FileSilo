@@ -25,14 +25,14 @@ upload.sendInfo();}]]></xp:this.postSaveDocument>
 					disableTheme="true">
 				</xp:label>
 			</xp:div>
-
+			<div class="panel-heading">
+				<h4 class="panel-title">You can upload one file with this form. The upload
+					will be checked and approved afterwards by administrative
+					authorities</h4>
+			</div>
 			<xp:div styleClass="panel-body">
-				<xp:label id="label2"
-					value="You can upload one file with this form. The upload will be checked and approved afterwards by administrative authorities.">
 
-				</xp:label>
-
-				<xp:div style="margin-top:30px">
+				<xp:div styleClass="panel-body">
 					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
 						required="true" styleClass="btn btn-default">
 						<xp:this.validators>
@@ -45,8 +45,8 @@ upload.sendInfo();}]]></xp:this.postSaveDocument>
 				</xp:div>
 				<xp:div style="padding-top:10.0px">
 					<xp:button id="button1" styleClass="btn btn-custom btn-lg">
-					<span class="glyphicon glyphicon-cloud-upload"></span>
-					&#160;Upload file
+						<span class="glyphicon glyphicon-cloud-upload"></span>
+						&#160;Upload file
 						<xp:eventHandler event="onclick" submit="true"
 							refreshMode="partial" refreshId="uploadmessage">
 							<xp:this.action>

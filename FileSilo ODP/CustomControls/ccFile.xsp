@@ -22,9 +22,9 @@ if(doc.hasItem("$PublicAccess")){
 		</xp:dominoDocument>
 	</xp:this.data>
 	<xp:div styleClass="actionbar">
-		<xp:div styleClass="btn-group">
+		<xp:div styleClass="">
 			<xp:button value="Save" id="button1"
-				rendered="#{javascript:currentDocument.isEditable()}" styleClass="btn btn-default">
+				rendered="#{javascript:currentDocument.isEditable()}" styleClass="btn btn-custom">
 				<xp:eventHandler event="onclick" submit="true"
 					refreshMode="complete">
 					<xp:this.action>
@@ -32,8 +32,9 @@ if(doc.hasItem("$PublicAccess")){
 					</xp:this.action>
 				</xp:eventHandler>
 			</xp:button>
+			&#160;
 			<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
-				styleClass="btn btn-default">
+				styleClass="btn btn-custom">
 				<xp:this.value><![CDATA[Save & close]]></xp:this.value>
 				<xp:eventHandler event="onclick" submit="true"
 					refreshMode="complete">
@@ -48,6 +49,7 @@ if(doc.hasItem("$PublicAccess")){
 					</xp:this.action>
 				</xp:eventHandler>
 			</xp:button>
+			&#160;
 			<xp:button value="Edit" id="button3" styleClass="btn btn-default">
 
 				<xp:this.rendered><![CDATA[#{javascript:var ctx = com.ibm.domino.xsp.module.nsf.NotesContext.getCurrent()
@@ -59,6 +61,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xp:this.action>
 				</xp:eventHandler>
 			</xp:button>
+			&#160;
 			<xp:button id="button4" styleClass="btn btn-warning">
 				<xp:this.value><![CDATA[#{javascript:currentDocument.isEditable() ? "Cancel" : "Close"}]]></xp:this.value>
 				<xp:eventHandler event="onclick" submit="true"

@@ -6,9 +6,13 @@
 			value="Welcome to your downloads" styleClass="lotusHeader panel-heading"
 			rendered="false">
 		</xp:text>
+		<div class="panel-heading">
+		<h4 class="panel-title">Search collections by customer key</h4>
+		</div>
 		<xp:div styleClass="panel-body">
 			<xp:div styleClass="form-group">
-				<xp:label value="Customer key" id="label1" for="inputText1">
+				<xp:label value="Customer key" id="label1"
+					for="inputText1" disableTheme="true">
 				</xp:label>
 
 
@@ -18,7 +22,7 @@
 				<xp:br></xp:br>
 
 				<xp:button id="button1"
-					styleClass="btn btn-lg btn-warning">
+					styleClass="btn btn-lg btn-custom">
 					<span class="glyphicon glyphicon-eye-open"></span>
 					&#160;Search
 					<xp:eventHandler event="onclick" submit="true"
