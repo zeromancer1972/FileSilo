@@ -56,6 +56,14 @@ if(url.indexOf(".xsp")==-1){
 							&#160;Manage collections
 						</a>
 					</xp:panel>
+					<xp:panel tagName="li">
+						<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
+						<a href="recent.xsp">
+							<span class="glyphicon glyphicon-flash">
+							</span>
+							&#160;Recent activities
+						</a>
+					</xp:panel>
 				</ul>
 
 				<xp:panel tagName="ul" id="usermenu" styleClass="nav navbar-nav navbar-right">

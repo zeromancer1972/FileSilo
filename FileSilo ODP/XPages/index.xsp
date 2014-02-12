@@ -4,7 +4,15 @@
 
 
 	<xp:this.beforePageLoad><![CDATA[#{javascript:sessionScope.put("customerKey", context.getUrlParameter("key"))}]]></xp:this.beforePageLoad>
-	<xc:ccLayoutBootstrap><xp:this.facets>
-	<xc:ccWelcome xp:key="facetMiddle"></xc:ccWelcome>
-	<xc:ccHelpWelcome xp:key="facetLeft"></xc:ccHelpWelcome></xp:this.facets></xc:ccLayoutBootstrap>
+	<xc:ccLayoutBootstrap>
+		<xp:this.facets>
+			<xp:div xp:key="facetMiddle">
+				<xc:ccWelcome></xc:ccWelcome>
+				<xc:ccRecent>
+					<xc:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xc:this.rendered>
+				</xc:ccRecent>
+			</xp:div>
+			<xc:ccHelpWelcome xp:key="facetLeft"></xc:ccHelpWelcome>
+		</xp:this.facets>
+	</xc:ccLayoutBootstrap>
 </xp:view>

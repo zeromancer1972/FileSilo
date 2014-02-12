@@ -18,6 +18,8 @@ itAdmin.setAuthors(true);
 if(doc.hasItem("$PublicAccess")){
 	doc.removeItem("$PublicAccess")
 }
+var collectionname = doc.getItemValueString("fileID");
+log.add("Collection saved", session.getEffectiveUserName() + " saved collection "+collectionname)
 } catch(e) {}}]]></xp:this.querySaveDocument>
 			<xp:this.postNewDocument><![CDATA[#{javascript:currentDocument.setValue("fileCreator", session.getEffectiveUserName())}]]></xp:this.postNewDocument>
 		</xp:dominoDocument>
