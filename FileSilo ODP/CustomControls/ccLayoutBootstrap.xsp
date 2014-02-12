@@ -42,22 +42,27 @@ if(url.indexOf(".xsp")==-1){
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
 					<xp:panel tagName="li">
+						<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("upload")!=-1 ? "active" : ""}]]></xp:this.styleClass>
 						<a href="upload.xsp">
-							<span class="glyphicon glyphicon-cloud-upload">
+							<span
+								class="glyphicon glyphicon-cloud-upload">
 							</span>
 							&#160;Upload a file
 						</a>
 					</xp:panel>
 					<xp:panel tagName="li">
 						<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
+						<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("manage")!=-1 ? "active" : ""}]]></xp:this.styleClass>
 						<a href="manage.xsp">
-							<span class="glyphicon glyphicon-paperclip">
+							<span
+								class="glyphicon glyphicon-paperclip">
 							</span>
 							&#160;Manage collections
 						</a>
 					</xp:panel>
 					<xp:panel tagName="li">
 						<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
+						<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("recent")!=-1 ? "active" : ""}]]></xp:this.styleClass>
 						<a href="recent.xsp">
 							<span class="glyphicon glyphicon-flash">
 							</span>
