@@ -139,6 +139,9 @@
 												</xp:executeScript>
 											</xp:actionGroup>
 										</xp:this.action>
+										<xp:this.onComplete>
+										<![CDATA[XSP.partialRefreshGet("#{id:usermenu}")]]>
+										</xp:this.onComplete>
 									</xp:eventHandler>
 									<span class="glyphicon glyphicon-trash" title="Delete collection"></span>
 								</xp:link>
@@ -157,5 +160,5 @@
 			</div>
 		</div>
 	</xp:div>
-	
+
 </xp:view>
