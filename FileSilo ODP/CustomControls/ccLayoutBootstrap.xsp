@@ -164,7 +164,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 					<li>
 						<a>
 							<xp:label id="label1">
-								<xp:this.value><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']+" | © 2014 Oliver Busse, Apache License 2.0"}]]></xp:this.value>
+								<xp:this.value><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']+" | © 2013, 2014 Oliver Busse, Apache License 2.0"}]]></xp:this.value>
 							</xp:label>
 						</a>
 					</li>
