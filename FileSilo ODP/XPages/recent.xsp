@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
-	xmlns:xc="http://www.ibm.com/xsp/custom">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.beforePageLoad><![CDATA[#{javascript:if(session.getEffectiveUserName().equals("Anonymous")){
+	context.redirectToPage("index.xsp")
+}}]]></xp:this.beforePageLoad>
 
-	
 	<xc:ccLayoutBootstrap>
 		<xp:this.facets>
 			<xp:div xp:key="facetMiddle">
