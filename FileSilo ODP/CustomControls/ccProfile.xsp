@@ -42,7 +42,8 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 			</xp:button>
 
 			<xp:button id="button4" styleClass="btn btn-default">
-				<xp:this.value><![CDATA[#{javascript:currentDocument.isEditable() ? "Cancel" : "Close"}]]></xp:this.value><xp:eventHandler event="onclick" submit="true"
+				<xp:this.value><![CDATA[#{javascript:currentDocument.isEditable() ? "Cancel" : "Close"}]]></xp:this.value>
+				<xp:eventHandler event="onclick" submit="true"
 					refreshMode="complete" immediate="true">
 					<xp:this.action><![CDATA[#{javascript:return (session.getEffectiveUserName().equals("Anonymous"))?"welcome":"cancel"}]]></xp:this.action>
 				</xp:eventHandler>
@@ -50,14 +51,11 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 		</xp:div>
 	</xp:div>
 	<xp:div styleClass="form-group">
-		<xp:label value="Mail address&#160;" id="profileMail_Label1" for="profileMail1">
+		<xp:label value="Mail address" id="profileMail_Label1" for="profileMail1"
+			disableTheme="true">
 		</xp:label>
-
-		<xp:inputText value="#{document1.profileMail}" id="profileMail1"
-			styleClass="form-control">
-		</xp:inputText>
-
-		<xe:namePicker id="namePicker1" for="fileReaders1"
+		&#160;
+		<xe:namePicker id="namePicker1" for="profileMail1"
 			dialogTitle="Choose names" rendered="#{javascript:currentDocument.isEditable()}">
 			<xe:this.dataProvider>
 				<xe:dominoNABNamePicker people="true"
@@ -66,6 +64,15 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				</xe:dominoNABNamePicker>
 			</xe:this.dataProvider>
 		</xe:namePicker>
+		<xp:inputText value="#{document1.profileMail}" id="profileMail1"
+			styleClass="form-control">
+			<xp:this.attrs>
+				<xp:attr name="placeholder" value="Enter a valid SMTP mail address">
+				</xp:attr>
+			</xp:this.attrs>
+		</xp:inputText>
+
+
 
 	</xp:div>
 </xp:view>
