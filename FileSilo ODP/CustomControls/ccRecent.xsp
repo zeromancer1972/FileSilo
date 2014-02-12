@@ -25,8 +25,8 @@
 				</tr>
 			</thead>
 			<tbody class="#{javascript:compositeData.widget?'tiny':''}">
-				<xp:repeat id="repeat1" rows="#{javascript:compositeData.widget?7:20}" value="#{view1}" var="entry"
-					disableOutputTag="true">
+				<xp:repeat id="repeat1" rows="#{javascript:compositeData.widget?7:20}"
+					value="#{view1}" var="entry" disableOutputTag="true">
 					<xp:panel>
 						<xp:this.data>
 							<xp:dominoDocument var="doc" action="openDocument"
@@ -36,6 +36,8 @@
 						</xp:this.data>
 						<tr>
 							<td>
+								<xp:panel tagName="span" styleClass="glyphicon glyphicon-time">
+								</xp:panel>
 								<xp:inputText id="inputText1" value="#{doc.logTimestamp}">
 									<xp:this.converter>
 										<xp:convertDateTime type="both">
@@ -44,12 +46,36 @@
 								</xp:inputText>
 							</td>
 							<td>
+								<xp:panel tagName="span">
+									<xp:this.styleClass><![CDATA[#{javascript:var action = doc.getDocument().getItemValueString("logSubject");
+if(action.toLowerCase().indexOf("upload")!=-1){
+	return "glyphicon glyphicon-cloud-upload";
+}
+if(action.toLowerCase().indexOf("deletion")!=-1){
+	return "glyphicon glyphicon-remove";
+}
+if(action.toLowerCase().indexOf("saved")!=-1){
+	return "glyphicon glyphicon-ok";
+}}]]></xp:this.styleClass>
+								</xp:panel>
 								<xp:inputText id="inputText2" value="#{doc.logSubject}">
 								</xp:inputText>
 							</td>
 							<td>
-								<xp:inputText id="inputText3" value="#{doc.logMessage}">
+								<xp:inputText id="inputText3"
+									value="#{doc.logMessage}">
+									<xp:this.rendered><![CDATA[#{javascript:return doc.getItemValueString("logSubject").toLowerCase().indexOf("upload")==-1}]]></xp:this.rendered>
 								</xp:inputText>
+								<xp:link escape="true"
+									text="#{doc.logMessage}" id="link1">
+									<xp:this.rendered><![CDATA[#{javascript:return doc.getItemValueString("logSubject").toLowerCase().indexOf("upload")!=-1}]]></xp:this.rendered>
+								<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true">
+									<xp:this.action>
+										<xp:openPage name="/file.xsp"
+											target="openDocument">
+											<xp:this.documentId><![CDATA[#{javascript:doc.getItemValueString("logUnid")}]]></xp:this.documentId>
+										</xp:openPage>
+									</xp:this.action></xp:eventHandler></xp:link>
 							</td>
 
 						</tr>

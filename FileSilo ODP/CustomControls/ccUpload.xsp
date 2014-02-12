@@ -14,7 +14,7 @@ if(document1.getAttachmentList("fileAttachment").isEmpty()){
 			<xp:this.postNewDocument><![CDATA[#{javascript:document1.setValue("$PublicAccess", "1")}]]></xp:this.postNewDocument>
 			<xp:this.postSaveDocument><![CDATA[#{javascript:sessionScope.put("uploadSuccessful", "1")
 upload.sendInfo();
-log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file")}]]></xp:this.postSaveDocument>
+log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file", currentDocument.getDocument().getUniversalID())}]]></xp:this.postSaveDocument>
 		</xp:dominoDocument>
 	</xp:this.data>
 	<xp:div id="panel">
