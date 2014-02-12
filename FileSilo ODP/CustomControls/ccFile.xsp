@@ -76,8 +76,14 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 	<ul class="nav nav-tabs">
 		<li class="active">
 			<a href="#general" data-toggle="tab">
-				<span class="glyphicon glyphicon-file"></span>
+				<span class="glyphicon glyphicon-cloud-upload"></span>
 				&#160;General
+			</a>
+		</li>
+		<li>
+			<a href="#desc" data-toggle="tab">
+				<span class="glyphicon glyphicon-info-sign"></span>
+				&#160;Description
 			</a>
 		</li>
 		<li>
@@ -122,18 +128,17 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				<xp:label value="Customer key *&#160;" id="fileKey_Label1"
 					for="fileKey1" disableTheme="true">
 				</xp:label>
-				<xp:link escape="true" text="Generate customer key"
-					style="margin-top:5px" id="link1"
-					rendered="#{javascript:currentDocument.isEditable()}"
+				<xp:link escape="true" text="Generate customer key" style="margin-top:5px"
+					id="link1" rendered="#{javascript:currentDocument.isEditable()}"
 					styleClass="lotusAction btn btn-sm btn-primary pull-right">
 					<xp:eventHandler event="onclick" submit="true"
-						refreshMode="partial" execMode="partial"
-						refreshId="fileKey1" id="eventHandler1" disableValidators="true">
+						refreshMode="partial" execMode="partial" refreshId="fileKey1" id="eventHandler1"
+						disableValidators="true">
 						<xp:this.action><![CDATA[#{javascript:getComponent("fileKey1").setValue(@Unique())}]]></xp:this.action>
 					</xp:eventHandler>
 				</xp:link>
-				<br/>
-				<br/>
+				<br />
+				<br />
 				<xp:message id="message2" for="fileKey1" styleClass="alert alert-danger msg">
 				</xp:message>
 				<xp:inputText value="#{document1.fileKey}" id="fileKey1"
@@ -151,8 +156,8 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						<xp:this.valueList><![CDATA[#{javascript:@Unique(@DbColumn(database.getFilePath(), "filesByKey", 1))}]]></xp:this.valueList>
 					</xp:typeAhead>
 				</xp:inputText>
-				
-				
+
+
 
 			</xp:div>
 			<xp:div styleClass="form-group">
@@ -171,9 +176,11 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
 					styleClass="btn btn-default form-control"></xp:fileUpload>
 			</xp:div>
+		</div>
+		<div class="tab-pane fade" id="desc">
 			<xp:div styleClass="form-group">
-				<xp:label id="label1" value="Message/Description&#160;"
-					for="inputRichText1" disableTheme="true">
+				<xp:label id="label1" value="Description " for="inputRichText1"
+					disableTheme="true">
 				</xp:label>
 
 				<xp:inputRichText id="inputRichText1" value="#{document1.fileMessage}"
@@ -183,17 +190,6 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						</xp:dojoAttribute>
 					</xp:this.dojoAttributes>
 				</xp:inputRichText>
-			</xp:div>
-			<xp:div styleClass="form-group">
-				<xp:label value="Created by&#160;" id="fileCreator_Label1"
-					for="fileCreator1" disableTheme="true">
-				</xp:label>
-
-				<xp:inputText id="fileCreator1" styleClass="form-control"
-					disabled="true">
-					<xp:this.value><![CDATA[#{javascript:var creator = currentDocument.getDocument(true).getItemValueString("fileCreator");
-return @Name("[Abbreviate]", creator)}]]></xp:this.value>
-				</xp:inputText>
 			</xp:div>
 		</div>
 		<div class="tab-pane fade" id="access">
@@ -257,7 +253,21 @@ return @Name("[Abbreviate]", creator)}]]></xp:this.value>
 				</xp:inputText>
 			</xp:div>
 		</div>
+		<div class="pull-right" style="margin-top:10px;">
+			<xp:div styleClass="form-group">
+				<xp:label value="Created by&#160;" id="fileCreator_Label1"
+					for="fileCreator1" disableTheme="true">
+				</xp:label>
+
+				<xp:inputText id="fileCreator1" styleClass="form-control"
+					disabled="true">
+					<xp:this.value><![CDATA[#{javascript:var creator = currentDocument.getDocument(true).getItemValueString("fileCreator");
+return @Name("[Abbreviate]", creator)}]]></xp:this.value>
+				</xp:inputText>
+			</xp:div>
+		</div>
 	</div>
+
 	<xp:scriptBlock>
 		<xp:this.value><![CDATA[dojo.query(".xspLinkFileDownload").forEach(
 function(node, index, arr) {

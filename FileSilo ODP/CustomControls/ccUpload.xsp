@@ -63,7 +63,7 @@ upload.sendInfo();}]]></xp:this.postSaveDocument>
 						</xp:this.attrs>
 					</xp:inputText>
 				</div>
-				
+
 				<div class="form-group">
 					<xp:button id="button1" styleClass="btn btn-custom btn-lg">
 						<span class="glyphicon glyphicon-cloud-upload"></span>
@@ -79,18 +79,19 @@ upload.sendInfo();}]]></xp:this.postSaveDocument>
 						</xp:eventHandler>
 					</xp:button>
 				</div>
-			</xp:div>
 
-			<xp:div id="uploadmessage" styleClass="lotusMessage2 lotusSuccess alert alert-success">
-				<xp:this.rendered><![CDATA[#{javascript:return sessionScope.get("uploadSuccessful")!=null}]]></xp:this.rendered>
-				<img class="lotusIcon lotusIconMsgSuccess" src="/icons/ecblank.gif" />
-				<xp:div styleClass="lotusMessageBody">
-					<xp:label id="label3">
-						<xp:this.value><![CDATA[#{javascript:var success = (context.getLocale().equals(Locale.GERMAN))?"Die Datei wurde erfolgreich hochgeladen.":"The file was uploaded successfully.";
+				<xp:div id="uploadmessage" styleClass="lotusMessage2 lotusSuccess alert alert-success">
+					<xp:this.rendered><![CDATA[#{javascript:return sessionScope.get("uploadSuccessful")!=null}]]></xp:this.rendered>
+					<img class="lotusIcon lotusIconMsgSuccess" src="/icons/ecblank.gif" />
+					<xp:div styleClass="lotusMessageBody">
+						<xp:label id="label3">
+							<xp:this.value><![CDATA[#{javascript:var success = (context.getLocale().equals(Locale.GERMAN))?"Die Datei wurde erfolgreich hochgeladen.":"The file was uploaded successfully.";
 if(sessionScope.get("uploadSuccessful")!=null){
 	return success
 }}]]></xp:this.value>
-					</xp:label>
+						</xp:label>
+					</xp:div>
+
 				</xp:div>
 
 			</xp:div>
