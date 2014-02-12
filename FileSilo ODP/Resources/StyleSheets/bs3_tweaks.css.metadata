@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="6a6" sequence="31" unid="B9C95A980EDE6596C1257C67002EA479">
+<created><datetime>20140121T092927,61+01</datetime></created>
+<modified><datetime>20140212T023402,35+01</datetime></modified>
+<revised><datetime>20140212T023402,34+01</datetime></revised>
+<lastaccessed><datetime>20140212T023402,35+01</datetime></lastaccessed>
+<addedtofile><datetime>20140212T022017,41+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$Flags"><text>34C=Q</text></item>
+<item name="$TITLE"><text>bs3_tweaks.css</text></item>
+<item name="$MimeType"><text>text/css</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>bs3_tweaks.css</text></item></note>

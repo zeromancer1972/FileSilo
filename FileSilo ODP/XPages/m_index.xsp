@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex"
+	pageTitle="#{javascript:@DbTitle()}">
+
+
+
+	<xp:this.acl>
+		<xp:acl>
+			<xp:this.entries>
+				<xp:aclEntry right="NOACCESS" fullName="Anonymous"
+					loaded="true" name="Anonymous" type="ANONYMOUS">
+				</xp:aclEntry>
+			</xp:this.entries></xp:acl>
+	</xp:this.acl>
+	<xe:singlePageApp selectedPageName="Navigator"
+		id="singlePageApp1">
+		<xe:appPage pageName="Navigator" resetContent="true"
+			id="appPage2">
+			<xe:djxmHeading label="#{javascript:@DbTitle()}"
+				moveTo="Start" id="djxmHeading2">
+				<xp:this.facets>
+					<xp:panel xp:key="actionFacet">
+
+					</xp:panel>
+				</xp:this.facets>
+			</xe:djxmHeading>
+			<xe:outline id="outline1">
+				<xe:this.treeNodes>
+
+					<xe:basicLeafNode label="Search" href="#Search">
+					</xe:basicLeafNode>
+					<xe:basicLeafNode href="#Upload"
+						label="Upload a file">
+					</xe:basicLeafNode>
+				</xe:this.treeNodes>
+			</xe:outline>
+		</xe:appPage>
+
+		<xe:appPage pageName="Files" resetContent="true"
+			id="appPage3">
+			<xe:djxmHeading label="Manage all collections" back="Back"
+				moveTo="Navigator" id="djxmHeading3">
+				<xp:this.facets>
+					<xp:panel xp:key="actionFacet">
+						<xe:toolBarButton label="Create collection"
+							id="toolBarButton2" moveTo="File">
+						</xe:toolBarButton>
+					</xp:panel>
+				</xp:this.facets>
+			</xe:djxmHeading>
+			<xe:dataView openDocAsReadonly="true" pageName="File"
+				id="dataView1" infiniteScroll="enable">
+				<xe:this.summaryColumn>
+					<xe:viewSummaryColumn columnName="fileID"></xe:viewSummaryColumn>
+				</xe:this.summaryColumn>
+				<xe:this.data>
+					<xp:dominoView var="view1" viewName="filesByKey">
+
+
+
+
+
+						<xp:this.categoryFilter><![CDATA[#{javascript:var key = sessionScope.get("customerKey");
+return key.equals("") ? "_none" : key}]]></xp:this.categoryFilter>
+					</xp:dominoView>
+				</xe:this.data>
+			</xe:dataView>
+		</xe:appPage>
+
+		<xe:appPage pageName="File" resetContent="true" id="appPage4">
+			<xe:djxmHeading label="File" back="Back" moveTo="Files"
+				id="djxmHeading4">
+				<xp:this.facets>
+					<xp:panel xp:key="actionFacet">
+
+						<xe:toolBarButton id="toolBarButton1"
+							label="Save">
+							<xp:eventHandler event="onClick"
+								submit="true" refreshMode="complete">
+								<xe:this.action>
+									<xp:save name="#Files"></xp:save>
+								</xe:this.action>
+							</xp:eventHandler>
+						</xe:toolBarButton>
+					</xp:panel>
+				</xp:this.facets>
+			</xe:djxmHeading>
+			<xp:panel>
+				<xp:this.data>
+					<xp:dominoDocument var="document1"
+						formName="file">
+					</xp:dominoDocument>
+				</xp:this.data>
+				<xe:formTable id="formTable1">
+					<xe:formRow label="ID" id="formRow1">
+						<xp:inputText value="#{document1.fileID}"
+							id="inputText1">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="Key" id="formRow6">
+						<xp:inputText value="#{document1.fileKey}"
+							id="inputText5">
+						</xp:inputText>
+					</xe:formRow>
+
+					<xe:formRow label="Description" id="formRow7">
+						<xp:inputRichText id="inputRichText1"
+							value="#{document1.fileMessage}">
+						</xp:inputRichText>
+
+					</xe:formRow>
+					<xe:formRow label="Attachment" id="formRow2">
+						<xp:fileUpload id="fileUpload1"
+							value="#{document1.fileAttachment}"
+							rendered="#{javascript:currentDocument.isEditable()}">
+						</xp:fileUpload>
+
+
+						<xp:fileDownload rows="30" id="fileDownload1"
+							displayLastModified="false" value="#{document1.fileAttachment}"
+							rendered="#{javascript:!currentDocument.isEditable()}">
+						</xp:fileDownload>
+					</xe:formRow>
+
+
+					<xe:formRow label="Readers" id="formRow3">
+						<xp:inputText value="#{document1.fileReaders}"
+							id="inputText2">
+						</xp:inputText>
+					</xe:formRow>
+					<xe:formRow label="Authors" id="formRow4">
+						<xp:inputText value="#{document1.fileAuthors}"
+							id="inputText3">
+						</xp:inputText>
+					</xe:formRow>
+
+
+					<xe:formRow label="Expires" id="formRow8">
+						<xp:inputText value="#{document1.fileExpires}"
+							id="inputText7">
+							<xp:this.converter>
+								<xp:convertDateTime
+									pattern="MM/dd/yyyy">
+								</xp:convertDateTime>
+							</xp:this.converter>
+							<xp:dateTimeHelper></xp:dateTimeHelper>
+						</xp:inputText>
+					</xe:formRow>
+
+				</xe:formTable>
+
+			</xp:panel>
+		</xe:appPage>
+		<xe:appPage id="appPage1" pageName="Upload">
+			<xe:djxmHeading id="djxmHeading1" label="Upload a file"
+				back="Back" moveTo="Navigator">
+			</xe:djxmHeading>
+		</xe:appPage>
+		<xe:appPage id="appPage5" pageName="Search">
+			<xe:djxmHeading id="djxmHeading5"
+				label="Search by customer key">
+			</xe:djxmHeading>
+			<xp:panel>
+				<xe:formTable id="formTable2"
+					formTitle="Enter the customer key">
+					<xp:this.facets></xp:this.facets>
+					<xe:formRow id="formRow5" label="Customer key">
+						<xp:inputText id="inputText4"></xp:inputText>
+					</xe:formRow>
+
+				</xe:formTable>
+			</xp:panel>
+		</xe:appPage>
+	</xe:singlePageApp>
+</xp:view>

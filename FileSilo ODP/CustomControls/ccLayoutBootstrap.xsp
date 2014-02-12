@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xe:keepSessionAlive id="keepSessionAlive1"></xe:keepSessionAlive>
+
+	<xp:this.beforePageLoad><![CDATA[#{javascript:var url = facesContext.getExternalContext().getRequest().getRequestURI();
+if(url.indexOf(".xsp")==-1){
+	if(url.endsWith("/")){
+		url = url.substr(0, url.length-1)
+	}
+	context.redirectToPage(url+view.getPageName())
+}}]]></xp:this.beforePageLoad>
+	<xp:this.resources>
+		<xp:bundle src="/app.properties" var="app"></xp:bundle>
+	</xp:this.resources>
+
+	<nav class="navbar-header navbar-inverse navbar-fixed-top"
+		role="navigation">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle"
+					data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+
+				<a class="navbar-brand" href="index.xsp">
+					<xp:image
+						style="margin-left:-12px;margin-right:10px" url="/silo_small.png"
+						id="image1">
+					</xp:image>
+					<xp:text value="#{javascript:@DbTitle()}"
+						style="color:rgb(255,255,255)">
+					</xp:text>
+				</a>
+			</div>
+
+
+
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav">
+					<xp:panel tagName="li">
+						<a href="upload.xsp">
+							<span
+								class="glyphicon glyphicon-cloud-upload">
+							</span>
+							&#160;Upload a file
+						</a>
+					</xp:panel>
+					<xp:panel tagName="li">
+						<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
+						<a href="manage.xsp">
+							<span
+								class="glyphicon glyphicon-paperclip">
+							</span>
+							&#160;Manage collections
+						</a>
+					</xp:panel>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+
+					<xp:panel tagName="li" styleClass="dropdown"
+						rendered="false">
+						<a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">
+							Lanuage
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#"
+									onclick="dojo.byId('#{id:btnGerman}').click()">
+									German
+								</a>
+							</li>
+							<li>
+								<a href="#"
+									onclick="dojo.byId('#{id:btnEnglish}').click()">
+									English
+								</a>
+							</li>
+						</ul>
+					</xp:panel>
+
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle"
+							data-toggle="dropdown">
+							<xp:text>
+								<xp:this.value><![CDATA[#{javascript:var uploads = database.search("SELECT Form=\"file\" & @IsAvailable($PublicAccess)").getCount();
+var uploadtext = (uploads>0)?" ("+uploads.toString()+")":""; 
+
+@UserName().equals("Anonymous") ? "Howdy, stranger" : @Name("[CN]", @UserName())+uploadtext}]]></xp:this.value>
+							</xp:text>
+							<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<xp:panel tagName="li">
+								<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
+								<xp:link value="#{javascript:@UserName().equals('Anonymous')?'/login.xsp':'javascript:doLogout()'}">
+									<span
+										class="glyphicon glyphicon-user">
+									</span>
+									&#160;
+									<xp:text>
+										<xp:this.value><![CDATA[#{javascript:@UserName().equals("Anonymous")?"Login":"Logout"}]]></xp:this.value>
+									</xp:text>
+								</xp:link>
+							</xp:panel>
+							
+							<xp:panel tagName="li">
+								<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Profile]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
+								<a href="profile.xsp">
+									<span
+										class="glyphicon glyphicon-cog">
+									</span>
+									&#160;Settings
+								</a>
+							</xp:panel>
+						</ul>
+					</li>
+
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div>
+	</nav>
+
+	<div class="pagehelp">
+		<div class="container" style="padding-top:50px">
+			<xp:callback facetName="facetLeft" id="facetLeft"></xp:callback>
+		</div>
+	</div>
+
+	<div class="container" style="padding-bottom:70px">
+		<div class="row">
+			<div class="col-xs-12 col-md-12">
+				<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
+			</div>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-default navbar-fixed-bottom "
+		role="navigation" id="footer">
+
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				<ul class="nav navbar-nav" style="margin-left:-14px;">
+					<li>
+						<a
+							href="http://www.openntf.org/main.nsf/project.xsp?r=project/FileSilo"
+							target="_blank">
+							Download FileSilo
+						</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li>
+						<a>
+							<xp:label id="label1">
+								<xp:this.value><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']+" | © 2014 Oliver Busse, Apache License 2.0"}]]></xp:this.value>
+							</xp:label>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</nav>	
+</xp:view>

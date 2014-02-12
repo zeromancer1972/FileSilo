@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom" enableModifiedFlag="true"
+	modifiedMessage="You have unsaved changes. do you want to discard your changes?"
+	modifiedControl="button1">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="file">
+
+			<xp:this.querySaveDocument><![CDATA[#{javascript:try {
+var doc = currentDocument.getDocument(true); 
+var itReaders:NotesItem = doc.getFirstItem("fileReaders")
+var itAuthors:NotesItem = doc.getFirstItem("fileAuthors")
+itReaders.setReaders(true);
+itAuthors.setAuthors(true);
+var itAdmin:NotesItem = doc.replaceItemValue("fileAdmin", "[Admin]")
+itAdmin.setAuthors(true);
+if(doc.hasItem("$PublicAccess")){
+	doc.removeItem("$PublicAccess")
+}
+} catch(e) {}}]]></xp:this.querySaveDocument>
+			<xp:this.postNewDocument><![CDATA[#{javascript:currentDocument.setValue("fileCreator", session.getEffectiveUserName())}]]></xp:this.postNewDocument>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xp:div styleClass="actionbar">
+		<xp:div styleClass="btn-group">
+			<xp:button value="Save" id="button1"
+				rendered="#{javascript:currentDocument.isEditable()}" styleClass="btn btn-default">
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+						<xp:saveDocument var="document1"></xp:saveDocument>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
+				styleClass="btn btn-default">
+				<xp:this.value><![CDATA[Save & close]]></xp:this.value>
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+
+						<xp:actionGroup>
+							<xp:saveDocument var="document1"></xp:saveDocument>
+							<xp:executeScript>
+								<xp:this.script><![CDATA[#{javascript:return "close"}]]></xp:this.script>
+							</xp:executeScript>
+						</xp:actionGroup>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:button value="Edit" id="button3" styleClass="btn btn-default">
+
+				<xp:this.rendered><![CDATA[#{javascript:var ctx = com.ibm.domino.xsp.module.nsf.NotesContext.getCurrent()
+return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEditable()}]]></xp:this.rendered>
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+						<xp:changeDocumentMode mode="edit"></xp:changeDocumentMode>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:button id="button4" styleClass="btn btn-default">
+				<xp:this.value><![CDATA[#{javascript:currentDocument.isEditable() ? "Cancel" : "Close"}]]></xp:this.value>
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="complete" immediate="true">
+					<xp:this.action><![CDATA[#{javascript:return (session.getEffectiveUserName().equals("Anonymous"))?"welcome":"cancel"}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+		</xp:div>
+	</xp:div>
+
+	
+
+	<xp:div styleClass="form-group">
+
+		<xp:label value="ID *&#160;" id="fileID_Label1" for="fileID1">
+		</xp:label>
+<xp:message id="message1" for="fileID1"
+			styleClass="alert alert-danger msg">
+		</xp:message>
+		<xp:inputText value="#{document1.fileID}" id="fileID1"
+			required="true" styleClass="form-control">
+			<xp:this.validators>
+				<xp:validateRequired message="An ID is required">
+				</xp:validateRequired>
+				<xp:validateLength minimum="3"
+					message="The ID's length must be 3 characters or more">
+				</xp:validateLength>
+			</xp:this.validators>
+		</xp:inputText>
+		
+	</xp:div>
+	<xp:div styleClass="form-group">
+		<xp:label value="Customer key *&#160;" id="fileKey_Label1" for="fileKey1">
+		</xp:label>
+<xp:message id="message2" for="fileKey1"
+			styleClass="alert alert-danger msg">
+		</xp:message>
+		<xp:inputText value="#{document1.fileKey}" id="fileKey1"
+			required="true" styleClass="form-control">
+			<xp:this.validators>
+				<xp:validateRequired message="A key is required">
+				</xp:validateRequired>
+			</xp:this.validators>
+			<xp:typeAhead mode="partial" minChars="1" ignoreCase="true"
+				id="typeAhead1">
+				<xp:this.valueList><![CDATA[#{javascript:@Unique(@DbColumn(database.getFilePath(), "filesByKey", 1))}]]></xp:this.valueList>
+			</xp:typeAhead>
+		</xp:inputText>
+
+		<xp:link escape="true" text="Generate customer key" id="link1"
+			rendered="#{javascript:currentDocument.isEditable()}" styleClass="lotusAction">
+			<xp:eventHandler event="onclick" submit="true"
+				refreshMode="partial" immediate="true" execMode="partial" refreshId="fileKey1"
+				id="eventHandler1">
+				<xp:this.action><![CDATA[#{javascript:getComponent("fileKey1").setValue(@Unique())}]]></xp:this.action>
+			</xp:eventHandler>
+		</xp:link>
+		
+	</xp:div>
+	<xp:div styleClass="form-group">
+
+		<xp:label value="Attachments&#160;" id="fileAttachment_Label1" for="fileAttachment1">
+		</xp:label>
+
+
+		<xp:fileDownload rows="30" id="fileDownload1"
+			displayLastModified="true" value="#{document1.fileAttachment}"
+			allowDelete="true" hideWhen="true" style="width:100%" displayCreated="false"
+			deleteMessage="Delete this file?">
+		</xp:fileDownload>
+		<xp:br></xp:br>
+		<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
+			styleClass="btn btn-default"></xp:fileUpload>
+	</xp:div>
+	<xp:div styleClass="form-group">
+		<xp:label id="label1" value="Message/Description&#160;" for="inputRichText1">
+		</xp:label>
+
+		<xp:inputRichText id="inputRichText1" value="#{document1.fileMessage}">
+			<xp:this.dojoAttributes>
+				<xp:dojoAttribute name="height" value="200">
+				</xp:dojoAttribute>
+			</xp:this.dojoAttributes>
+		</xp:inputRichText>
+	</xp:div>
+	<xp:div styleClass="form-group">
+		<xp:label value="Readers&#160;" id="fileReaders_Label1" for="fileReaders1">
+		</xp:label>
+
+		<xp:inputText value="#{document1.fileReaders}" id="fileReaders1"
+			multipleSeparator="," multipleTrim="true" styleClass="form-control">
+		</xp:inputText>
+		<xe:namePicker id="namePicker1" for="fileReaders1"
+			dialogTitle="Choose names" rendered="#{javascript:currentDocument.isEditable()}">
+			<xe:this.dataProvider>
+				<xe:dominoNABNamePicker people="true"
+					addressBookSel="db-name">
+					<xe:this.addressBookDb><![CDATA[#{javascript:database.getServer()+"!!names.nsf"}]]></xe:this.addressBookDb>
+				</xe:dominoNABNamePicker>
+			</xe:this.dataProvider>
+		</xe:namePicker>
+	</xp:div>
+	<xp:div styleClass="form-group">
+		<xp:label value="Authors&#160;" id="fileAuthors_Label1" for="fileAuthors1">
+		</xp:label>
+
+		<xp:inputText value="#{document1.fileAuthors}" id="fileAuthors1"
+			multipleSeparator="," multipleTrim="true" styleClass="form-control">
+		</xp:inputText>
+		<xe:namePicker id="namePicker2" for="fileAuthors1"
+			dialogTitle="Choose names" rendered="#{javascript:currentDocument.isEditable()}">
+			<xe:this.dataProvider>
+				<xe:dominoNABNamePicker people="true"
+					addressBookSel="db-name">
+					<xe:this.addressBookDb><![CDATA[#{javascript:database.getServer()+"!!names.nsf"}]]></xe:this.addressBookDb>
+				</xe:dominoNABNamePicker>
+			</xe:this.dataProvider>
+		</xe:namePicker>
+	</xp:div>
+	<xp:div styleClass="form-group">
+		<xp:label value="Expires&#160;" id="fileExpires_Label1" for="fileExpires1">
+		</xp:label>
+
+		<xp:inputText value="#{document1.fileExpires}" id="fileExpires1"
+			styleClass="form-control datepicker">
+			<xp:this.converter>
+				<xp:convertDateTime pattern="MM/dd/yyyy"></xp:convertDateTime>
+			</xp:this.converter>
+		</xp:inputText>
+	</xp:div>
+	<xp:div styleClass="form-group">
+		<xp:label value="Created by&#160;" id="fileCreator_Label1" for="fileCreator1">
+		</xp:label>
+
+		<xp:inputText value="#{document1.fileCreator}" id="fileCreator1"
+			styleClass="form-control" disabled="true">
+		</xp:inputText>
+	</xp:div>
+
+	<xp:scriptBlock>
+		<xp:this.value><![CDATA[dojo.query(".xspLinkFileDownload").forEach(
+function(node, index, arr) {
+dojo.attr(node, "draggable", "true");
+dojo.attr(node, "ondragstart", "event.dataTransfer.setData('DownloadURL', 'application/octet-stream:" + node.innerText + ":" + node.href + "')");
+}
+);]]></xp:this.value>
+		<xp:this.loaded><![CDATA[${javascript:context.getUserAgent().isChrome() && @Attachments() != 0}]]></xp:this.loaded>
+	</xp:scriptBlock>
+
+</xp:view>

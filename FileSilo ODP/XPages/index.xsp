@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+
+
+	<xp:this.beforePageLoad><![CDATA[#{javascript:sessionScope.put("customerKey", context.getUrlParameter("key"))}]]></xp:this.beforePageLoad>
+	<xc:ccLayoutBootstrap><xp:this.facets>
+	<xc:ccWelcome xp:key="facetMiddle"></xc:ccWelcome>
+	<xc:ccHelpWelcome xp:key="facetLeft"></xc:ccHelpWelcome></xp:this.facets></xc:ccLayoutBootstrap>
+</xp:view>

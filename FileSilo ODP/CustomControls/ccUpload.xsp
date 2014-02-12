@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="file">
+			<xp:this.querySaveDocument><![CDATA[#{javascript:var unique = @Unique();
+document1.setValue("fileId", "UPLOAD: " + unique);
+document1.setValue("fileKey", unique);
+document1.setValue("fileUpload", "1");
+document1.setValue("fileExpires", @Adjust(@Now(), 0,1,0,0,0,0));
+if(document1.getAttachmentList("fileAttachment").isEmpty()){
+	// silent for bots
+	return false	
+}}]]></xp:this.querySaveDocument>
+			<xp:this.postNewDocument><![CDATA[#{javascript:document1.setValue("$PublicAccess", "1")
+document1.setValue("fileCreator", session.getEffectiveUserName())}]]></xp:this.postNewDocument>
+			<xp:this.postSaveDocument><![CDATA[#{javascript:sessionScope.put("uploadSuccessful", "1")
+var upload = new com.olb.Upload();
+upload.sendInfo();}]]></xp:this.postSaveDocument>
+		</xp:dominoDocument>
+	</xp:this.data>
+	<xp:div id="panel">
+		<xp:div styleClass="panel panel-default">
+			<xp:div styleClass="panel-heading" rendered="false">
+				<xp:label value="Upload a file here" id="label1"
+					disableTheme="true">
+				</xp:label>
+			</xp:div>
+
+			<xp:div styleClass="panel-body">
+				<xp:label id="label2"
+					value="You can upload one file with this form. The upload will be checked and approved afterwards by administrative authorities.">
+
+				</xp:label>
+
+				<xp:div style="margin-top:30px">
+					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
+						required="true" styleClass="btn btn-default">
+						<xp:this.validators>
+							<xp:validateRequired message="Please provide a file"></xp:validateRequired>
+						</xp:this.validators>
+					</xp:fileUpload>
+				</xp:div>
+				<xp:div>
+					<xp:messages id="messages1"></xp:messages>
+				</xp:div>
+				<xp:div style="padding-top:10.0px">
+					<xp:button id="button1" styleClass="btn btn-custom btn-lg">
+					<span class="glyphicon glyphicon-cloud-upload"></span>
+					&#160;Upload file
+						<xp:eventHandler event="onclick" submit="true"
+							refreshMode="partial" refreshId="uploadmessage">
+							<xp:this.action>
+
+								<xp:actionGroup>
+									<xp:saveDocument var="document1"></xp:saveDocument>
+
+									<xp:openPage name="/upload.xsp"></xp:openPage>
+								</xp:actionGroup>
+							</xp:this.action>
+						</xp:eventHandler>
+					</xp:button>
+				</xp:div>
+				<br />
+				<xp:div id="uploadmessage" styleClass="lotusMessage2 lotusSuccess alert alert-success">
+					<xp:this.rendered><![CDATA[#{javascript:return sessionScope.get("uploadSuccessful")!=null}]]></xp:this.rendered>
+					<img class="lotusIcon lotusIconMsgSuccess" src="/icons/ecblank.gif" />
+					<xp:div styleClass="lotusMessageBody">
+						<xp:label id="label3">
+							<xp:this.value><![CDATA[#{javascript:var success = (context.getLocale().equals(Locale.GERMAN))?"Die Datei wurde erfolgreich hochgeladen.":"The file was uploaded successfully.";
+if(sessionScope.get("uploadSuccessful")!=null){
+	return success
+}}]]></xp:this.value>
+						</xp:label>
+					</xp:div>
+				</xp:div>
+			</xp:div>
+		</xp:div>
+	</xp:div>
+</xp:view>

@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
+ replicaid='C1257BDF00312926'>
+<noteinfo noteid='702' unid='41DABAB976181584C1257BDF003B530C' sequence='30'>
+<created><datetime dst='true'>20130907T124758,84+02</datetime></created>
+<modified><datetime>20140212T022338,32+01</datetime></modified>
+<revised><datetime>20140212T022338,31+01</datetime></revised>
+<lastaccessed><datetime>20140212T022338,32+01</datetime></lastaccessed>
+<addedtofile><datetime>20140212T022017,84+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name='$Comment' sign='true'><text/></item>
+<item name='$HTMLCode' sign='true'>
+<rawitemdata type='1'>
+X/8QAAIADwAHAAAAAAAAAA==
+</rawitemdata></item>
+<item name='$TITLE'><text>file</text></item>
+<item name='$Info' sign='true'>
+<rawitemdata type='1'>
+hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
+</rawitemdata></item>
+<item name='$Flags'><text/></item>
+<item name='$DesignerVersion'><text>8.5.3</text></item>
+<item name='$$ScriptName' summary='false' sign='true'><text>file</text></item>
+<item name='fileID' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='fileAttachment' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='fileReaders' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='fileAuthors' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='fileAdmin' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='fileKey' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='fileMessage' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='fileExpires' summary='false'>
+<rawitemdata type='400'>
+AAAAAAAAAAA=
+</rawitemdata></item>
+<item name='fileCreator' placeholder='true'>
+<rawitemdata type='0'>
+</rawitemdata></item>
+<item name='$Fields'><textlist><text>fileCreator</text><text>fileExpires</text><text
+>fileMessage</text><text>fileKey</text><text>fileAdmin</text><text>fileAuthors</text><text
+>fileReaders</text><text>fileAttachment</text><text>fileID</text></textlist></item>
+<item name='$Body' sign='true'>
+<rawitemdata type='1'>
+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
+</rawitemdata></item>
+<item name='$PublicAccess'><text>1</text></item></note>
+

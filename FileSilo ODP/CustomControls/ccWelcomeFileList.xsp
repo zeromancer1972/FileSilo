@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<xp:this.data>
+		<xp:dominoView var="view1" viewName="filesByKey"
+			keysExactMatch="true">
+			<xp:this.keys><![CDATA[#{javascript:sessionScope.get("customerKey")}]]></xp:this.keys>
+		</xp:dominoView>
+	</xp:this.data>
+
+	<div class="">
+		<xp:label id="label1">
+			<xp:this.value><![CDATA[#{javascript:((context.getLocale().toString().startsWith("en"))?"Current customer key: ":"Aktueller Kunden-Schlüssel: ")+sessionScope.get("customerKey")}]]></xp:this.value>
+		</xp:label>
+	</div>
+
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Key</th>
+				<th>Expires</th>
+			</tr>
+		</thead>
+		<tbody>
+			<xp:repeat id="repeat1" rows="30" value="#{view1}" var="entry"
+				disableOutputTag="true">
+				<xp:panel>
+					<xp:this.data>
+						<xp:dominoDocument var="doc" action="openDocument"
+							documentId="#{javascript:entry.getDocument().getUniversalID()}"
+							formName="file">
+						</xp:dominoDocument>
+					</xp:this.data>
+					<tr>
+						<td>
+							<b>
+								<xp:link escape="true" id="link1"
+									value="/file.xsp?action=openDocument&amp;documentId=#{javascript:doc.getDocument().getUniversalID()}">
+									<xp:this.text><![CDATA[#{javascript:doc.getValue("fileID")}]]></xp:this.text>
+								</xp:link>
+							</b>
+							<xp:br></xp:br>
+							<xp:inputRichText id="inputRichText1" value="#{doc.fileMessage}"
+								disableTheme="true">
+							</xp:inputRichText>
+						</td>
+						<td>
+							<xp:inputText id="inputText1"
+								value="#{doc.fileKey}">
+							</xp:inputText>
+						</td>
+
+						<td>
+							<xp:inputText id="inputText2"
+								value="#{doc.fileExpires}">
+								<xp:this.converter>
+									<xp:convertDateTime type="date">
+									</xp:convertDateTime>
+								</xp:this.converter>
+							</xp:inputText>
+						</td>
+					</tr>
+				</xp:panel>
+			</xp:repeat>
+		</tbody>
+	</table>
+	
+	<xp:pager layout="Previous Group Next" partialRefresh="true"
+		id="pager1" for="repeat1" disableTheme="true">
+	</xp:pager>
+
+</xp:view>

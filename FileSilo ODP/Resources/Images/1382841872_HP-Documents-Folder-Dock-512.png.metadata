@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="78e" sequence="21" unid="BD7AC5306E5A0753C1257C10007775AF">
+<created><datetime dst="true">20131026T234449,11+02</datetime></created>
+<modified><datetime>20140212T022337,94+01</datetime></modified>
+<revised><datetime>20140212T022337,93+01</datetime></revised>
+<lastaccessed><datetime>20140212T022337,94+01</datetime></lastaccessed>
+<addedtofile><datetime>20140212T022018,54+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$TITLE"><text>1382841872_HP-Documents-Folder-Dock-512.png</text></item>
+<item name="$Flags"><text>34CiQ</text></item>
+<item name="$FlagsExt"><text>D</text></item>
+<item name="$ImagesWide" sign="true"><number>1</number></item>
+<item name="$ImagesHigh" sign="true"><number>1</number></item>
+<item name="$ImagesColorize" sign="true"><number>0</number></item>
+<item name="$FileModDT" sign="true"><datetime dst="true">20131026T234439,77+02</datetime></item>
+<item name="$ImageNames" sign="true"><text>1382841872_HP-Documents-Folder-Dock-512.png</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+</note>

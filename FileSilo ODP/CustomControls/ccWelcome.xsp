@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:div styleClass="panel panel-default">
+		<xp:text escape="true" id="computedField1" tagName="div"
+			value="Welcome to your downloads" styleClass="lotusHeader panel-heading"
+			rendered="false">
+		</xp:text>
+		<xp:div styleClass="panel-body">
+			<xp:div styleClass="form-group">
+				<xp:label value="Customer key" id="label1" for="inputText1">
+				</xp:label>
+
+
+				<xp:inputText id="inputText1" style="width:100%"
+					value="#{sessionScope.customerKey}" styleClass="form-control">
+				</xp:inputText>
+				<xp:br></xp:br>
+
+				<xp:button id="button1"
+					styleClass="btn btn-lg btn-warning">
+					<span class="glyphicon glyphicon-eye-open"></span>
+					&#160;Search
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete" id="eventHandler1">
+					</xp:eventHandler>
+				</xp:button>
+			</xp:div>
+			<xp:div>
+				<xp:this.rendered><![CDATA[#{javascript:var key = sessionScope.get("customerKey");return (key!=null && key!="")}]]>
+				</xp:this.rendered>
+
+
+				<xc:ccWelcomeFileList></xc:ccWelcomeFileList>
+			</xp:div>
+		</xp:div>
+	</xp:div>
+</xp:view>

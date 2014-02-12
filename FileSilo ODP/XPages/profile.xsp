@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="profile"
+			action="openDocument">
+			<xp:this.documentId><![CDATA[#{javascript:@DbLookup(@DbName(), "profiles", "profile", "Form", "[RETURNDOCUMENTUNIQUEID]")}]]></xp:this.documentId>
+		</xp:dominoDocument>
+	</xp:this.data>
+
+	<xp:this.navigationRules>
+		<xp:navigationRule outcome="cancel" viewId="/manage.xsp"></xp:navigationRule>
+		<xp:navigationRule outcome="welcome" viewId="/index.xsp"></xp:navigationRule>
+		<xp:navigationRule outcome="close" viewId="/manage.xsp"></xp:navigationRule>
+	</xp:this.navigationRules>
+	<xp:this.beforePageLoad><![CDATA[#{javascript:if(session.getEffectiveUserName().equals("Anonymous")){
+	context.redirectToPage("index.xsp")
+}}]]></xp:this.beforePageLoad>
+	<xc:ccLayoutBootstrap><xp:this.facets>
+	<xc:ccProfile xp:key="facetMiddle"></xc:ccProfile>
+	<xc:ccHelpProfile xp:key="facetLeft"></xc:ccHelpProfile></xp:this.facets></xc:ccLayoutBootstrap>
+</xp:view>
