@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:xe="http://www.ibm.com/xsp/coreex">
 
 	<xp:this.beforePageLoad><![CDATA[#{javascript:if(session.getEffectiveUserName().equals("Anonymous")){
@@ -11,6 +12,6 @@
 			<xc:ccHelpAdmin xp:key="facetLeft"></xc:ccHelpAdmin>
 		</xp:this.facets>
 	</xc:ccLayoutBootstrap>
-	
+
 
 </xp:view>

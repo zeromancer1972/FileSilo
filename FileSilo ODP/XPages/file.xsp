@@ -9,7 +9,10 @@
 	</xp:this.navigationRules>
 
 
-	<xc:ccLayoutBootstrap><xp:this.facets>
-	<xc:ccHelpFile xp:key="facetLeft"></xc:ccHelpFile>
-	<xc:ccFile xp:key="facetMiddle"></xc:ccFile></xp:this.facets></xc:ccLayoutBootstrap>
+	<xc:ccLayoutBootstrap>
+		<xp:this.facets>
+			<xc:ccHelpFile xp:key="facetLeft"></xc:ccHelpFile>
+			<xc:ccFile xp:key="facetMiddle"></xc:ccFile>
+		</xp:this.facets>
+	</xc:ccLayoutBootstrap>
 </xp:view>

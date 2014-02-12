@@ -47,3 +47,12 @@
 th {
 	font-weight: bold;
 }
+
+.tundra .dijitSelect .dijitButtonContents,.tundra .dijitSelect,.tundra .dijitTextBox
+	{
+	background: none;
+}
+
+.dijitPlaceHolder {
+	font-style: inherit;
+}
