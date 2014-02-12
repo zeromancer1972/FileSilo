@@ -157,19 +157,5 @@
 			</div>
 		</div>
 	</xp:div>
-	<xp:scriptBlock id="scriptBlock1" type="text/javascript">
-		<xp:this.value><![CDATA[dojo._xhr = dojo.xhr; 
-var loadOld;
-function hijacked( response, ioArgs ){
-   // your code or function here (pre-processed)
-   loadOld( response, ioArgs ); 
-   // your code or function here (post-processed)
-   XSP.partialRefreshGet("#{id:usermenu}")
-}
-dojo.xhr = function( mode, args, bool ){
-    loadOld = args["load"];
-    args["load"] = hijacked;
-    dojo._xhr( mode, args, bool );
-}]]></xp:this.value>
-	</xp:scriptBlock>
+	
 </xp:view>
