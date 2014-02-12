@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<h4>Ooops!</h4>
+	<div>The page/document you wanted to access does not exist anymore.
+		Maybe the document has been deleted before.</div>
+</xp:view>
