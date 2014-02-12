@@ -56,3 +56,7 @@ th {
 .dijitPlaceHolder {
 	font-style: inherit;
 }
+
+.panel-title {
+	font-weight: bold;
+}
