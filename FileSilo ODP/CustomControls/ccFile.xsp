@@ -105,13 +105,18 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				<xp:inputText value="#{document1.fileID}" id="fileID1"
 					required="true" styleClass="form-control" disableTheme="true">
 					<xp:this.validators>
-						<xp:validateRequired message="An ID is required">
+						<xp:validateRequired
+							message="An ID is required">
 						</xp:validateRequired>
 						<xp:validateLength minimum="3"
 							message="The ID's length must be 3 characters or more">
 						</xp:validateLength>
 					</xp:this.validators>
-				</xp:inputText>
+					<xp:this.attrs>
+						<xp:attr name="placeholder"
+							value="e.g. Important Updates">
+						</xp:attr>
+					</xp:this.attrs></xp:inputText>
 
 			</xp:div>
 			<xp:div styleClass="form-group">
@@ -123,11 +128,17 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				<xp:inputText value="#{document1.fileKey}" id="fileKey1"
 					required="true" styleClass="form-control" disableTheme="true">
 					<xp:this.validators>
-						<xp:validateRequired message="A key is required">
+						<xp:validateRequired
+							message="A key is required">
 						</xp:validateRequired>
 					</xp:this.validators>
-					<xp:typeAhead mode="partial" minChars="1" ignoreCase="true"
-						id="typeAhead1">
+					<xp:this.attrs>
+						<xp:attr name="placeholder"
+							value="e.g. CustomerName">
+						</xp:attr>
+					</xp:this.attrs>
+					<xp:typeAhead mode="partial" minChars="1"
+						ignoreCase="true" id="typeAhead1">
 						<xp:this.valueList><![CDATA[#{javascript:@Unique(@DbColumn(database.getFilePath(), "filesByKey", 1))}]]></xp:this.valueList>
 					</xp:typeAhead>
 				</xp:inputText>
