@@ -1,5 +1,6 @@
 // core
 
+/*
 var username = dojo.byId("#{id:username}");
 var password = dojo.byId("#{id:password}");
 var msg = dojo.byId("#{id:loginMessage}");
@@ -51,6 +52,7 @@ dojo.connect(dojo.byId("#{id:btnLogoutCancel}"), "onclick", function(evt) {
 	dijit.byId("#{id:dlgLogout}").hide();
 })
 
+
 doLogin = function() {
 	require(
 			[ "dojo/request/xhr" ],
@@ -87,6 +89,7 @@ doLogin = function() {
 			});
 }
 
+
 checkCookie = function() {
 	var tokenOk = false;
 	require( [ "dojo/cookie" ], function(cookie) {
@@ -116,6 +119,8 @@ dialogLogin = function() {
 	}
 
 }
+
+*/
 
 doLogout = function() {
 	require( [ "dojo/cookie" ], function(cookie) {
