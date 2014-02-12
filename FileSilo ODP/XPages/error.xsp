@@ -12,7 +12,7 @@
 						<xp:text styleClass="alert alert-warning msg" escape="true" id="computedField1" value="#{requestScope.error}">
 						</xp:text>
 						<xp:section id="section1" initClosed="true" header="Click here for details">
-							<code>
+							<pre>
 								<xp:text escape="false" id="computedField" styleClass="code">
 									<xp:this.value>
 							<![CDATA[#{javascript:var stackTrace ="";
@@ -26,7 +26,7 @@ return stackTrace;
 }]]>
 									</xp:this.value>
 								</xp:text>
-							</code>
+							</pre>
 						</xp:section>
 					</div>
 				</div>
