@@ -3,7 +3,6 @@ package com.olb;
 import java.io.Serializable;
 import java.util.Date;
 
-import lotus.domino.DateTime;
 import lotus.domino.Document;
 
 import com.ibm.xsp.extlib.util.ExtLibUtil;
@@ -21,8 +20,7 @@ public class Log implements Serializable {
 			Document doc = ExtLibUtil.getCurrentDatabase().createDocument();
 			doc.replaceItemValue("Form", "log");
 			doc.replaceItemValue("$PublicAccess", "1");
-			DateTime now = ExtLibUtil.getCurrentSession().createDateTime(new Date());
-			doc.replaceItemValue("logTimestamp", now);
+			doc.replaceItemValue("logTimestamp", ExtLibUtil.getCurrentSession().createDateTime(new Date()));
 			doc.replaceItemValue("logSubject", subject);
 			doc.replaceItemValue("logMessage", message);
 			doc.save(true, false);
