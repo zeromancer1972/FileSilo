@@ -24,8 +24,8 @@
 					<th>Details</th>
 				</tr>
 			</thead>
-			<tbody>
-				<xp:repeat id="repeat1" rows="7" value="#{view1}" var="entry"
+			<tbody class="#{javascript:compositeData.widget?'tiny':''}">
+				<xp:repeat id="repeat1" rows="#{javascript:compositeData.widget?7:20}" value="#{view1}" var="entry"
 					disableOutputTag="true">
 					<xp:panel>
 						<xp:this.data>

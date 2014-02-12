@@ -8,7 +8,7 @@
 		<xp:this.facets>
 			<xp:div xp:key="facetMiddle">
 				<xc:ccWelcome></xc:ccWelcome>
-				<xc:ccRecent>
+				<xc:ccRecent widget="true">
 					<xc:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xc:this.rendered>
 				</xc:ccRecent>
 			</xp:div>
