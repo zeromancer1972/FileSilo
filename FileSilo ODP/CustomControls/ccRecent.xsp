@@ -6,7 +6,7 @@
 	<xp:div id="list" styleClass="panel panel-default">
 		<div class="panel-heading">
 			<span class="panel-title">
-				Activities
+				Activities (entries will be removed after one month)
 						</span>
 
 		</div>
