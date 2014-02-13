@@ -13,6 +13,16 @@
 						<xp:text styleClass="alert alert-warning msg" escape="true"
 							id="computedField1" value="#{requestScope.error}">
 						</xp:text>
+						<h4>Prossible cause</h4>
+						<xp:text>
+							<xp:this.value><![CDATA[#{javascript:var err:string = requestScope.error.toString();
+if(err.toLowerCase().indexOf("could not open the document")!=-1){
+	return "The collection might have been deleted before";
+}
+
+return "Unknown";}]]></xp:this.value>
+						</xp:text>
+						<br/><br/>
 						<xp:section id="section1" initClosed="true"
 							header="Click here for details">
 							<pre>

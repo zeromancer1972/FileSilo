@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 import lotus.domino.Document;
+import lotus.domino.NotesException;
 
 import com.ibm.xsp.extlib.util.ExtLibUtil;
 
@@ -28,6 +29,25 @@ public class Log implements Serializable {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+	public void add(String subject, String message, String unid) {
+		try {
+			Document doc = ExtLibUtil.getCurrentDatabase().createDocument();
+			doc.replaceItemValue("Form", "log");
+			doc.replaceItemValue("$PublicAccess", "1");
+			doc.replaceItemValue("logTimestamp", ExtLibUtil.getCurrentSession().createDateTime(new Date()));
+			doc.replaceItemValue("logSubject", subject);
+			doc.replaceItemValue("logMessage", message);
+			doc.replaceItemValue("logUnid", unid);
+			doc.save(true, false);
+			doc.recycle();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public String getUserName() throws NotesException{
+		return ExtLibUtil.getCurrentSession().createName(ExtLibUtil.getCurrentSession().getEffectiveUserName()).getAbbreviated();
 	}
 
 }

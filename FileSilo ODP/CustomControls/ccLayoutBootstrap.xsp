@@ -66,7 +66,7 @@ if(url.indexOf(".xsp")==-1){
 						<a href="recent.xsp">
 							<span class="glyphicon glyphicon-flash">
 							</span>
-							&#160;Recent activities
+							&#160;Activities
 						</a>
 					</xp:panel>
 				</ul>
@@ -156,12 +156,12 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 						<a
 							href="http://www.openntf.org/main.nsf/project.xsp?r=project/FileSilo"
 							target="_blank">
-							Download FileSilo (OpenNTF)
+							Download FileSilo
 						</a>
 					</li>
 					<li>
 						<a href="https://github.com/zeromancer1972/FileSilo" target="_blank">
-							Fork me on GitHub (Nightly)
+							FileSilo on GitHub
 						</a>
 					</li>
 				</ul>
