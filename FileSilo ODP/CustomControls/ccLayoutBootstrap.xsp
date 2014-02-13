@@ -156,12 +156,12 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 						<a
 							href="http://www.openntf.org/main.nsf/project.xsp?r=project/FileSilo"
 							target="_blank">
-							Download FileSilo
+							Download FileSilo (OpenNTF)
 						</a>
 					</li>
 					<li>
 						<a href="https://github.com/zeromancer1972/FileSilo" target="_blank">
-							Fork me on GitHub
+							Fork me on GitHub (Nightly)
 						</a>
 					</li>
 				</ul>
