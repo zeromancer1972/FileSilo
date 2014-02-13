@@ -33,7 +33,7 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file", c
 
 
 				<div class="formgroup">
-					<xp:label value="File" id="label2" for="fileUpload1"
+					<xp:label value="Choose a file from your PC" id="label2" for="fileUpload1"
 						disableTheme="true">
 					</xp:label>
 					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
