@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:xe="http://www.ibm.com/xsp/coreex">
+	<xp:this.beforePageLoad><![CDATA[#{javascript:sessionScope.put("customerKey", context.getUrlParameter("key"))
+sessionScope.put("uploadSuccessful", null)}]]></xp:this.beforePageLoad>
 	<xc:ccLayoutBootstrapDynamic>
 		<xp:this.facets>
 			<xe:dynamicContent id="dynamicContent2" xp:key="facetMiddle">
@@ -22,7 +24,6 @@ return pagename!=null && pagename!="" ? pagename : "start"}]]></xe:this.defaultF
 					<xp:panel xp:key="recent">
 						<xc:ccRecent widget="false"></xc:ccRecent>
 					</xp:panel>
-				
 				</xp:this.facets>
 
 
@@ -32,10 +33,15 @@ return pagename!=null && pagename!="" ? pagename : "start"}]]></xe:this.defaultF
 return pagename!=null && pagename!="" ? pagename : "start"}]]></xe:this.defaultFacet>
 				<xp:this.facets>
 					<xc:ccHelpWelcome xp:key="start"></xc:ccHelpWelcome>
-					<xc:ccHelpRecent xp:key="upload"></xc:ccHelpRecent>
+
 					<xc:ccHelpAdmin xp:key="manage"></xc:ccHelpAdmin>
 					<xc:ccHelpRecent xp:key="recent"></xc:ccHelpRecent>
-					
+
+					<xp:div xp:key="upload">
+						<h4>Upload a file</h4>You
+						just have to provide a file from your local file system and click
+						the &quot;upload&quot; button.
+					</xp:div>
 				</xp:this.facets>
 			</xe:dynamicContent>
 		</xp:this.facets>

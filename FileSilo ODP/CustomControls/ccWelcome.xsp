@@ -34,12 +34,13 @@
 						submit="false">
 						<xp:this.script><![CDATA[if(thisEvent.keyCode==13){
 	thisEvent.preventDefault();
+	dojo.byId("#{id:btnSearch}").click();
 }]]></xp:this.script>
 					</xp:eventHandler>
 				</xp:inputText>
 				<xp:br></xp:br>
 
-				<xp:button id="button1" styleClass="btn btn-lg btn-custom">
+				<xp:button id="btnSearch" styleClass="btn btn-lg btn-custom">
 					<span class="glyphicon glyphicon-eye-open"></span>
 					&#160;Search
 					<xp:eventHandler event="onclick" submit="true"

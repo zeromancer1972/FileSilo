@@ -15,6 +15,7 @@ if(url.indexOf(".xsp")==-1){
 	</xp:this.resources>
 
 	<xp:div id="page" disableTheme="true">
+		<xc:ccStandby></xc:ccStandby>
 
 		<nav class="navbar-header navbar-inverse navbar-fixed-top" role="navigation"
 			style="height:50px">
@@ -130,6 +131,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 							<ul class="dropdown-menu">
 								<xp:panel tagName="li">
 
+									<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
 									<xp:link
 										value="#{javascript:@UserName().equals('Anonymous')?'/login.xsp':'javascript:doLogout()'}">
 										<span

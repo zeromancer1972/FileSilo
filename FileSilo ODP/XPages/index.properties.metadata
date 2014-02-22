@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1276" sequence="3" unid="2D637A9468925CE0C1257C87005164E6">
+<noteinfo noteid="1276" sequence="4" unid="2D637A9468925CE0C1257C87005164E6">
 <created><datetime>20140222T154902,46+01</datetime></created>
-<modified><datetime>20140222T164232,37+01</datetime></modified>
-<revised><datetime>20140222T164232,36+01</datetime></revised>
-<lastaccessed><datetime>20140222T164232,37+01</datetime></lastaccessed>
+<modified><datetime>20140222T175613,84+01</datetime></modified>
+<revised><datetime>20140222T175613,83+01</datetime></revised>
+<lastaccessed><datetime>20140222T175613,84+01</datetime></lastaccessed>
 <addedtofile><datetime>20140222T154902,46+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
 <item name="$Flags"><text>gC~4K2</text></item>
+<item name="$TITLE"><text>index.properties</text></item>
 
 
-<item name="$FileNames" sign="true"><text>start.properties</text></item>
-<item name="$TITLE"><text>index.properties</text></item></note>
+<item name="$FileNames" sign="true"><text>index.properties</text></item></note>
