@@ -57,11 +57,12 @@
 							<td>
 								<b>
 									<xp:link escape="true" id="link1">
-										<xp:this.text><![CDATA[#{javascript:doc.getValue("fileID")}]]></xp:this.text>
-										<xp:eventHandler event="onclick" submit="true"
-											refreshMode="complete">
+										<xp:this.text><![CDATA[#{javascript:return doc.getValue("fileID")+(@Attachments() > 0 ? (@Attachments() > 1 ? " ("+@Attachments()+" files)" : " ("+@Attachments()+" file)") : "")}]]></xp:this.text>
+										<xp:eventHandler event="onclick"
+											submit="true" refreshMode="complete">
 											<xp:this.action>
-												<xp:openPage name="/file.xsp" target="openDocument"
+												<xp:openPage
+													name="/file.xsp" target="openDocument"
 													documentId="#{javascript:doc.getDocument().getUniversalID()}">
 												</xp:openPage>
 											</xp:this.action>
