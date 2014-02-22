@@ -9,14 +9,18 @@
 	</xp:this.data>
 
 	<xp:this.navigationRules>
-		<xp:navigationRule outcome="cancel" viewId="/manage.xsp"></xp:navigationRule>
+		<xp:navigationRule outcome="cancel" viewId="/index.xsp"></xp:navigationRule>
 		<xp:navigationRule outcome="welcome" viewId="/index.xsp"></xp:navigationRule>
-		<xp:navigationRule outcome="close" viewId="/manage.xsp"></xp:navigationRule>
+		<xp:navigationRule outcome="close" viewId="/index.xsp"></xp:navigationRule>
 	</xp:this.navigationRules>
 	<xp:this.beforePageLoad><![CDATA[#{javascript:if(session.getEffectiveUserName().equals("Anonymous")){
-	context.redirectToPage("index.xsp")
+	sessionScope.put("page", "start")
+	context.reloadPage()
 }}]]></xp:this.beforePageLoad>
-	<xc:ccLayoutBootstrap><xp:this.facets>
-	<xc:ccProfile xp:key="facetMiddle"></xc:ccProfile>
-	<xc:ccHelpProfile xp:key="facetLeft"></xc:ccHelpProfile></xp:this.facets></xc:ccLayoutBootstrap>
+	<xc:ccLayoutBootstrapDynamic>
+		<xp:this.facets>
+			<xc:ccProfile xp:key="facetMiddle"></xc:ccProfile>
+			<xc:ccHelpProfile xp:key="facetLeft"></xc:ccHelpProfile>
+		</xp:this.facets>
+	</xc:ccLayoutBootstrapDynamic>
 </xp:view>

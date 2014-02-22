@@ -5,13 +5,15 @@
 	</xp:this.data>
 	<xp:div id="list" styleClass="panel panel-default">
 		<div class="panel-heading">
-			<span class="panel-title">
+			<h3 class="panel-title">
 				Activities (entries will be removed after one month)
-						</span>
-
+			</h3>
+			<span class="pull-right clickable">
+				<i class="glyphicon glyphicon-chevron-up"></i>
+			</span>
 		</div>
 
-		<table class="table table-striped table-hover">
+		<table class="table table-striped table-hover panel-body">
 			<colgroup>
 				<col style="width:20%" />
 				<col style="width:20%" />
@@ -62,20 +64,20 @@ if(action.toLowerCase().indexOf("saved")!=-1){
 								</xp:inputText>
 							</td>
 							<td>
-								<xp:inputText id="inputText3"
-									value="#{doc.logMessage}">
+								<xp:inputText id="inputText3" value="#{doc.logMessage}">
 									<xp:this.rendered><![CDATA[#{javascript:return doc.getItemValueString("logSubject").toLowerCase().indexOf("upload")==-1}]]></xp:this.rendered>
 								</xp:inputText>
-								<xp:link escape="true"
-									text="#{doc.logMessage}" id="link1">
+								<xp:link escape="true" text="#{doc.logMessage}" id="link1">
 									<xp:this.rendered><![CDATA[#{javascript:return doc.getItemValueString("logSubject").toLowerCase().indexOf("upload")!=-1}]]></xp:this.rendered>
-								<xp:eventHandler event="onclick" submit="true" refreshMode="complete" immediate="true">
-									<xp:this.action>
-										<xp:openPage name="/file.xsp"
-											target="openDocument">
-											<xp:this.documentId><![CDATA[#{javascript:doc.getItemValueString("logUnid")}]]></xp:this.documentId>
-										</xp:openPage>
-									</xp:this.action></xp:eventHandler></xp:link>
+									<xp:eventHandler event="onclick" submit="true"
+										refreshMode="complete" immediate="true">
+										<xp:this.action>
+											<xp:openPage name="/file.xsp" target="openDocument">
+												<xp:this.documentId><![CDATA[#{javascript:doc.getItemValueString("logUnid")}]]></xp:this.documentId>
+											</xp:openPage>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:link>
 							</td>
 
 						</tr>

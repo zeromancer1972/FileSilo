@@ -10,7 +10,7 @@
 		<div class="panel-heading">
 			<h4 class="panel-title">Search collections by customer key</h4>
 		</div>
-		<xp:div styleClass="panel-body">
+		<xp:div styleClass="panel-body" id="searchbox">
 			<xp:div styleClass="form-group">
 				<xp:label value="Customer key" id="label1" for="inputText1"
 					disableTheme="true">
@@ -23,9 +23,19 @@
 					required="true">
 
 					<xp:this.validators>
-						<xp:validateRequired message="Please enter your customer key">
+						<xp:validateRequired
+							message="Please enter your customer key">
 						</xp:validateRequired>
 					</xp:this.validators>
+					<xp:this.attrs>
+						<xp:attr name="autocomplete" value="off"></xp:attr>
+					</xp:this.attrs>
+					<xp:eventHandler event="onkeypress"
+						submit="false">
+						<xp:this.script><![CDATA[if(thisEvent.keyCode==13){
+	thisEvent.preventDefault();
+}]]></xp:this.script>
+					</xp:eventHandler>
 				</xp:inputText>
 				<xp:br></xp:br>
 
@@ -33,7 +43,7 @@
 					<span class="glyphicon glyphicon-eye-open"></span>
 					&#160;Search
 					<xp:eventHandler event="onclick" submit="true"
-						refreshMode="complete" id="eventHandler1">
+						refreshMode="partial" id="eventHandler1" refreshId="searchbox">
 					</xp:eventHandler>
 				</xp:button>
 			</xp:div>
@@ -47,10 +57,9 @@
 		</xp:div>
 		<xp:div styleClass="panel-footer">
 			<xp:panel tagName="h4" styleClass="panel-title">
-			<xp:link escape="true"
-				text="Want to upload a file? Click here!" id="link1"
-				value="/upload.xsp">
-			</xp:link>
+				<xp:link escape="true" text="Want to upload a file? Click here!"
+					id="link1" value="/upload.xsp">
+				</xp:link>
 			</xp:panel>
 		</xp:div>
 	</xp:div>
