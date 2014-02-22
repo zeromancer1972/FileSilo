@@ -10,10 +10,10 @@
 
 
 	
-	<xc:ccLayoutBootstrap>
+	<xc:ccLayoutBootstrapDynamic>
 		<xp:this.facets>
 			<xc:ccHelpFile xp:key="facetLeft"></xc:ccHelpFile>
 			<xc:ccFile xp:key="facetMiddle"></xc:ccFile>
 		</xp:this.facets>
-	</xc:ccLayoutBootstrap>
+	</xc:ccLayoutBootstrapDynamic>
 </xp:view>
