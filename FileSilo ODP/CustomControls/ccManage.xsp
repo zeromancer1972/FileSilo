@@ -6,26 +6,24 @@
 
 	<xp:div id="list" styleClass="panel panel-default">
 		<div class="panel-heading" style="padding-bottom: 24px;">
-			<span class="panel-title">Collections in store</span>
-			<div class="pull-right">
-				<div>
-					<a href="file.xsp" class="btn btn-custom-green">
-						<span class="glyphicon glyphicon-plus-sign"></span>
-						&#160;
-						Create collection
-					</a>
-				</div>
-			</div>
+			<h3 class="panel-title">Collections in store</h3>
+			<span class="pull-right">
+				<a href="file.xsp" class="btn btn-custom-green">
+					<span class="glyphicon glyphicon-plus-sign"></span>
+					&#160;
+					Create collection
+				</a>
+			</span>
 		</div>
 
 		<table class="table table-striped table-hover panel-body">
 			<colgroup>
 				<col style="width:2%" />
-				<col style="width:48%" />
+				<col style="width:55%" />
 				<col style="width:10%" />
 				<col style="width:10%" />
 				<col style="width:10%" />
-				<col style="width:10%" />
+				<col style="width:3%" />
 			</colgroup>
 			<thead>
 				<tr>
@@ -50,19 +48,18 @@
 						</xp:this.data>
 						<tr>
 							<td>
-							<xp:panel tagName="span" styleClass="glyphicon glyphicon-cloud-upload">
-								<xp:this.rendered><![CDATA[#{javascript:doc.getItemValueString("fileUpload").equals("1")}]]></xp:this.rendered>
-							</xp:panel>
+								<xp:panel tagName="span" styleClass="glyphicon glyphicon-cloud-upload">
+									<xp:this.rendered><![CDATA[#{javascript:doc.getItemValueString("fileUpload").equals("1")}]]></xp:this.rendered>
+								</xp:panel>
 							</td>
 							<td>
 								<b>
 									<xp:link escape="true" id="link1">
 										<xp:this.text><![CDATA[#{javascript:return doc.getValue("fileID")+(@Attachments() > 0 ? (@Attachments() > 1 ? " ("+@Attachments()+" files)" : " ("+@Attachments()+" file)") : "")}]]></xp:this.text>
-										<xp:eventHandler event="onclick"
-											submit="true" refreshMode="complete">
+										<xp:eventHandler event="onclick" submit="true"
+											refreshMode="complete">
 											<xp:this.action>
-												<xp:openPage
-													name="/file.xsp" target="openDocument"
+												<xp:openPage name="/file.xsp" target="openDocument"
 													documentId="#{javascript:doc.getDocument().getUniversalID()}">
 												</xp:openPage>
 											</xp:this.action>
@@ -131,29 +128,30 @@
 								</xp:link>
 							</td>
 							<td>
-								<xp:link styleClass="btn btn-sm btn-danger" escape="true" text=""
-									id="link6">
-									<xp:eventHandler event="onclick" submit="true"
-										refreshMode="partial" refreshId="list">
-										<xp:this.action>
-											<xp:actionGroup>
-												<xp:confirm message="Do you really want to delete this collection?">
-												</xp:confirm>
-												<xp:executeScript>
+								<span class="pull-right">
+									<xp:link styleClass="btn btn-sm btn-danger" escape="true"
+										text="" id="link6">
+										<xp:eventHandler event="onclick" submit="true"
+											refreshMode="partial" refreshId="list">
+											<xp:this.action>
+												<xp:actionGroup>
+													<xp:confirm message="Do you really want to delete this collection?">
+													</xp:confirm>
+													<xp:executeScript>
 
-													<xp:this.script><![CDATA[#{javascript:var collectionname = doc.getItemValueString("fileID");
+														<xp:this.script><![CDATA[#{javascript:var collectionname = doc.getItemValueString("fileID");
 doc.getDocument().remove(false);
 log.add("Deletion", log.getUserName()+" deleted collection "+collectionname)}]]></xp:this.script>
-												</xp:executeScript>
-											</xp:actionGroup>
-										</xp:this.action>
-										<xp:this.onComplete>
+													</xp:executeScript>
+												</xp:actionGroup>
+											</xp:this.action>
+											<xp:this.onComplete>
 										<![CDATA[XSP.partialRefreshGet("#{id:usermenu}")]]>
-										</xp:this.onComplete>
-									</xp:eventHandler>
-									<span class="glyphicon glyphicon-trash" title="Delete collection"></span>
-								</xp:link>
-
+											</xp:this.onComplete>
+										</xp:eventHandler>
+										<span class="glyphicon glyphicon-trash" title="Delete collection"></span>
+									</xp:link>
+								</span>
 							</td>
 						</tr>
 					</xp:panel>
