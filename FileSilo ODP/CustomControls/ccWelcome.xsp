@@ -47,6 +47,13 @@
 						refreshMode="partial" id="eventHandler1" refreshId="searchbox">
 					</xp:eventHandler>
 				</xp:button>
+				<xp:panel tagName="span" styleClass="pull-right">
+					<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
+					<a href="file.xsp" class="btn btn-lg btn-custom">
+						<span class="glyphicon glyphicon-plus-sign"></span>
+						&#160; Create collection
+					</a>
+				</xp:panel>
 			</xp:div>
 			<xp:div>
 				<xp:this.rendered><![CDATA[#{javascript:var key = sessionScope.get("customerKey");return (key!=null && key!="")}]]>

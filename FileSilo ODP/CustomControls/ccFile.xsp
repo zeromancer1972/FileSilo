@@ -28,8 +28,11 @@ log.add("Collection saved", log.getUserName() + " saved collection "+collectionn
 	<xp:div id="theform">
 		<xp:div styleClass="actionbar">
 			<xp:div styleClass="">
-				<xp:button value="Save" id="button1"
-					rendered="#{javascript:currentDocument.isEditable()}" styleClass="btn btn-custom">
+				<xp:button id="button1" rendered="#{javascript:currentDocument.isEditable()}"
+					styleClass="btn btn-custom">
+					<span class="glyphicon glyphicon-floppy-disk">
+					</span>
+					&#160;Save
 					<xp:eventHandler event="onclick" submit="true"
 						refreshMode="partial" refreshId="theform">
 						<xp:this.action>
@@ -40,7 +43,9 @@ log.add("Collection saved", log.getUserName() + " saved collection "+collectionn
 				&#160;
 				<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
 					styleClass="btn btn-custom">
-					<xp:this.value><![CDATA[Save & close]]></xp:this.value>
+					<span class="glyphicon glyphicon-floppy-saved">
+					</span>
+					&#160;Save &amp; Close
 					<xp:eventHandler event="onclick" submit="true"
 						refreshMode="complete">
 						<xp:this.action>
@@ -55,8 +60,10 @@ log.add("Collection saved", log.getUserName() + " saved collection "+collectionn
 					</xp:eventHandler>
 				</xp:button>
 				&#160;
-				<xp:button value="Edit" id="button3" styleClass="btn btn-default">
-
+				<xp:button id="button3" styleClass="btn btn-default">
+					<span class="glyphicon glyphicon-edit">
+					</span>
+					&#160;Edit
 					<xp:this.rendered><![CDATA[#{javascript:var ctx = com.ibm.domino.xsp.module.nsf.NotesContext.getCurrent()
 return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEditable()}]]></xp:this.rendered>
 					<xp:eventHandler event="onclick" submit="true"
@@ -68,6 +75,8 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				</xp:button>
 				&#160;
 				<xp:button id="button4" styleClass="btn btn-warning">
+					<span class="glyphicon glyphicon-chevron-left"></span>&#160;
+
 					<xp:this.value><![CDATA[#{javascript:currentDocument.isEditable() ? "Cancel" : "Close"}]]></xp:this.value>
 					<xp:eventHandler event="onclick" submit="true"
 						refreshMode="complete" immediate="true">
@@ -140,8 +149,8 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						id="link1" rendered="#{javascript:currentDocument.isEditable()}"
 						styleClass="lotusAction btn btn-sm btn-primary pull-right">
 						<xp:eventHandler event="onclick" submit="true"
-							refreshMode="partial" refreshId="fileKey1"
-							id="eventHandler1" disableValidators="true">
+							refreshMode="partial" refreshId="fileKey1" id="eventHandler1"
+							disableValidators="true">
 							<xp:this.action><![CDATA[#{javascript:getComponent("fileKey1").setValue(@Unique())}]]></xp:this.action>
 						</xp:eventHandler>
 					</xp:link>
