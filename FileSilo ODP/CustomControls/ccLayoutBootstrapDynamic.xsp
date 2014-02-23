@@ -201,8 +201,17 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
-							<xp:link target="_blank" value="http://about.me/oliverbusse">
+							<xp:link disableTheme="true">
 								<xp:this.text><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']+" | © 2013, 2014 Oliver Busse, Apache License 2.0"}]]></xp:this.text>
+								<xp:this.attrs>
+									<xp:attr name="data-target"
+										value="#aboutbox">
+
+									</xp:attr>
+									<xp:attr name="data-toggle"
+										value="modal">
+									</xp:attr>
+								</xp:this.attrs>
 							</xp:link>
 						</li>
 					</ul>
@@ -210,4 +219,5 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 			</nav>
 		</nav>
 	</xp:div>
+	<xc:ccAboutbox></xc:ccAboutbox>
 </xp:view>
