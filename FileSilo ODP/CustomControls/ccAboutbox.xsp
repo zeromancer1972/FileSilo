@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
 
+	<xp:this.resources>
+		<xp:bundle src="/app.properties" var="app"></xp:bundle>
+	</xp:this.resources>
 	<div id="aboutbox" class="modal">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal"
-						aria-hidden="true">
+					<button type="button" class="close"
+						data-dismiss="modal" aria-hidden="true">
 						x
 					</button>
-					<h4 class="modal-title">About FileSilo</h4>
+					<xp:text disableTheme="true"
+						styleClass="modal-title" tagName="h4">
+						<xp:this.value><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']}]]></xp:this.value>
+					</xp:text>
 				</div>
 				<div class="modal-body">
 					<p>Written &amp; programmed by Oliver Busse</p>
-					<p>This software is licensed under the Apache License 2.0</p>
+					<p>
+						This software is licensed under the Apache
+						License 2.0
+					</p>
 					<p>
 						Made with&#160;
-						<a href="http://getbootstrap.com" target="_blank">Twitter
-							Bootstrap 3</a>
+						<a href="http://getbootstrap.com"
+							target="_blank">
+							Twitter Bootstrap 3
+						</a>
 					</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn" data-dismiss="modal">
+					<button type="button" class="btn"
+						data-dismiss="modal">
 						Close
 					</button>
 				</div>
