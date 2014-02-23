@@ -57,9 +57,16 @@
 			</xp:div>
 		</xp:div>
 		<xp:div styleClass="panel-footer">
+			<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Upload]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
 			<xp:panel tagName="h4" styleClass="panel-title">
-				<xp:link escape="true" text="Want to upload a file? Click here!"
-					id="link1" value="/upload.xsp">
+				<xp:link escape="true"
+					text="Want to upload a file? Click here!" id="link1">
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="partial" refreshId="page" immediate="true">
+						<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("upload")
+getComponent("dynamicContent2").show("upload")
+sessionScope.put("page", "upload")}]]></xp:this.action>
+					</xp:eventHandler>
 				</xp:link>
 			</xp:panel>
 		</xp:div>

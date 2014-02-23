@@ -51,13 +51,16 @@ sessionScope.put("page", "start")}]]></xp:this.action>
 					<ul class="nav navbar-nav">
 						<xp:panel tagName="li">
 							<xp:this.styleClass><![CDATA[#{javascript:try {sessionScope.get("page").indexOf("upload")!=-1 ? "active" : ""} catch(e){}}]]></xp:this.styleClass>
+							<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Upload]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
 							<xp:link id="link1" disableTheme="true">
-								<span class="glyphicon glyphicon-cloud-upload">
+								<span
+									class="glyphicon glyphicon-cloud-upload">
 								</span>
 								&#160;Upload a file
 
-								<xp:eventHandler event="onclick" submit="true"
-									refreshMode="partial" refreshId="page" immediate="true">
+								<xp:eventHandler event="onclick"
+									submit="true" refreshMode="partial" refreshId="page"
+									immediate="true">
 									<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("upload")
 getComponent("dynamicContent2").show("upload")
 sessionScope.put("page", "upload")}]]></xp:this.action>
