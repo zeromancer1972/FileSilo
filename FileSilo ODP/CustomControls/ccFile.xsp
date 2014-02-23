@@ -75,7 +75,8 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				</xp:button>
 				&#160;
 				<xp:button id="button4" styleClass="btn btn-warning">
-					<span class="glyphicon glyphicon-chevron-left"></span>&#160;
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					&#160;
 
 					<xp:this.value><![CDATA[#{javascript:currentDocument.isEditable() ? "Cancel" : "Close"}]]></xp:this.value>
 					<xp:eventHandler event="onclick" submit="true"
@@ -145,37 +146,38 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					<xp:label value="Customer key *&#160;" id="fileKey_Label1"
 						for="fileKey1" disableTheme="true">
 					</xp:label>
-					<xp:link escape="true" text="Generate customer key" style="margin-top:5px"
-						id="link1" rendered="#{javascript:currentDocument.isEditable()}"
-						styleClass="lotusAction btn btn-sm btn-primary pull-right">
-						<xp:eventHandler event="onclick" submit="true"
-							refreshMode="partial" refreshId="fileKey1" id="eventHandler1"
-							disableValidators="true">
-							<xp:this.action><![CDATA[#{javascript:getComponent("fileKey1").setValue(@Unique())}]]></xp:this.action>
-						</xp:eventHandler>
-					</xp:link>
-					<br />
-					<br />
+					
 					<xp:message id="message2" for="fileKey1" styleClass="alert alert-danger msg">
 					</xp:message>
-					<xp:inputText value="#{document1.fileKey}" id="fileKey1"
-						required="true" styleClass="form-control" disableTheme="true">
-						<xp:this.validators>
-							<xp:validateRequired message="A key is required">
-							</xp:validateRequired>
-						</xp:this.validators>
-						<xp:this.attrs>
-							<xp:attr name="placeholder" value="e.g. CustomerName">
-							</xp:attr>
-						</xp:this.attrs>
-						<xp:typeAhead mode="partial" minChars="1" ignoreCase="true"
-							id="typeAhead1">
-							<xp:this.valueList><![CDATA[#{javascript:@Unique(@DbColumn(database.getFilePath(), "filesByKey", 1))}]]></xp:this.valueList>
-						</xp:typeAhead>
-					</xp:inputText>
-
-
-
+					<div class="input-group">
+						<xp:inputText value="#{document1.fileKey}" id="fileKey1"
+							required="true" styleClass="form-control" disableTheme="true">
+							<xp:this.validators>
+								<xp:validateRequired message="A key is required">
+								</xp:validateRequired>
+							</xp:this.validators>
+							<xp:this.attrs>
+								<xp:attr name="placeholder" value="e.g. CustomerName">
+								</xp:attr>
+							</xp:this.attrs>
+							<!-- 
+							<xp:typeAhead mode="partial" minChars="1"
+								ignoreCase="true" id="typeAhead1">
+								<xp:this.valueList><![CDATA[#{javascript:@Unique(@DbColumn(database.getFilePath(), "filesByKey", 1))}]]></xp:this.valueList>
+							</xp:typeAhead>
+							 -->
+						</xp:inputText>
+						<span class="input-group-btn">
+							<xp:button disableTheme="true" id="button5" styleClass="btn btn-info">
+								<span class=""></span>
+								&#160;Generate customer key
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="fileKey1" disableValidators="true">
+									<xp:this.action><![CDATA[#{javascript:getComponent("fileKey1").setValue(@Unique())}]]></xp:this.action>
+								</xp:eventHandler>
+							</xp:button>
+						</span>
+					</div>
 				</xp:div>
 				<xp:div styleClass="form-group">
 
