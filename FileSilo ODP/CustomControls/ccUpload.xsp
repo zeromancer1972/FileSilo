@@ -67,7 +67,7 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 				</div>
 
 				<div class="form-group">
-					<xp:button id="button1" styleClass="btn btn-custom btn-lg">
+					<xp:button id="button1" styleClass="btn btn-custom-green btn-lg">
 						<span class="glyphicon glyphicon-cloud-upload"></span>
 						&#160;Upload file
 						<xp:eventHandler event="onclick" submit="true"

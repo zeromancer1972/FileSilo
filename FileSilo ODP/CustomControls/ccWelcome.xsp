@@ -40,7 +40,7 @@
 				</xp:inputText>
 				<xp:br></xp:br>
 
-				<xp:button id="btnSearch" styleClass="btn btn-lg btn-custom">
+				<xp:button id="btnSearch" styleClass="btn btn-lg btn-warning">
 					<span class="glyphicon glyphicon-eye-open"></span>
 					&#160;Search
 					<xp:eventHandler event="onclick" submit="true"
@@ -49,7 +49,7 @@
 				</xp:button>
 				<xp:panel tagName="span" styleClass="pull-right">
 					<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
-					<a href="file.xsp" class="btn btn-lg btn-custom">
+					<a href="file.xsp" class="btn btn-lg btn-custom-green">
 						<span class="glyphicon glyphicon-plus-sign"></span>
 						&#160; Create collection
 					</a>

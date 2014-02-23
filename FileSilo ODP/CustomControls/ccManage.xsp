@@ -9,7 +9,7 @@
 			<span class="panel-title">Collections in store</span>
 			<div class="pull-right">
 				<div>
-					<a href="file.xsp" class="btn btn-custom">
+					<a href="file.xsp" class="btn btn-custom-green">
 						<span class="glyphicon glyphicon-plus-sign"></span>
 						&#160;
 						Create collection

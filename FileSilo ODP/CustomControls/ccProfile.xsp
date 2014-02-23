@@ -3,7 +3,7 @@
 	<xp:div styleClass="actionbar">
 		<xp:div styleClass="">
 			<xp:button value="Save" id="button1"
-				rendered="#{javascript:currentDocument.isEditable()}" styleClass="btn btn-custom">
+				rendered="#{javascript:currentDocument.isEditable()}" styleClass="btn btn-custom-green">
 				<xp:eventHandler event="onclick" submit="true"
 					refreshMode="complete">
 					<xp:this.action>
@@ -13,7 +13,7 @@
 			</xp:button>
 			&#160;
 			<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
-				styleClass="btn btn-custom">
+				styleClass="btn btn-custom-green">
 				<xp:this.value><![CDATA[Save & close]]></xp:this.value>
 				<xp:eventHandler event="onclick" submit="true"
 					refreshMode="complete">

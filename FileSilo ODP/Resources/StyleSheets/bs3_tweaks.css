@@ -10,13 +10,13 @@
 	display: block;
 }
 
-.btn-custom {
+.btn-custom-green {
 	background-color: #abd100;
 	color: white;
 	border-color: #abd100;
 }
 
-.btn-custom:hover,.btn-custom:focus,.btn-custom:active {
+.btn-custom-green:hover,.btn-custom-green:focus,.btn-custom-green:active {
 	background-color: #C4DF4D;
 	border-color: #C4DF4D;
 	color: white;

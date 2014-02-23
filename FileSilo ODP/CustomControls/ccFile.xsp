@@ -29,7 +29,7 @@ log.add("Collection saved", log.getUserName() + " saved collection "+collectionn
 		<xp:div styleClass="actionbar">
 			<xp:div styleClass="">
 				<xp:button id="button1" rendered="#{javascript:currentDocument.isEditable()}"
-					styleClass="btn btn-custom">
+					styleClass="btn btn-custom-green">
 					<span class="glyphicon glyphicon-floppy-disk">
 					</span>
 					&#160;Save
@@ -42,7 +42,7 @@ log.add("Collection saved", log.getUserName() + " saved collection "+collectionn
 				</xp:button>
 				&#160;
 				<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
-					styleClass="btn btn-custom">
+					styleClass="btn btn-custom-green">
 					<span class="glyphicon glyphicon-floppy-saved">
 					</span>
 					&#160;Save &amp; Close
