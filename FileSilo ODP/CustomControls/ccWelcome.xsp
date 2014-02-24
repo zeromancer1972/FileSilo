@@ -17,27 +17,38 @@
 				</xp:label>
 				<xp:message id="message1" for="inputText1" styleClass="alert alert-danger msg">
 				</xp:message>
+				<div class="input-group">
+					<xp:inputText id="inputText1" style="width:100%"
+						value="#{sessionScope.customerKey}" styleClass="form-control"
+						required="true">
 
-				<xp:inputText id="inputText1" style="width:100%"
-					value="#{sessionScope.customerKey}" styleClass="form-control"
-					required="true">
-
-					<xp:this.validators>
-						<xp:validateRequired
-							message="Please enter your customer key">
-						</xp:validateRequired>
-					</xp:this.validators>
-					<xp:this.attrs>
-						<xp:attr name="autocomplete" value="off"></xp:attr>
-					</xp:this.attrs>
-					<xp:eventHandler event="onkeypress"
-						submit="false">
-						<xp:this.script><![CDATA[if(thisEvent.keyCode==13){
+						<xp:this.validators>
+							<xp:validateRequired message="Please enter your customer key">
+							</xp:validateRequired>
+						</xp:this.validators>
+						<xp:this.attrs>
+							<xp:attr name="autocomplete" value="off"></xp:attr>
+						</xp:this.attrs>
+						<xp:eventHandler event="onkeypress" submit="false">
+							<xp:this.script><![CDATA[if(thisEvent.keyCode==13){
 	thisEvent.preventDefault();
 	dojo.byId("#{id:btnSearch}").click();
 }]]></xp:this.script>
-					</xp:eventHandler>
-				</xp:inputText>
+						</xp:eventHandler>
+					</xp:inputText>
+					<span class="input-group-btn">
+						<xp:button disableTheme="true" id="button5"
+							styleClass="btn btn-default">
+							<span class=""></span>
+							&#160;Clear
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="partial" refreshId="searchbox"
+								disableValidators="true">
+								<xp:this.action><![CDATA[#{javascript:getComponent("inputText1").setValue("")}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:button>
+					</span>
+				</div>
 				<xp:br></xp:br>
 
 				<xp:button id="btnSearch" styleClass="btn btn-lg btn-warning">
@@ -66,8 +77,8 @@
 		<xp:div styleClass="panel-footer">
 			<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Upload]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
 			<xp:panel tagName="h4" styleClass="panel-title">
-				<xp:link escape="true"
-					text="Want to upload a file? Click here!" id="link1">
+				<xp:link escape="true" text="Want to upload a file? Click here!"
+					id="link1">
 					<xp:eventHandler event="onclick" submit="true"
 						refreshMode="partial" refreshId="page" immediate="true">
 						<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("upload")
