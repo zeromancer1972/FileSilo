@@ -19,7 +19,7 @@
 				</div>
 				<div class="modal-body">
 					<p>
-						Written &amp; programmed by Oliver Busse</p>
+						Created by Oliver Busse</p>
 					<p>
 						<a href="http://about.me/oliverbusse" target="_blank">
 							http://about.me/oliverbusse</a>
@@ -32,7 +32,7 @@
 						Made with&#160;
 						<a href="http://getbootstrap.com" target="_blank">
 							Twitter Bootstrap 3
-						</a>
+						</a>&#160; and tons of great stuff from OpenNTF and XSnippets
 					</p>
 				</div>
 				<div class="modal-footer">

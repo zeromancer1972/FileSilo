@@ -3,6 +3,52 @@
 	xmlns:xc="http://www.ibm.com/xsp/custom" enableModifiedFlag="true"
 	modifiedMessage="You have unsaved changes. do you want to discard your changes?"
 	modifiedControl="button1">
+	<xp:this.beforeRenderResponse>
+    <![CDATA[#{javascript:
+
+    /***
+     * adds an additional method to "delete action"
+     * of a UIFileDownload control
+     *  
+     * @param UIFileDownload component
+     * @author Sven Hasselbach
+     * @category SSJS
+     * @category UI
+     * @version 0.3
+     */
+    function overrideFileDownloadAction( fDownload ){
+        if( fDownload === null )
+            return;
+        rekOverrideFileDownloadAction( fDownload, fDownload );
+    }
+
+    function rekOverrideFileDownloadAction( component:javax.faces.component.UIOutput, fDownload:com.ibm.xsp.component.UIFileDownload  ){
+        try{
+            var children:java.util.List = component.getChildren();
+            var it:java.util.Iterator = children.iterator();
+            var curChild:javax.faces.component.UIOutput;
+
+            while( it.hasNext() ){
+                curChild = it.next();
+                if( typeof( curChild ) === 'com.ibm.xsp.component.xp.XspEventHandler' ){
+
+                    var group = new com.ibm.xsp.actions.ActionGroup();
+                    var list = new java.util.ArrayList();
+                    group.setComponent( fDownload );
+                    list.add( curChild.getAction() );
+                    list.add( mBinding );
+                    group.setActions( list );
+                    curChild.setAction(group);
+                }
+                rekOverrideFileDownloadAction( curChild , fDownload );
+            }
+        }catch(e){}    
+    }
+
+    var mBinding = facesContext.getApplication().createMethodBinding("#{javascript:document1.save()}", null );
+    overrideFileDownloadAction( getComponent( 'fileDownload1' ) );
+    }]]>
+	</xp:this.beforeRenderResponse>
 	<xp:this.data>
 		<xp:dominoDocument var="document1" formName="file">
 
@@ -146,7 +192,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					<xp:label value="Customer key *&#160;" id="fileKey_Label1"
 						for="fileKey1" disableTheme="true">
 					</xp:label>
-					
+
 					<xp:message id="message2" for="fileKey1" styleClass="alert alert-danger msg">
 					</xp:message>
 					<div class="input-group">
@@ -160,15 +206,16 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 								<xp:attr name="placeholder" value="e.g. CustomerName">
 								</xp:attr>
 							</xp:this.attrs>
-							<!-- 
-							<xp:typeAhead mode="partial" minChars="1"
-								ignoreCase="true" id="typeAhead1">
-								<xp:this.valueList><![CDATA[#{javascript:@Unique(@DbColumn(database.getFilePath(), "filesByKey", 1))}]]></xp:this.valueList>
-							</xp:typeAhead>
-							 -->
+							<!--
+								<xp:typeAhead mode="partial" minChars="1" ignoreCase="true"
+								id="typeAhead1">
+								<xp:this.valueList><![CDATA[#{javascript:@Unique(@DbColumn(database.getFilePath(),
+								"filesByKey", 1))}]]></xp:this.valueList> </xp:typeAhead>
+							-->
 						</xp:inputText>
 						<span class="input-group-btn">
-							<xp:button disableTheme="true" id="button5" styleClass="btn btn-info">
+							<xp:button disableTheme="true" id="button5" styleClass="btn btn-info"
+								rendered="#{javascript:currentDocument.isEditable()}">
 								<span class=""></span>
 								&#160;Generate customer key
 								<xp:eventHandler event="onclick" submit="true"
@@ -216,7 +263,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 
 				<xp:div styleClass="form-group">
 					<xp:label value="Readers&#160;" id="fileReaders_Label1"
-						for="fileReaders1" disableTheme="true">
+						for="fileReaders1" disableTheme="true" styleClass="left">
 					</xp:label>
 					<xe:namePicker id="namePicker1" for="fileReaders1"
 						dialogTitle="Choose names" rendered="#{javascript:currentDocument.isEditable()}">
@@ -229,17 +276,15 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xe:namePicker>
 
 					<xp:inputText value="#{document1.fileReaders}" id="fileReaders1"
-						multipleSeparator="," multipleTrim="true" styleClass="form-control">
-						<xp:this.attrs>
-							<xp:attr name="disabled" value="true"></xp:attr>
-						</xp:this.attrs>
+						multipleSeparator="," multipleTrim="true" styleClass="form-control disabled">
+
 					</xp:inputText>
 
 				</xp:div>
 
 				<xp:div styleClass="form-group">
 					<xp:label value="Authors&#160;" id="fileAuthors_Label1"
-						for="fileAuthors1" disableTheme="true">
+						for="fileAuthors1" disableTheme="true" styleClass="left">
 					</xp:label>
 					<xe:namePicker id="namePicker2" for="fileAuthors1"
 						dialogTitle="Choose names" rendered="#{javascript:currentDocument.isEditable()}">
@@ -251,10 +296,8 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						</xe:this.dataProvider>
 					</xe:namePicker>
 					<xp:inputText value="#{document1.fileAuthors}" id="fileAuthors1"
-						multipleSeparator="," multipleTrim="true" styleClass="form-control">
-						<xp:this.attrs>
-							<xp:attr name="disabled" value="true"></xp:attr>
-						</xp:this.attrs>
+						multipleSeparator="," multipleTrim="true" styleClass="form-control disabled">
+
 					</xp:inputText>
 
 				</xp:div>
@@ -276,7 +319,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 			<div class="pull-right" style="margin-top:10px;">
 				<xp:div styleClass="form-group">
 					<xp:label value="Created by&#160;" id="fileCreator_Label1"
-						for="fileCreator1" disableTheme="true">
+						for="fileCreator1" disableTheme="true" styleClass="left">
 					</xp:label>
 
 					<xp:inputText id="fileCreator1" styleClass="form-control"

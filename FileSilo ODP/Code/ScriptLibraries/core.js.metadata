@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.0" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="726" sequence="77" unid="DE2404D0D528CB88C1257BE00078D3A9">
+<noteinfo noteid="726" sequence="91" unid="DE2404D0D528CB88C1257BE00078D3A9">
 <created><datetime dst="true">20130908T235945,05+02</datetime></created>
-<modified><datetime>20140212T022753,43+01</datetime></modified>
-<revised><datetime>20140212T022753,42+01</datetime></revised>
-<lastaccessed><datetime>20140212T022753,43+01</datetime></lastaccessed>
+<modified><datetime>20140224T195103,74+01</datetime></modified>
+<revised><datetime>20140224T195103,73+01</datetime></revised>
+<lastaccessed><datetime>20140224T195103,74+01</datetime></lastaccessed>
 <addedtofile><datetime>20140212T022018,02+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
-<item name="$POID"><datetime>20131127T232704,28+01</datetime></item>
+<item name="$POID"><datetime>20140214T000209,70+01</datetime></item>
 <item name="$TITLE" sign="true"><text>core.js</text></item>
 <item name="$Flags"><text>h534Q</text></item>
 <item name="$PublicAccess" sign="true"><text>1</text></item>

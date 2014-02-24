@@ -16,7 +16,8 @@
 	border-color: #abd100;
 }
 
-.btn-custom-green:hover,.btn-custom-green:focus,.btn-custom-green:active {
+.btn-custom-green:hover,.btn-custom-green:focus,.btn-custom-green:active
+	{
 	background-color: #C4DF4D;
 	border-color: #C4DF4D;
 	color: white;
@@ -65,11 +66,24 @@ th {
 	font-size: 0.8em;
 }
 
-.clickable{
-    cursor: pointer;   
+.clickable {
+	cursor: pointer;
 }
 
 .panel-heading span {
 	margin-top: -20px;
 	font-size: 15px;
+}
+
+.form-group label {
+	display: block;
+}
+
+.form-group label.left {
+	display: inline-table;
+}
+
+.disabled {
+	background-color: #eee;
+	cursor: not-allowed;
 }

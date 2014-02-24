@@ -49,6 +49,9 @@ dojo.addOnLoad( function() {
 			showKey(evt.target.innerHTML)
 		})
 	})
+	$('.disabled').focus( function() {
+		$(this).blur();
+	});
 })
 
 var showKey = function(id) {
