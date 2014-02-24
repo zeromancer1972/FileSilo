@@ -241,7 +241,9 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					<xp:br></xp:br>
 					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
 						styleClass="btn btn-default form-control">
-					</xp:fileUpload>
+					<xp:eventHandler event="onchange" submit="false">
+						<xp:this.script><![CDATA[dojo.byId("#{id:button1}").click();]]></xp:this.script>
+					</xp:eventHandler></xp:fileUpload>
 				</xp:div>
 			</div>
 			<div class="tab-pane fade" id="desc">
