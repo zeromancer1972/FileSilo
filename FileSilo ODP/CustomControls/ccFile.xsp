@@ -191,7 +191,9 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 							</xp:attr>
 						</xp:this.attrs>
 					</xp:inputText>
-
+					<xe:tooltip id="tooltip1" for="fileID1"
+						label="Give your collection a unique name." position="below">
+					</xe:tooltip>
 				</xp:div>
 				<xp:div styleClass="form-group">
 					<xp:label value="Customer key *&#160;" id="fileKey_Label1"
@@ -218,6 +220,10 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 								"filesByKey", 1))}]]></xp:this.valueList> </xp:typeAhead>
 							-->
 						</xp:inputText>
+						<xe:tooltip id="tooltip2" for="fileKey1"
+							label="Give your collection a unique ID. This ID will be used to find the collection."
+							position="below">
+						</xe:tooltip>
 						<span class="input-group-btn">
 							<xp:button disableTheme="true" id="button5" styleClass="btn btn-info"
 								rendered="#{javascript:currentDocument.isEditable()}">
@@ -246,9 +252,13 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					<xp:br></xp:br>
 					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
 						styleClass="btn btn-default form-control">
-					<xp:eventHandler event="onchange" submit="false">
-						<xp:this.script><![CDATA[dojo.byId("#{id:button1}").click();]]></xp:this.script>
-					</xp:eventHandler></xp:fileUpload>
+						<xp:eventHandler event="onchange" submit="false">
+							<xp:this.script><![CDATA[dojo.byId("#{id:button1}").click();]]></xp:this.script>
+						</xp:eventHandler>
+					</xp:fileUpload>
+					<xe:tooltip id="tooltip3" for="fileUpload1" position="below"
+						label="Select a file from your local PC. The collection will be saved after you chose a file.">
+					</xe:tooltip>
 				</xp:div>
 			</div>
 			<div class="tab-pane fade" id="desc">
@@ -286,7 +296,9 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						multipleSeparator="," multipleTrim="true" styleClass="form-control disabled">
 
 					</xp:inputText>
-
+					<xe:tooltip id="tooltip4" for="fileReaders1"
+						label="Click on the icon to choose names." position="below">
+					</xe:tooltip>
 				</xp:div>
 
 				<xp:div styleClass="form-group">
@@ -306,7 +318,9 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						multipleSeparator="," multipleTrim="true" styleClass="form-control disabled">
 
 					</xp:inputText>
-
+					<xe:tooltip id="tooltip5" for="fileAuthors1"
+						label="Click on the icon to choose names." position="below">
+					</xe:tooltip>
 				</xp:div>
 			</div>
 			<div class="tab-pane fade" id="misc">
@@ -321,6 +335,10 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 							<xp:convertDateTime pattern="MM/dd/yyyy"></xp:convertDateTime>
 						</xp:this.converter>
 					</xp:inputText>
+					<xe:tooltip id="tooltip6" for="fileExpires1"
+						label="Click in the field to get a datepicker. Choose a date on this collection will be removed automatically or keep it blank to remain it forever."
+						position="below">
+					</xe:tooltip>
 				</xp:div>
 			</div>
 			<div class="pull-right" style="margin-top:10px;">
