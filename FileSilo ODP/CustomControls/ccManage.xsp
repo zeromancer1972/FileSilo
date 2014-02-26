@@ -86,11 +86,12 @@
 							</td>
 							<td>
 								<xp:link escape="true" id="link3">
-									<xp:this.text><![CDATA[#{javascript:doc.getValue("fileReaders")}]]></xp:this.text>
-									<xp:eventHandler event="onclick" submit="true"
-										refreshMode="complete">
+									<xp:this.text><![CDATA[#{javascript:@Name("[Abbreviate]",doc.getValue("fileReaders"))}]]></xp:this.text>
+									<xp:eventHandler event="onclick"
+										submit="true" refreshMode="complete">
 										<xp:this.action>
-											<xp:openPage name="/file.xsp" target="openDocument"
+											<xp:openPage
+												name="/file.xsp" target="openDocument"
 												documentId="#{javascript:doc.getDocument().getUniversalID()}">
 											</xp:openPage>
 										</xp:this.action>
@@ -99,11 +100,12 @@
 							</td>
 							<td>
 								<xp:link escape="true" id="link4">
-									<xp:this.text><![CDATA[#{javascript:doc.getValue("fileAuthors")}]]></xp:this.text>
-									<xp:eventHandler event="onclick" submit="true"
-										refreshMode="complete">
+									<xp:this.text><![CDATA[#{javascript:@Name("[Abbreviate]",doc.getValue("fileAuthors"))}]]></xp:this.text>
+									<xp:eventHandler event="onclick"
+										submit="true" refreshMode="complete">
 										<xp:this.action>
-											<xp:openPage name="/file.xsp" target="openDocument"
+											<xp:openPage
+												name="/file.xsp" target="openDocument"
 												documentId="#{javascript:doc.getDocument().getUniversalID()}">
 											</xp:openPage>
 										</xp:this.action>

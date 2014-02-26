@@ -30,11 +30,14 @@ if(url.indexOf(".xsp")==-1){
 						<span class="icon-bar"></span>
 					</button>
 
-					<xp:link styleClass="navbar-brand" disableTheme="true" id="link2">
-						<xp:image style="margin-left:-12px;margin-right:10px;overflow:hidden"
+					<xp:link disableTheme="true" id="link2">
+						<xp:this.styleClass><![CDATA[#{javascript:return "navbar-brand " + (view.getPageName().indexOf("index")==-1 ? "nav-disabled" : "")}]]></xp:this.styleClass>
+						<xp:image
+							style="margin-left:-12px;margin-right:10px;overflow:hidden"
 							url="/silo_small.png" id="image1">
 						</xp:image>
-						<xp:text value="#{javascript:@DbTitle()}" style="color:rgb(255,255,255)">
+						<xp:text value="#{javascript:@DbTitle()}"
+							style="color:rgb(255,255,255)">
 						</xp:text>
 						<xp:eventHandler event="onclick" submit="true"
 							refreshMode="partial" refreshId="page" immediate="true">
@@ -53,7 +56,7 @@ sessionScope.put("page", "start")}]]></xp:this.action>
 							<xp:this.styleClass><![CDATA[#{javascript:try {sessionScope.get("page").indexOf("upload")!=-1 ? "active" : ""} catch(e){}}]]></xp:this.styleClass>
 							<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Upload]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
 							<xp:link id="link1" disableTheme="true">
-								<span
+								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass><span
 									class="glyphicon glyphicon-cloud-upload">
 								</span>
 								&#160;Upload a file
@@ -72,7 +75,7 @@ sessionScope.put("page", "upload")}]]></xp:this.action>
 							<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
 							<xp:this.styleClass><![CDATA[#{javascript:try {sessionScope.get("page").indexOf("manage")!=-1 ? "active" : ""} catch(e){}}]]></xp:this.styleClass>
 							<xp:link disableTheme="true" id="link3">
-								<span class="glyphicon glyphicon-paperclip">
+								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass><span class="glyphicon glyphicon-paperclip">
 								</span>
 								&#160;Manage collections
 								<xp:eventHandler event="onclick" submit="true"
@@ -87,7 +90,7 @@ sessionScope.put("page", "manage")}]]></xp:this.action>
 							<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
 							<xp:this.styleClass><![CDATA[#{javascript:try {sessionScope.get("page").indexOf("recent")!=-1 ? "active" : ""} catch(e){}}]]></xp:this.styleClass>
 							<xp:link disableTheme="true" id="link4">
-								<span class="glyphicon glyphicon-flash">
+								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass><span class="glyphicon glyphicon-flash">
 								</span>
 								&#160;Activities
 								<xp:eventHandler event="onclick" submit="true"
@@ -122,15 +125,21 @@ sessionScope.put("page", "recent")}]]></xp:this.action>
 						</xp:panel>
 
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								<xp:text>
+							<xp:link disableTheme="true" value="#">
+								
+								<xp:this.attrs>
+									<xp:attr name="data-toggle">
+										<xp:this.value><![CDATA[#{javascript:(view.getPageName().indexOf("index")==-1 ? "" : "dropdown")}]]></xp:this.value>
+									</xp:attr>
+								</xp:this.attrs>
+								<xp:this.styleClass><![CDATA[#{javascript:"dropdown-toggle "+(view.getPageName().indexOf("index")==-1 ? "nav-disabled" : "")}]]></xp:this.styleClass><xp:text>
 									<xp:this.value><![CDATA[#{javascript:var uploads = database.search("SELECT Form=\"file\" & @IsAvailable($PublicAccess)").getCount();
 var uploadtext = (uploads>0)?" ("+uploads.toString()+")":""; 
 
 @UserName().equals("Anonymous") ? "Howdy, stranger" : "Welcome, "+@Name("[CN]", @UserName())+uploadtext}]]></xp:this.value>
 								</xp:text>
 								<b class="caret"></b>
-							</a>
+							</xp:link>
 							<ul class="dropdown-menu">
 								<xp:panel tagName="li">
 

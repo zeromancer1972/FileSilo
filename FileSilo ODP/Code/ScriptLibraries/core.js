@@ -52,6 +52,9 @@ dojo.addOnLoad( function() {
 	$('.disabled').focus( function() {
 		$(this).blur();
 	});
+	$('.nav-disabled').click( function(e) {
+		e.preventDefault();
+	});
 })
 
 var showKey = function(id) {

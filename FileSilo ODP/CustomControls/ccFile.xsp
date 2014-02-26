@@ -59,6 +59,8 @@ var itAuthors:NotesItem = doc.getFirstItem("fileAuthors")
 itReaders.setReaders(true);
 itAuthors.setAuthors(true);
 var itAdmin:NotesItem = doc.replaceItemValue("fileAdmin", "[Admin]")
+
+
 itAdmin.setAuthors(true);
 if(doc.hasItem("$PublicAccess")){
 	doc.removeItem("$PublicAccess")
@@ -67,7 +69,10 @@ if(doc.hasItem("$PublicAccess")){
 
 } catch(e) {}}]]></xp:this.querySaveDocument>
 			<xp:this.postNewDocument><![CDATA[#{javascript:currentDocument.setValue("fileCreator", session.getEffectiveUserName())}]]></xp:this.postNewDocument>
-			<xp:this.postSaveDocument><![CDATA[#{javascript:var collectionname = doc.getItemValueString("fileID");
+			<xp:this.postSaveDocument><![CDATA[#{javascript:// canonicalize
+rights.setNames(doc);
+
+var collectionname = doc.getItemValueString("fileID");
 log.add("Collection saved", log.getUserName() + " saved collection "+collectionname)}]]></xp:this.postSaveDocument>
 		</xp:dominoDocument>
 	</xp:this.data>
@@ -80,7 +85,7 @@ log.add("Collection saved", log.getUserName() + " saved collection "+collectionn
 					</span>
 					&#160;Save
 					<xp:eventHandler event="onclick" submit="true"
-						refreshMode="partial" refreshId="theform">
+						refreshMode="complete">
 						<xp:this.action>
 							<xp:saveDocument var="document1"></xp:saveDocument>
 						</xp:this.action>

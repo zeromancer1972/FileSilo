@@ -22,5 +22,11 @@
 		</managed-bean-class>
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>rights</managed-bean-name>
+		<managed-bean-class>org.openntf.filesilo.RightsManagement
+		</managed-bean-class>
+		<managed-bean-scope>view</managed-bean-scope>
+	</managed-bean>
 	<!--AUTOGEN-END-BUILDER: End of automatically generated section-->
 </faces-config>

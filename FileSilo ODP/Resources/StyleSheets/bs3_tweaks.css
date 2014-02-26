@@ -87,3 +87,7 @@ th {
 	background-color: #eee;
 	cursor: not-allowed;
 }
+
+a.nav-disabled {
+	cursor: not-allowed;
+}
