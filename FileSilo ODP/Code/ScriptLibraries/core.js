@@ -1,9 +1,20 @@
 // core
+confirmDelete = function(id) {
+	$("#confirmdelete").attr("rel", id).modal( {
+		backdrop : "static"
+	});
+}
+actionDelete = function(){
+	dojo.byId($("#confirmdelete").attr("rel")).click();
+}
+
+doLogoutDialog = function() {
+	$("#confirmlogout").modal( {
+		backdrop : "static"
+	});
+}
 
 doLogout = function() {
-	if (!confirm("Are your sure you want to logout?")) {
-		return false;
-	}
 	require( [ "dojo/cookie" ], function(cookie) {
 		if (cookie("DomAuthSessId")) {
 			cookie("DomAuthSessId", null, {

@@ -67,7 +67,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 		<xp:inputText value="#{document1.profileMail}" id="profileMail1"
 			styleClass="form-control">
 			<xp:this.attrs>
-				<xp:attr name="placeholder" value="Enter a valid SMTP mail address">
+				<xp:attr name="placeholder" value="Enter a valid SMTP or Notes mail address">
 				</xp:attr>
 			</xp:this.attrs>
 		</xp:inputText>

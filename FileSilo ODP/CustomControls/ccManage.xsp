@@ -133,14 +133,20 @@
 								<span class="pull-right">
 									<xp:link styleClass="btn btn-sm btn-danger" escape="true"
 										text="" id="link6">
-										<xp:eventHandler event="onclick" submit="true"
-											refreshMode="partial" refreshId="list">
+										
+										<span class="glyphicon glyphicon-trash" title="Delete collection"></span>
+										<xp:eventHandler event="onclick"
+											submit="false">
+											<xp:this.script><![CDATA[// dialog confirm
+confirmDelete("#{id:delAction}")]]></xp:this.script>
+										</xp:eventHandler></xp:link>
+									<xp:link text="action"
+										id="delAction" style="display:none">
+										<xp:eventHandler event="onclick"
+											submit="true" refreshMode="partial" refreshId="list">
 											<xp:this.action>
 												<xp:actionGroup>
-													<xp:confirm message="Do you really want to delete this collection?">
-													</xp:confirm>
 													<xp:executeScript>
-
 														<xp:this.script><![CDATA[#{javascript:var collectionname = doc.getItemValueString("fileID");
 doc.getDocument().remove(false);
 log.add("Deletion", log.getUserName()+" deleted collection "+collectionname)}]]></xp:this.script>
@@ -148,10 +154,9 @@ log.add("Deletion", log.getUserName()+" deleted collection "+collectionname)}]]>
 												</xp:actionGroup>
 											</xp:this.action>
 											<xp:this.onComplete>
-										<![CDATA[XSP.partialRefreshGet("#{id:usermenu}")]]>
+												<![CDATA[XSP.partialRefreshGet("#{id:usermenu}")]]>
 											</xp:this.onComplete>
 										</xp:eventHandler>
-										<span class="glyphicon glyphicon-trash" title="Delete collection"></span>
 									</xp:link>
 								</span>
 							</td>

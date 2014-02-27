@@ -145,7 +145,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 
 									<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
 									<xp:link
-										value="#{javascript:@UserName().equals('Anonymous')?'/login.xsp':'javascript:doLogout()'}">
+										value="#{javascript:@UserName().equals('Anonymous')?'/login.xsp':'javascript:doLogoutDialog()'}">
 										<span
 											class="glyphicon glyphicon-user">
 										</span>
@@ -229,4 +229,6 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 		</nav>
 	</xp:div>
 	<xc:ccAboutbox></xc:ccAboutbox>
+	<xc:ccDialogLogout></xc:ccDialogLogout>
+	<xc:ccDialogDeleteCollection></xc:ccDialogDeleteCollection>
 </xp:view>

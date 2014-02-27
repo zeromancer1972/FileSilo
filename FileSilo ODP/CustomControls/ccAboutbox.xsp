@@ -4,7 +4,7 @@
 	<xp:this.resources>
 		<xp:bundle src="/app.properties" var="app"></xp:bundle>
 	</xp:this.resources>
-	<div id="aboutbox" class="modal">
+	<div id="aboutbox" class="modal" data-backdrop="static">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -37,7 +37,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn" data-dismiss="modal">
-						Close
+						OK
 					</button>
 				</div>
 			</div><!-- /.modal-content -->
