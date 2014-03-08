@@ -42,9 +42,9 @@
 							<span class=""></span>
 							&#160;Clear
 							<xp:eventHandler event="onclick"
-								submit="true" refreshMode="partial" refreshId="searchbox"
-								disableValidators="true">
-								<xp:this.action><![CDATA[#{javascript:getComponent("inputText1").setValue("")}]]></xp:this.action>
+								submit="true" refreshMode="complete" disableValidators="true">
+								<xp:this.action><![CDATA[#{javascript:getComponent("inputText1").setValue("");
+sessionScope.put("customerKey", null)}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:button>
 					</span>

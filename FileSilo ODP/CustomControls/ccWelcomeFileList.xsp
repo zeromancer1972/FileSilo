@@ -18,7 +18,7 @@
 			<tr>
 				<th>ID</th>
 				<th>Key</th>
-				<th>Expires</th>
+				<th>Expires</th>				
 			</tr>
 		</thead>
 		<tbody>
@@ -45,14 +45,12 @@
 							</xp:inputRichText>
 						</td>
 						<td>
-							<xp:inputText id="inputText1"
-								value="#{doc.fileKey}">
+							<xp:inputText id="inputText1" value="#{doc.fileKey}">
 							</xp:inputText>
 						</td>
-
+						
 						<td>
-							<xp:inputText id="inputText2"
-								value="#{doc.fileExpires}">
+							<xp:inputText id="inputText2" value="#{doc.fileExpires}">
 								<xp:this.converter>
 									<xp:convertDateTime type="date">
 									</xp:convertDateTime>
@@ -64,7 +62,7 @@
 			</xp:repeat>
 		</tbody>
 	</table>
-	
+
 	<xp:pager layout="Previous Group Next" partialRefresh="true"
 		id="pager1" for="repeat1" disableTheme="true">
 	</xp:pager>

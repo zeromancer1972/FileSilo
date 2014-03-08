@@ -12,7 +12,12 @@ if(document1.getAttachmentList("fileAttachment").isEmpty()){
 	return false	
 }}]]></xp:this.querySaveDocument>
 			<xp:this.postNewDocument><![CDATA[#{javascript:document1.setValue("$PublicAccess", "1")}]]></xp:this.postNewDocument>
-			<xp:this.postSaveDocument><![CDATA[#{javascript:sessionScope.put("uploadSuccessful", "1")
+			<xp:this.postSaveDocument><![CDATA[#{javascript:try {
+	var url = context.getUrl().toSiteRelativeString(context)+"?key="+currentDocument.getValue("fileKey");
+} catch(e) {
+	
+}
+sessionScope.put("uploadSuccessful", url)
 upload.sendInfo();
 log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Key: "+currentDocument.getValue("fileKey"), currentDocument.getDocument().getUniversalID())}]]></xp:this.postSaveDocument>
 		</xp:dominoDocument>
@@ -92,6 +97,16 @@ if(sessionScope.get("uploadSuccessful")!=null){
 	return success
 }}]]></xp:this.value>
 						</xp:label>
+						<xp:br></xp:br>
+						<xp:link escape="true" id="link1">
+							<xp:this.text><![CDATA[#{javascript:"You can find it here"}]]></xp:this.text>
+
+							<xp:eventHandler event="onclick"
+								submit="true" refreshMode="complete">
+								<xp:this.action><![CDATA[#{javascript:sessionScope.put("page", "start");
+context.redirectToPage(sessionScope.get("uploadSuccessful"))}]]></xp:this.action>
+							</xp:eventHandler>
+						</xp:link>
 					</xp:div>
 
 				</xp:div>
