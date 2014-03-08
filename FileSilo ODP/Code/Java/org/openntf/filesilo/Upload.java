@@ -19,6 +19,7 @@ public class Upload implements Serializable {
 	private Document profile = null;
 	private Database db;
 	private String adr = "";
+	private String msg = "A new upload has been posted in <DB>";
 	private int adjust = 30;
 
 	public Upload() {
@@ -36,6 +37,7 @@ public class Upload implements Serializable {
 			}
 			this.profile = doc;
 			this.adr = doc.getItemValueString("profileMail");
+			this.msg = doc.getItemValueString("profileMessage");
 			this.adjust = doc.getItemValueInteger("profileAdjust");
 			doc.recycle();
 		} catch (NotesException e) {
@@ -53,7 +55,7 @@ public class Upload implements Serializable {
 			mail.replaceItemValue("Form", "Memo");
 			mail.replaceItemValue("SendTo", adr);
 			mail.replaceItemValue("Recipients", adr);
-			mail.replaceItemValue("Subject", "A new upload has been posted in " + this.db.getTitle());
+			mail.replaceItemValue("Subject", this.msg.replace("<DB>", this.db.getTitle()));
 			mail.send();
 			mail.recycle();
 		} catch (NotesException e) {

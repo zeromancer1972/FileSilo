@@ -73,9 +73,22 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 		</xp:inputText>
 	</xp:div>
 	<xp:div styleClass="form-group">
+		<xp:label value="Custom subject" id="label2" for="customMessage"
+			disableTheme="true">
+		</xp:label>
+		<xp:inputText id="customMessage" styleClass="form-control"
+			value="#{document1.profileMessage}">
+			<xp:this.attrs>
+				<xp:attr name="placeholder">
+					<xp:this.value><![CDATA[#{javascript:"You can use <DB> as placeholder for the database title"}]]></xp:this.value>
+				</xp:attr>
+			</xp:this.attrs>
+		</xp:inputText>
+	</xp:div>
+	<xp:div styleClass="form-group">
 
 		<xp:label value="Default number of days for expire date" id="label1"
-			for="profileAdjust">
+			for="profileAdjust" disableTheme="true">
 		</xp:label>
 		<xp:inputText id="profileAdjust" value="#{document1.profileAdjust}"
 			styleClass="form-control">
