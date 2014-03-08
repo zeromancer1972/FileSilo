@@ -6,7 +6,7 @@
 document1.setValue("fileId", unique);
 document1.setValue("fileKey", unique);
 document1.setValue("fileUpload", "1");
-document1.setValue("fileExpires", @Adjust(@Now(), 0,1,0,0,0,0));
+document1.setValue("fileExpires", @Adjust(@Now(), 0, 0, upload.getAdjust(),0,0,0));
 if(document1.getAttachmentList("fileAttachment").isEmpty()){
 	// silent for bots
 	return false	

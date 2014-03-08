@@ -1,4 +1,4 @@
-<theme extends="notes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<theme extends="" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
 	<resource>
 		<content-type>application/x-javascript</content-type>

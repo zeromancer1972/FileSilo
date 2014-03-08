@@ -1,5 +1,7 @@
 package org.openntf.filesilo;
 
+import java.io.Serializable;
+
 import lotus.domino.Database;
 import lotus.domino.Document;
 import lotus.domino.NotesException;
@@ -8,11 +10,16 @@ import lotus.domino.View;
 
 import com.ibm.xsp.extlib.util.ExtLibUtil;
 
-public class Upload {
+public class Upload implements Serializable {
+	/**
+	 * Members
+	 */
+	private static final long serialVersionUID = 3037095703579052234L;
 	private Session session;
 	private Document profile = null;
 	private Database db;
 	private String adr = "";
+	private int adjust = 30;
 
 	public Upload() {
 		String dbtitle = "";
@@ -28,7 +35,8 @@ public class Upload {
 				return;
 			}
 			this.profile = doc;
-			adr = doc.getItemValueString("profileMail");
+			this.adr = doc.getItemValueString("profileMail");
+			this.adjust = doc.getItemValueInteger("profileAdjust");
 			doc.recycle();
 		} catch (NotesException e) {
 			System.out.println("FileSilo: please provide a profile settings document in " + dbtitle + ", " + dbpath);
@@ -53,4 +61,9 @@ public class Upload {
 		}
 
 	}
+
+	public int getAdjust() {
+		return adjust;
+	}
+
 }

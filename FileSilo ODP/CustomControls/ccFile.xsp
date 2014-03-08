@@ -267,8 +267,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						disableTheme="true">
 					</xp:label>
 
-					<xp:inputRichText id="inputRichText1" value="#{document1.fileMessage}"
-						disableTheme="true">
+					<xp:inputRichText id="inputRichText1" value="#{document1.fileMessage}" disableTheme="true" styleClass="ckeditor">
 						<xp:this.dojoAttributes>
 							<xp:dojoAttribute name="height" value="200">
 							</xp:dojoAttribute>

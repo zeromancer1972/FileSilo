@@ -3,7 +3,7 @@
 	<xp:this.data>
 		<xp:dominoView var="view1" viewName="filesByKey"
 			keysExactMatch="true">
-			<xp:this.keys><![CDATA[#{javascript:sessionScope.get("customerKey")}]]></xp:this.keys>
+			<xp:this.keys><![CDATA[#{javascript:@Trim(sessionScope.get("customerKey"))}]]></xp:this.keys>
 		</xp:dominoView>
 	</xp:this.data>
 

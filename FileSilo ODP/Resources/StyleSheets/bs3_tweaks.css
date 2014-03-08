@@ -1,3 +1,10 @@
+.ckeditor * {
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+}
+
 .pagehelp {
 	background-color: #33B9FF;
 	margin-bottom: 20px;
@@ -90,4 +97,9 @@ th {
 
 a.nav-disabled {
 	cursor: not-allowed;
+}
+
+div[role=navigation] * {
+	display: inline-table;
+	margin-right: 3px;
 }

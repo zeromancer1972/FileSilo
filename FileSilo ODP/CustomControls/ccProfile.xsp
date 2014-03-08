@@ -71,8 +71,21 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				</xp:attr>
 			</xp:this.attrs>
 		</xp:inputText>
+	</xp:div>
+	<xp:div styleClass="form-group">
 
-
-
+		<xp:label value="Default number of days for expire date" id="label1"
+			for="profileAdjust">
+		</xp:label>
+		<xp:inputText id="profileAdjust" value="#{document1.profileAdjust}"
+			styleClass="form-control">
+			<xp:this.converter>
+				<xp:convertNumber type="number"></xp:convertNumber>
+			</xp:this.converter>
+			<xp:this.attrs>
+				<xp:attr name="placeholder" value="Enter a numeric value e.g. 30">
+				</xp:attr>
+			</xp:this.attrs>
+		</xp:inputText>
 	</xp:div>
 </xp:view>
