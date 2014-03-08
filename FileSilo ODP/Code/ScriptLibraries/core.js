@@ -4,8 +4,16 @@ confirmDelete = function(id) {
 		backdrop : "static"
 	});
 }
-actionDelete = function(){
+actionDelete = function() {
 	dojo.byId($("#confirmdelete").attr("rel")).click();
+}
+
+dialogURL = function(urlCollection, urlKey) {
+	$("#urlCollection").val(urlCollection);
+	$("#urlKey").val(urlKey);
+	$("#dialogurl").modal( {
+		backdrop : "static"
+	});
 }
 
 doLogoutDialog = function() {

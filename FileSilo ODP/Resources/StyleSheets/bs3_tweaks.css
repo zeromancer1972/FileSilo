@@ -5,6 +5,12 @@
 	-webkit-box-sizing: content-box;
 }
 
+@media ( min-width : 992px) {
+	.modal-lg {
+		width: 900px;
+	}
+}
+
 .pagehelp {
 	background-color: #33B9FF;
 	margin-bottom: 20px;

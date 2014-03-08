@@ -231,4 +231,5 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 	<xc:ccAboutbox></xc:ccAboutbox>
 	<xc:ccDialogLogout></xc:ccDialogLogout>
 	<xc:ccDialogDeleteCollection></xc:ccDialogDeleteCollection>
+	<xc:ccDialogURL></xc:ccDialogURL>
 </xp:view>
