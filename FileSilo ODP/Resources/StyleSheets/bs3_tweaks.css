@@ -104,8 +104,3 @@ th {
 a.nav-disabled {
 	cursor: not-allowed;
 }
-
-div[role=navigation] * {
-	display: inline-table;
-	margin-right: 3px;
-}

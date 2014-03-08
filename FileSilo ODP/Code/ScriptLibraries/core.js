@@ -74,6 +74,14 @@ dojo.addOnLoad( function() {
 	$('.nav-disabled').click( function(e) {
 		e.preventDefault();
 	});
+	$(".datepicker").datepicker( {
+
+	});
+	$(".select-all").focus( function(e) {
+		$(this).select();
+	}).mouseup( function() {
+		return false;
+	});
 })
 
 var showKey = function(id) {
@@ -81,12 +89,6 @@ var showKey = function(id) {
 	box.value = keyURL + "?key=" + id
 	dijit.byId("dlgCopyID").show()
 }
-
-$(document).ready( function() {
-	$(".datepicker").datepicker( {
-
-	});
-})
 
 $(document).on(
 		'click',

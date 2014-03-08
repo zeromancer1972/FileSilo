@@ -97,7 +97,7 @@
 											<xp:this.script><![CDATA[// dialog confirm
 var fileprefix = "#{javascript:context.getUrl().toString().replace('index.xsp', '')}";
 var collectionprefix = "#{javascript:context.getUrl().toString()}";
-var urlCollection = fileprefix + "files/#{javascript:doc.getDocument().getUniversalID()}";
+var urlCollection = fileprefix + "file.xsp?action=openDocument&documentId=#{javascript:doc.getDocument().getUniversalID()}";
 var urlKey = collectionprefix + "?key=#{javascript:doc.getDocument().getItemValueString('fileKey')}";
 dialogURL(urlCollection, urlKey);]]></xp:this.script>
 										</xp:eventHandler>
