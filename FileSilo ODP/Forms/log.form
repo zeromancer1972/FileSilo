@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
  replicaid='C1257BDF00312926'>
-<noteinfo noteid='1136' unid='BC309345297825EEC1257C7D006A0BEE' sequence='4'>
+<noteinfo noteid='1136' unid='BC309345297825EEC1257C7D006A0BEE' sequence='8'>
 <created><datetime>20140212T201818,70+01</datetime></created>
-<modified><datetime>20140212T202252,71+01</datetime></modified>
-<revised><datetime>20140212T202252,70+01</datetime></revised>
-<lastaccessed><datetime>20140212T202252,71+01</datetime></lastaccessed>
+<modified><datetime>20140309T045434,49+01</datetime></modified>
+<revised><datetime>20140309T045434,48+01</datetime></revised>
+<lastaccessed><datetime>20140309T045434,49+01</datetime></lastaccessed>
 <addedtofile><datetime>20140212T201818,98+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
@@ -19,7 +19,7 @@ X/8QAAIADwAHAAAAAAAAAA==
 <rawitemdata type='1'>
 hhgBAIAAAAAAgAAAAQABAP///wAQAAAA
 </rawitemdata></item>
-<item name='$Flags'><text/></item>
+<item name='$Flags'><text>CD</text></item>
 <item name='$DesignerVersion'><text>8.5.3</text></item>
 <item name='$$ScriptName' summary='false' sign='true'><text>log</text></item>
 <item name='logSubject' placeholder='true'>
