@@ -9,7 +9,7 @@
 						x
 					</button>
 					<xp:text disableTheme="true"
-						styleClass="modal-title" tagName="h4">
+						styleClass="modal-title panel-title" tagName="h3">
 						<xp:this.value><![CDATA[#{javascript:"Delete collection"}]]></xp:this.value>
 					</xp:text>
 				</div>

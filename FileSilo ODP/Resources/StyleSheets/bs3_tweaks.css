@@ -104,3 +104,11 @@ th {
 a.nav-disabled {
 	cursor: not-allowed;
 }
+
+.modal-header {
+	background-color: #D9EDF7;
+	border-color: #BCE8F1;
+	color: #31708F;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+}

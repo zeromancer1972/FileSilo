@@ -12,8 +12,8 @@
 						aria-hidden="true">
 						x
 					</button>
-					<xp:text disableTheme="true" styleClass="modal-title"
-						tagName="h4">
+					<xp:text disableTheme="true" styleClass="modal-title panel-title"
+						tagName="h3">
 						<xp:this.value><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']}]]></xp:this.value>
 					</xp:text>
 				</div>
@@ -36,7 +36,7 @@
 					</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn" data-dismiss="modal">
+					<button type="button" class="btn btn-block btn-custom-green" data-dismiss="modal">
 						OK
 					</button>
 				</div>
