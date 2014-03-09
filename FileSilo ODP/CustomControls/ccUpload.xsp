@@ -12,10 +12,12 @@ if(document1.getAttachmentList("fileAttachment").isEmpty()){
 	return false	
 }}]]></xp:this.querySaveDocument>
 			<xp:this.postNewDocument><![CDATA[#{javascript:document1.setValue("$PublicAccess", "1")}]]></xp:this.postNewDocument>
-			<xp:this.postSaveDocument><![CDATA[#{javascript:try {
-	var url = context.getUrl().toSiteRelativeString(context)+"?key="+currentDocument.getValue("fileKey");
+			<xp:this.postSaveDocument><![CDATA[#{javascript:var url;
+try {
+url = context.getUrl().toString();
+url = url.substring(0, url.indexOf("index.xsp")) +"index.xsp?key="+currentDocument.getValue("fileKey");
 } catch(e) {
-	
+print(e)
 }
 sessionScope.put("uploadSuccessful", url)
 upload.sendInfo();
@@ -104,7 +106,9 @@ if(sessionScope.get("uploadSuccessful")!=null){
 							<xp:eventHandler event="onclick"
 								submit="true" refreshMode="complete">
 								<xp:this.action><![CDATA[#{javascript:sessionScope.put("page", "start");
-context.redirectToPage(sessionScope.get("uploadSuccessful"))}]]></xp:this.action>
+url = sessionScope.get("uploadSuccessful");
+
+context.redirectToPage(url);}]]></xp:this.action>
 							</xp:eventHandler>
 						</xp:link>
 					</xp:div>
