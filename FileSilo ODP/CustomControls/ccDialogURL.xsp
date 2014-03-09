@@ -10,7 +10,6 @@
 					</button>
 					<xp:text disableTheme="true" styleClass="modal-title"
 						tagName="h4">
-
 						<xp:this.value><![CDATA[#{javascript:"URLs to this collection"}]]></xp:this.value>
 					</xp:text>
 				</div>

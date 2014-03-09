@@ -18,7 +18,8 @@
 			<tr>
 				<th>ID</th>
 				<th>Key</th>
-				<th>Expires</th>				
+				<th>Expires</th>
+				<th>&#160;</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -48,7 +49,7 @@
 							<xp:inputText id="inputText1" value="#{doc.fileKey}">
 							</xp:inputText>
 						</td>
-						
+
 						<td>
 							<xp:inputText id="inputText2" value="#{doc.fileExpires}">
 								<xp:this.converter>
@@ -56,6 +57,23 @@
 									</xp:convertDateTime>
 								</xp:this.converter>
 							</xp:inputText>
+						</td>
+
+						<td>
+							<span class="pull-right">
+								<xp:link styleClass="btn btn-sm btn-info" escape="true"
+									text="" id="link7">
+									<span class="glyphicon glyphicon-globe" title="Show URL"></span>
+									<xp:eventHandler event="onclick" submit="false">
+										<xp:this.script><![CDATA[// dialog confirm
+var url = "#{javascript:context.getUrl().toString()}";
+url = url.substring(0, url.indexOf("index.xsp"));
+var urlCollection = url + "file.xsp?action=openDocument&documentId=#{javascript:doc.getDocument().getUniversalID()}";
+var urlKey = url + "index.xsp?key=#{javascript:doc.getDocument().getItemValueString('fileKey')}";
+dialogURL(urlCollection, urlKey);]]></xp:this.script>
+									</xp:eventHandler>
+								</xp:link>
+							</span>
 						</td>
 					</tr>
 				</xp:panel>
