@@ -29,7 +29,7 @@
 										<h5>Please return by clicking OK.</h5>
 								</div>
 							</div>
-							<div class="row">
+							<div class="row" style="margin-top:20px">
 								<div class="col-lg-12">
 									<xp:link styleClass="btn btn-custom-green btn-block"
 										value="/index.xsp" text="OK">

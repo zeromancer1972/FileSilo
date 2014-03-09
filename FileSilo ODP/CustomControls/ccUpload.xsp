@@ -69,7 +69,7 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 							</xp:attr>
 						</xp:this.attrs>
 					<xp:this.defaultValue><![CDATA[#{javascript:if(!@UserName().equals("Anonymous")) {
-	return @Name("[CN]", @UserName())
+	return @Name("[Abbreviate]", @UserName())
 }}]]></xp:this.defaultValue></xp:inputText>
 				</div>
 

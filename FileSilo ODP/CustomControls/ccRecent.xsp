@@ -6,7 +6,7 @@
 	<xp:div id="list" styleClass="panel panel-default">
 		<div class="panel-heading">
 			<h3 class="panel-title">
-				Activities (entries will be removed after one month)
+				Activities (entries will be removed after 7 days)
 			</h3>
 			<span class="pull-right clickable">
 				<i class="glyphicon glyphicon-chevron-up"></i>

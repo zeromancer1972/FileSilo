@@ -229,7 +229,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 							position="below">
 						</xe:tooltip>
 						<span class="input-group-btn">
-							<xp:button disableTheme="true" id="button5" styleClass="btn btn-info"
+							<xp:button disableTheme="true" id="button5" styleClass="btn btn-default"
 								rendered="#{javascript:currentDocument.isEditable()}">
 								<span class=""></span>
 								&#160;Generate customer key
@@ -255,7 +255,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xp:fileDownload>
 					<xp:br></xp:br>
 					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
-						styleClass="btn btn-default form-control">
+						styleClass="">
 						<xp:eventHandler event="onchange" submit="false">
 							<xp:this.script><![CDATA[dojo.byId("#{id:button1}").click();]]></xp:this.script>
 						</xp:eventHandler>
