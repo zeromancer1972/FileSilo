@@ -61,10 +61,15 @@
 
 						<td>
 							<span class="pull-right">
-								<xp:link styleClass="btn btn-sm btn-info" escape="true"
-									text="" id="link7">
-									<span class="glyphicon glyphicon-globe" title="Show URL"></span>
-									<xp:eventHandler event="onclick" submit="false">
+								<xp:link
+									styleClass="btn btn-sm btn-info" escape="true" text=""
+									id="link7">
+									<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
+									<span
+										class="glyphicon glyphicon-globe" title="Show URL">
+									</span>
+									<xp:eventHandler event="onclick"
+										submit="false">
 										<xp:this.script><![CDATA[// dialog confirm
 var url = "#{javascript:context.getUrl().toString()}";
 url = url.substring(0, url.indexOf("index.xsp"));

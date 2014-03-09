@@ -89,9 +89,13 @@
 							</td>
 							<td>
 								<span class="pull-right">
-									<xp:link styleClass="btn btn-sm btn-info" escape="true"
-										text="" id="link7">
-										<span class="glyphicon glyphicon-globe" title="Show URL"></span>
+									<xp:link
+										styleClass="btn btn-sm btn-info" escape="true" text=""
+										id="link7">
+										<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
+										<span
+											class="glyphicon glyphicon-globe" title="Show URL">
+										</span>
 										<xp:eventHandler event="onclick"
 											submit="false">
 											<xp:this.script><![CDATA[// dialog confirm
@@ -101,7 +105,7 @@ var urlCollection = url + "file.xsp?action=openDocument&documentId=#{javascript:
 var urlKey = url + "index.xsp?key=#{javascript:doc.getDocument().getItemValueString('fileKey')}";
 dialogURL(urlCollection, urlKey);]]></xp:this.script>
 										</xp:eventHandler>
-									</xp:link>									
+									</xp:link>
 								</span>
 							</td>							
 							<td>
