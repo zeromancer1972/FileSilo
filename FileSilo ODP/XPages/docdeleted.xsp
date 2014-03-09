@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
+	style="background-color:#333">
+	<div class="container">
+		<div class="row" style="padding-top: 190px;">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-info logindialog">
+					<div class="panel-heading">
+						<h3 class="panel-title">
+							<xp:text disableTheme="true">
+								<xp:this.value><![CDATA[#{javascript:"We apologize..."}]]></xp:this.value>
+							</xp:text>
+						</h3>
+					</div>
+					<div class="panel-body">
+						<form accept-charset="UTF-8" role="form" method="post"
+							action="/names.nsf?login">
+							<div class="row">
+								<div class="col-lg-3">
+									<xp:image
+										url="/1394354545_dialog-error.png" id="image1"
+										disableTheme="true">
+									</xp:image>
+								</div>
+								<div class="col-lg-9">
+									<h4>Ooops!</h4>
+									<h5>This collection might have been deleted before you
+										could open it.</h5>
+										<h5>Please return by clicking OK.</h5>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-lg-12">
+									<xp:link styleClass="btn btn-custom-green btn-block"
+										value="/index.xsp" text="OK">
+									</xp:link>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</xp:view>

@@ -21,15 +21,18 @@
 							</xp:image>
 						</div>
 						<div class="col-lg-10">
+							<h4 class="alert alert-warning">Note: URLs do not work in XPinC!</h4>
 							<div class="form-group">
 								<label for="urlCollection">URL to collection
 								</label>
-								<input class="form-control select-all" type="text" id="urlCollection" name="urlCollection"></input>
+								<input class="form-control select-all" type="text"
+									id="urlCollection" name="urlCollection"></input>
 							</div>
 							<div class="form-group">
 								<label for="urlKey">URL to key
 								</label>
-								<input class="form-control select-all" type="text" id="urlKey" name="urlKey"></input>
+								<input class="form-control select-all" type="text" id="urlKey"
+									name="urlKey"></input>
 							</div>
 						</div>
 					</div>

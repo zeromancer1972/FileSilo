@@ -91,7 +91,7 @@ log.add("Collection saved", log.getUserName() + " saved collection "+collectionn
 						</xp:this.action>
 					</xp:eventHandler>
 				</xp:button>
-				&#160;
+				
 				<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
 					styleClass="btn btn-custom-green">
 					<span class="glyphicon glyphicon-floppy-saved">
@@ -110,7 +110,7 @@ log.add("Collection saved", log.getUserName() + " saved collection "+collectionn
 						</xp:this.action>
 					</xp:eventHandler>
 				</xp:button>
-				&#160;
+				
 				<xp:button id="button3" styleClass="btn btn-default">
 					<span class="glyphicon glyphicon-edit">
 					</span>
@@ -124,7 +124,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						</xp:this.action>
 					</xp:eventHandler>
 				</xp:button>
-				&#160;
+				
 				<xp:button id="button4" styleClass="btn btn-warning">
 					<span class="glyphicon glyphicon-chevron-left"></span>
 					&#160;
@@ -135,6 +135,10 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						<xp:this.action><![CDATA[#{javascript:return (session.getEffectiveUserName().equals("Anonymous"))?"welcome":"cancel"}]]></xp:this.action>
 					</xp:eventHandler>
 				</xp:button>
+				<xp:panel tagName="span"
+					styleClass="pull-right badge glyphicon glyphicon-cloud-upload" style="font-size:24px" title="This collection is an upload">
+					<xp:this.rendered><![CDATA[#{javascript:currentDocument.getDocument().getItemValueString("fileUpload").equals("1")}]]></xp:this.rendered>
+				</xp:panel>
 			</xp:div>
 		</xp:div>
 
@@ -142,7 +146,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 		<ul class="nav nav-tabs">
 			<li class="active">
 				<a href="#general" data-toggle="tab">
-					<span class="glyphicon glyphicon-cloud-upload"></span>
+					<span class="glyphicon glyphicon-hdd"></span>
 					&#160;General
 				</a>
 			</li>
@@ -267,7 +271,8 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						disableTheme="true">
 					</xp:label>
 
-					<xp:inputRichText id="inputRichText1" value="#{document1.fileMessage}" disableTheme="true" styleClass="ckeditor">
+					<xp:inputRichText id="inputRichText1" value="#{document1.fileMessage}"
+						disableTheme="true" styleClass="ckeditor">
 						<xp:this.dojoAttributes>
 							<xp:dojoAttribute name="height" value="200">
 							</xp:dojoAttribute>

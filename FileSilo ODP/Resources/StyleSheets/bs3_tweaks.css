@@ -23,6 +23,10 @@
 	display: block;
 }
 
+.actionbar .btn {
+	margin-right: 4px;
+	}
+
 .btn-custom-green {
 	background-color: #abd100;
 	color: white;

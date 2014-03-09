@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.beforePageLoad><![CDATA[#{javascript:var err:string = requestScope.error.toString();
+if(err.toLowerCase().indexOf("could not open the document")!=-1){
+	context.redirectToPage("docdeleted");
+}}]]></xp:this.beforePageLoad>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
