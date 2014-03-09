@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
 	<xp:this.data>
 		<xp:dominoDocument var="document1" formName="file">
 			<xp:this.querySaveDocument><![CDATA[#{javascript:var unique = @Unique();
@@ -44,12 +44,15 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 						disableTheme="true">
 					</xp:label>
 					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
-						required="true" styleClass="btn btn-default form-control">
+						required="true">
 						<xp:this.validators>
 							<xp:validateRequired message="Please provide a file">
 							</xp:validateRequired>
 						</xp:this.validators>
 					</xp:fileUpload>
+					<xe:tooltip id="tooltip3" for="fileUpload1"
+						position="below" label="Select a file from your local PC">
+					</xe:tooltip>
 				</div>
 				<br />
 				<div class="form-group">

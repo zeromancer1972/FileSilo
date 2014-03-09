@@ -81,7 +81,7 @@ dojo.addOnLoad( function() {
 		$(this).select();
 	}).mouseup( function() {
 		return false;
-	});
+	});	
 })
 
 var showKey = function(id) {
