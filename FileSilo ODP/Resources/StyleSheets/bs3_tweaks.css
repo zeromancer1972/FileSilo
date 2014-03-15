@@ -1,3 +1,7 @@
+body {
+	background-color: #eee;
+}
+
 .ckeditor * {
 	box-sizing: content-box;
 	-moz-box-sizing: content-box;
@@ -25,7 +29,7 @@
 
 .actionbar .btn {
 	margin-right: 4px;
-	}
+}
 
 .btn-custom-green {
 	background-color: #abd100;
@@ -54,6 +58,7 @@
 	border-left: solid 1px #ddd;
 	border-right: solid 1px #ddd;
 	border-bottom: solid 1px #ddd;
+	background-color: #fff;
 }
 
 .logindialog {

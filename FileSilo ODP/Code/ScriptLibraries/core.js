@@ -96,12 +96,12 @@ $(document).on(
 		function(e) {
 			var $this = $(this);
 			if (!$this.hasClass('panel-collapsed')) {
-				$this.parents('.panel').find('.panel-body').fadeOut();
+				$this.parents('.panel').find('.panel-body').hide();
 				$this.addClass('panel-collapsed');
 				$this.find('i').removeClass('glyphicon-chevron-up').addClass(
 						'glyphicon-chevron-down');
 			} else {
-				$this.parents('.panel').find('.panel-body').fadeIn();
+				$this.parents('.panel').find('.panel-body').show();
 				$this.removeClass('panel-collapsed');
 				$this.find('i').removeClass('glyphicon-chevron-down').addClass(
 						'glyphicon-chevron-up');
