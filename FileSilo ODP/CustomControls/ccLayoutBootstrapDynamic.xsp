@@ -13,6 +13,8 @@ if(url.indexOf(".xsp")==-1){
 	<xp:this.resources>
 		<xp:bundle src="/app.properties" var="app"></xp:bundle>
 	</xp:this.resources>
+	
+	<xc:ccBSCKE></xc:ccBSCKE>
 
 	<xp:div id="page" disableTheme="true">
 		<xc:ccStandby></xc:ccStandby>
@@ -32,12 +34,10 @@ if(url.indexOf(".xsp")==-1){
 
 					<xp:link disableTheme="true" id="link2">
 						<xp:this.styleClass><![CDATA[#{javascript:return "navbar-brand " + (view.getPageName().indexOf("index")==-1 ? "nav-disabled" : "")}]]></xp:this.styleClass>
-						<xp:image
-							style="margin-left:-12px;margin-right:10px;overflow:hidden"
+						<xp:image style="margin-left:-12px;margin-right:10px;overflow:hidden"
 							url="/silo_small.png" id="image1">
 						</xp:image>
-						<xp:text value="#{javascript:@DbTitle()}"
-							style="color:rgb(255,255,255)">
+						<xp:text value="#{javascript:@DbTitle()}" style="color:rgb(255,255,255)">
 						</xp:text>
 						<xp:eventHandler event="onclick" submit="true"
 							refreshMode="partial" refreshId="page" immediate="true">
@@ -56,14 +56,13 @@ sessionScope.put("page", "start")}]]></xp:this.action>
 							<xp:this.styleClass><![CDATA[#{javascript:try {sessionScope.get("page").indexOf("upload")!=-1 ? "active" : ""} catch(e){}}]]></xp:this.styleClass>
 							<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Upload]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
 							<xp:link id="link1" disableTheme="true">
-								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass><span
-									class="glyphicon glyphicon-cloud-upload">
+								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass>
+								<span class="glyphicon glyphicon-cloud-upload">
 								</span>
 								&#160;Upload a file
 
-								<xp:eventHandler event="onclick"
-									submit="true" refreshMode="partial" refreshId="page"
-									immediate="true">
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="page" immediate="true">
 									<xp:this.action><![CDATA[#{javascript:getComponent("dynamicContent1").show("upload")
 getComponent("dynamicContent2").show("upload")
 sessionScope.put("page", "upload")}]]></xp:this.action>
@@ -75,7 +74,8 @@ sessionScope.put("page", "upload")}]]></xp:this.action>
 							<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
 							<xp:this.styleClass><![CDATA[#{javascript:try {sessionScope.get("page").indexOf("manage")!=-1 ? "active" : ""} catch(e){}}]]></xp:this.styleClass>
 							<xp:link disableTheme="true" id="link3">
-								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass><span class="glyphicon glyphicon-paperclip">
+								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass>
+								<span class="glyphicon glyphicon-paperclip">
 								</span>
 								&#160;Manage collections
 								<xp:eventHandler event="onclick" submit="true"
@@ -90,7 +90,8 @@ sessionScope.put("page", "manage")}]]></xp:this.action>
 							<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
 							<xp:this.styleClass><![CDATA[#{javascript:try {sessionScope.get("page").indexOf("recent")!=-1 ? "active" : ""} catch(e){}}]]></xp:this.styleClass>
 							<xp:link disableTheme="true" id="link4">
-								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass><span class="glyphicon glyphicon-flash">
+								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass>
+								<span class="glyphicon glyphicon-flash">
 								</span>
 								&#160;Activities
 								<xp:eventHandler event="onclick" submit="true"
@@ -126,13 +127,14 @@ sessionScope.put("page", "recent")}]]></xp:this.action>
 
 						<li class="dropdown">
 							<xp:link disableTheme="true" value="#">
-								
+
 								<xp:this.attrs>
 									<xp:attr name="data-toggle">
 										<xp:this.value><![CDATA[#{javascript:(view.getPageName().indexOf("index")==-1 ? "" : "dropdown")}]]></xp:this.value>
 									</xp:attr>
 								</xp:this.attrs>
-								<xp:this.styleClass><![CDATA[#{javascript:"dropdown-toggle "+(view.getPageName().indexOf("index")==-1 ? "nav-disabled" : "")}]]></xp:this.styleClass><xp:text>
+								<xp:this.styleClass><![CDATA[#{javascript:"dropdown-toggle "+(view.getPageName().indexOf("index")==-1 ? "nav-disabled" : "")}]]></xp:this.styleClass>
+								<xp:text>
 									<xp:this.value><![CDATA[#{javascript:var uploads = database.search("SELECT Form=\"file\" & @IsAvailable($PublicAccess)").getCount();
 var uploadtext = (uploads>0)?" ("+uploads.toString()+")":""; 
 
@@ -146,8 +148,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 									<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
 									<xp:link
 										value="#{javascript:@UserName().equals('Anonymous')?'/login.xsp':'javascript:doLogoutDialog()'}">
-										<span
-											class="glyphicon glyphicon-user">
+										<span class="glyphicon glyphicon-user">
 										</span>
 										&#160;
 										<xp:text>
@@ -175,10 +176,10 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 			</div>
 		</nav>
 
-		<div class="pagehelp">
-			<div class="container" style="padding-top:50px">
-				<xp:callback facetName="facetLeft" id="facetLeft"></xp:callback>
-			</div>
+		<div class="pagehelp">			
+				<div class="container" style="padding-top:50px">
+					<xp:callback facetName="facetLeft" id="facetLeft"></xp:callback>
+				</div>
 		</div>
 
 		<div class="container" style="padding-bottom:70px">
@@ -213,12 +214,10 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 							<xp:link disableTheme="true">
 								<xp:this.text><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']+" | © 2013, 2014 Oliver Busse, Apache License 2.0"}]]></xp:this.text>
 								<xp:this.attrs>
-									<xp:attr name="data-target"
-										value="#aboutbox">
+									<xp:attr name="data-target" value="#aboutbox">
 
 									</xp:attr>
-									<xp:attr name="data-toggle"
-										value="modal">
+									<xp:attr name="data-toggle" value="modal">
 									</xp:attr>
 								</xp:this.attrs>
 							</xp:link>

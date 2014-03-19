@@ -81,7 +81,10 @@ dojo.addOnLoad( function() {
 		$(this).select();
 	}).mouseup( function() {
 		return false;
-	});	
+	});
+	$("[data-toggle=tooltip]").tooltip( {
+
+	});
 })
 
 var showKey = function(id) {
@@ -106,4 +109,20 @@ $(document).on(
 				$this.find('i').removeClass('glyphicon-chevron-down').addClass(
 						'glyphicon-chevron-up');
 			}
-		})
+		});
+
+dojo._xhr = dojo.xhr;
+var loadOld;
+function hijacked(response, ioArgs) {
+	// your code or function here (pre-processed)
+	loadOld(response, ioArgs);
+	// your code or function here (post-processed)
+	$("[data-toggle=tooltip]").tooltip( {
+
+	});
+}
+dojo.xhr = function(mode, args, bool) {
+	loadOld = args["load"];
+	args["load"] = hijacked;
+	dojo._xhr(mode, args, bool);
+}

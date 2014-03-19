@@ -40,19 +40,23 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 
 
 				<div class="formgroup">
-					<xp:label value="Choose a file from your PC" id="label2" for="fileUpload1"
-						disableTheme="true">
+					<xp:label value="Choose a file from your PC" id="label2"
+						for="fileUpload1" disableTheme="true">
 					</xp:label>
 					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
-						required="true">
+						required="true" title="Select a file from your local PC">
 						<xp:this.validators>
 							<xp:validateRequired message="Please provide a file">
 							</xp:validateRequired>
 						</xp:this.validators>
+						<xp:this.attrs>
+							<xp:attr name="data-placement" value="bottom">
+							</xp:attr>
+							<xp:attr name="data-toggle" value="tooltip">
+							</xp:attr>
+						</xp:this.attrs>
 					</xp:fileUpload>
-					<xe:tooltip id="tooltip3" for="fileUpload1"
-						position="below" label="Select a file from your local PC">
-					</xe:tooltip>
+					
 				</div>
 				<br />
 				<div class="form-group">
@@ -61,19 +65,29 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 					</xp:label>
 					<xp:message id="message1" for="inputText1" styleClass="alert alert-danger msg">
 					</xp:message>
-					<xp:inputText id="inputText1" value="#{document1.fileCreator}"
-						required="true" styleClass="form-control">
+					<xp:inputText id="inputText1"
+						value="#{document1.fileCreator}" required="true"
+						styleClass="form-control" title="Please enter your name">
 						<xp:this.validators>
-							<xp:validateRequired message="Please enter your name">
+							<xp:validateRequired
+								message="Please enter your name">
 							</xp:validateRequired>
 						</xp:this.validators>
 						<xp:this.attrs>
-							<xp:attr name="placeholder" value="Tell me who you are, e.g. John Doe">
+							<xp:attr name="data-toggle"
+								value="tooltip">
+							</xp:attr>
+							<xp:attr name="placeholder"
+								value="Tell me who you are, e.g. John Doe">
+							</xp:attr>
+							<xp:attr name="data-placement"
+								value="bottom">
 							</xp:attr>
 						</xp:this.attrs>
-					<xp:this.defaultValue><![CDATA[#{javascript:if(!@UserName().equals("Anonymous")) {
+						<xp:this.defaultValue><![CDATA[#{javascript:if(!@UserName().equals("Anonymous")) {
 	return @Name("[Abbreviate]", @UserName())
-}}]]></xp:this.defaultValue></xp:inputText>
+}}]]></xp:this.defaultValue>
+					</xp:inputText>
 				</div>
 
 				<div class="form-group">
@@ -106,8 +120,8 @@ if(sessionScope.get("uploadSuccessful")!=null){
 						<xp:link escape="true" id="link1">
 							<xp:this.text><![CDATA[#{javascript:"You can find it here"}]]></xp:this.text>
 
-							<xp:eventHandler event="onclick"
-								submit="true" refreshMode="complete">
+							<xp:eventHandler event="onclick" submit="true"
+								refreshMode="complete">
 								<xp:this.action><![CDATA[#{javascript:sessionScope.put("page", "start");
 url = sessionScope.get("uploadSuccessful");
 

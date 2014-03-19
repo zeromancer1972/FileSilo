@@ -73,7 +73,7 @@
 									disableTheme="true">
 								</xp:inputRichText>
 							</td>
-							
+
 							<td>
 								<xp:link escape="true" id="link2">
 									<xp:this.text><![CDATA[#{javascript:doc.getValue("fileKey")}]]></xp:this.text>
@@ -89,15 +89,12 @@
 							</td>
 							<td>
 								<span class="pull-right">
-									<xp:link
-										styleClass="btn btn-sm btn-info" escape="true" text=""
-										id="link7">
+									<xp:link styleClass="btn btn-sm btn-info" escape="true"
+										title="Display URLs to this collection" id="link7">
 										<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
-										<span
-											class="glyphicon glyphicon-globe" title="Show URL">
+										<span class="glyphicon glyphicon-globe" title="Show URL">
 										</span>
-										<xp:eventHandler event="onclick"
-											submit="false">
+										<xp:eventHandler event="onclick" submit="false">
 											<xp:this.script><![CDATA[// dialog confirm
 var url = "#{javascript:context.getUrl().toString()}";
 url = url.substring(0, url.indexOf("index.xsp"));
@@ -105,9 +102,15 @@ var urlCollection = url + "file.xsp?action=openDocument&documentId=#{javascript:
 var urlKey = url + "index.xsp?key=#{javascript:doc.getDocument().getItemValueString('fileKey')}";
 dialogURL(urlCollection, urlKey);]]></xp:this.script>
 										</xp:eventHandler>
+										<xp:this.attrs>
+											<xp:attr name="data-placement" value="bottom">
+											</xp:attr>
+											<xp:attr name="data-toggle" value="tooltip">
+											</xp:attr>
+										</xp:this.attrs>
 									</xp:link>
 								</span>
-							</td>							
+							</td>
 							<td>
 								<xp:link escape="true" id="link3">
 									<xp:this.text><![CDATA[#{javascript:@Name("[Abbreviate]",doc.getValue("fileReaders"))}]]></xp:this.text>
@@ -154,13 +157,19 @@ dialogURL(urlCollection, urlKey);]]></xp:this.script>
 							<td>
 								<span class="pull-right">
 									<xp:link styleClass="btn btn-sm btn-danger" escape="true"
-										text="" id="link6">
+										text="" id="link6" title="Delete collection">
 
 										<span class="glyphicon glyphicon-trash" title="Delete collection"></span>
 										<xp:eventHandler event="onclick" submit="false">
 											<xp:this.script><![CDATA[// dialog confirm
 confirmDelete("#{id:delAction}")]]></xp:this.script>
 										</xp:eventHandler>
+										<xp:this.attrs>
+											<xp:attr name="data-placement" value="bottom">
+											</xp:attr>
+											<xp:attr name="data-toggle" value="tooltip">
+											</xp:attr>
+										</xp:this.attrs>									
 									</xp:link>
 									<xp:link text="action" id="delAction" style="display:none">
 										<xp:eventHandler event="onclick" submit="true"

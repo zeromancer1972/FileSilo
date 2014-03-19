@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
-
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xpt="http://www.openntf.org/xsp/xpt">
 	<xp:this.resources>
 		<xp:bundle src="/app.properties" var="app"></xp:bundle>
 	</xp:this.resources>
+
 	<div id="aboutbox" class="modal" data-backdrop="static">
 		<div class="modal-dialog">
 			<div class="modal-content">
@@ -18,25 +19,26 @@
 					</xp:text>
 				</div>
 				<div class="modal-body">
-					<p>
-						Created by Oliver Busse</p>
+					<p>Created by Oliver Busse</p>
 					<p>
 						<a href="http://about.me/oliverbusse" target="_blank">
-							http://about.me/oliverbusse</a>
+							http://about.me/oliverbusse
+						</a>
 					</p>
 					<p>
 						This software is licensed under the Apache
 						License 2.0
 					</p>
 					<p>
-						Made with&#160;
+						Made with love and &#160;
 						<a href="http://getbootstrap.com" target="_blank">
 							Twitter Bootstrap 3
-						</a>&#160; and tons of great stuff from OpenNTF and XSnippets
+						</a>
 					</p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-block btn-custom-green" data-dismiss="modal">
+					<button type="button" class="btn btn-block btn-custom-green"
+						data-dismiss="modal">
 						OK
 					</button>
 				</div>
