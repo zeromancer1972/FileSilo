@@ -2,7 +2,10 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xc="http://www.ibm.com/xsp/custom"
 	xmlns:xe="http://www.ibm.com/xsp/coreex">
 	<xp:this.beforePageLoad><![CDATA[#{javascript:sessionScope.put("customerKey", context.getUrlParameter("key"))
-sessionScope.put("uploadSuccessful", null)}]]></xp:this.beforePageLoad>
+sessionScope.put("uploadSuccessful", null)
+if(context.getUrlParameter("key")!=null && context.getUrlParameter("key")!=""){
+	sessionScope.put("page", null)
+}}]]></xp:this.beforePageLoad>
 	<xc:ccLayoutBootstrapDynamic>
 		<xp:this.facets>
 			<xe:dynamicContent id="dynamicContent2" xp:key="facetMiddle">
