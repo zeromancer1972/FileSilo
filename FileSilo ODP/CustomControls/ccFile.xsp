@@ -82,7 +82,7 @@ log.add("Collection saved", log.getUserName() + " saved collection "+collectionn
 		<xp:div styleClass="actionbar">
 			<xp:div styleClass="">
 				<xp:button id="button1" rendered="#{javascript:currentDocument.isEditable()}"
-					styleClass="btn btn-custom-green">
+					styleClass="btn btn-default">
 					<span class="glyphicon glyphicon-floppy-disk">
 					</span>
 					&#160;Save
@@ -94,8 +94,7 @@ log.add("Collection saved", log.getUserName() + " saved collection "+collectionn
 					</xp:eventHandler>
 				</xp:button>
 
-				<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
-					styleClass="btn btn-custom-green">
+				<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}" styleClass="btn btn-default">
 					<span class="glyphicon glyphicon-floppy-saved">
 					</span>
 					&#160;Save &amp; Close
@@ -127,7 +126,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xp:eventHandler>
 				</xp:button>
 
-				<xp:button id="button4" styleClass="btn btn-warning">
+				<xp:button id="button4" styleClass="btn btn-default">
 					<span class="glyphicon glyphicon-chevron-left"></span>
 					&#160;
 
@@ -138,9 +137,16 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xp:eventHandler>
 				</xp:button>
 				<xp:panel tagName="span"
-					styleClass="pull-right badge glyphicon glyphicon-cloud-upload"
-					style="font-size:24px" title="This collection is an upload">
+					styleClass="pull-right badge glyphicon glyphicon-cloud-upload" style="font-size:30px"
+					title="This collection was uploaded. If you save it, the upload flag will be removed">
 					<xp:this.rendered><![CDATA[#{javascript:currentDocument.getDocument().getItemValueString("fileUpload").equals("1")}]]></xp:this.rendered>
+					
+					<xp:this.attrs>
+						<xp:attr name="data-placement" value="left">
+						</xp:attr>
+						<xp:attr name="data-toggle" value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
 				</xp:panel>
 			</xp:div>
 		</xp:div>
@@ -203,7 +209,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 							</xp:attr>
 						</xp:this.attrs>
 					</xp:inputText>
-					
+
 				</xp:div>
 				<xp:div styleClass="form-group">
 					<xp:label value="Customer key *&#160;" id="fileKey_Label1"
@@ -254,7 +260,8 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					<xp:fileDownload rows="30" id="fileDownload1"
 						displayLastModified="true" value="#{document1.fileAttachment}"
 						allowDelete="true" hideWhen="true" style="width:100%"
-						displayCreated="false" deleteMessage="Delete this file?" styleClass="table table-striped table-hover" disableTheme="true">
+						displayCreated="false" deleteMessage="Delete this file?"
+						styleClass="table table-striped table-hover" disableTheme="true">
 					</xp:fileDownload>
 					<xp:br></xp:br>
 					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
@@ -263,7 +270,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 							<xp:this.script><![CDATA[dojo.byId("#{id:button1}").click();]]></xp:this.script>
 						</xp:eventHandler>
 					</xp:fileUpload>
-					
+
 				</xp:div>
 			</div>
 			<div class="tab-pane fade" id="desc">
@@ -272,12 +279,10 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						disableTheme="true">
 					</xp:label>
 
-					<xp:inputRichText id="inputRichText1"
-						value="#{document1.fileMessage}" disableTheme="true"
-						styleClass="ckeditor">
+					<xp:inputRichText id="inputRichText1" value="#{document1.fileMessage}"
+						disableTheme="true" styleClass="ckeditor">
 						<xp:this.dojoAttributes>
-							<xp:dojoAttribute name="height"
-								value="200">
+							<xp:dojoAttribute name="height" value="200">
 							</xp:dojoAttribute>
 							<xp:dojoAttribute name="skin">
 								<xp:this.value><![CDATA[#{javascript:return @ClientType().equals("Web") ? "BootstrapCK-Skin,/"+database.getFilePath()+"/bscke/" : ""}]]></xp:this.value>
@@ -361,7 +366,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 							</xp:attr>
 						</xp:this.attrs>
 					</xp:inputText>
-					
+
 				</xp:div>
 			</div>
 			<div class="pull-right" style="margin-top:10px;">

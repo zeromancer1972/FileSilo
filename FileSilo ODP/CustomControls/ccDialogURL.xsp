@@ -22,13 +22,13 @@
 						</div>
 						<div class="col-lg-10">
 							<div class="form-group">
-								<label for="urlCollection">URL to collection
+								<label for="urlCollection">URL to this collection
 								</label>
 								<input class="form-control select-all" type="text"
 									id="urlCollection" name="urlCollection"></input>
 							</div>
 							<div class="form-group">
-								<label for="urlKey">URL to key
+								<label for="urlKey">URL to this customer key
 								</label>
 								<input class="form-control select-all" type="text" id="urlKey"
 									name="urlKey"></input>

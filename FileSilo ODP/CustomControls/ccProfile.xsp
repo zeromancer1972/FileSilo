@@ -2,8 +2,11 @@
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
 	<xp:div styleClass="actionbar">
 		<xp:div styleClass="">
-			<xp:button value="Save" id="button1"
-				rendered="#{javascript:currentDocument.isEditable()}" styleClass="btn btn-custom-green">
+			<xp:button id="button1" rendered="#{javascript:currentDocument.isEditable()}"
+				styleClass="btn btn-default">
+				<span class="glyphicon glyphicon-floppy-disk">
+				</span>
+				&#160;Save
 				<xp:eventHandler event="onclick" submit="true"
 					refreshMode="complete">
 					<xp:this.action>
@@ -13,8 +16,10 @@
 			</xp:button>
 
 			<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
-				styleClass="btn btn-custom-green">
-				<xp:this.value><![CDATA[Save & close]]></xp:this.value>
+				styleClass="btn btn-default">
+				<span class="glyphicon glyphicon-floppy-saved">
+				</span>
+				&#160;Save &amp; Close
 				<xp:eventHandler event="onclick" submit="true"
 					refreshMode="complete">
 					<xp:this.action>
@@ -29,8 +34,10 @@
 				</xp:eventHandler>
 			</xp:button>
 
-			<xp:button value="Edit" id="button3" styleClass="btn btn-default">
-
+			<xp:button id="button3" styleClass="btn btn-default">
+				<span class="glyphicon glyphicon-edit">
+				</span>
+				&#160;Edit
 				<xp:this.rendered><![CDATA[#{javascript:var ctx = com.ibm.domino.xsp.module.nsf.NotesContext.getCurrent()
 return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEditable()}]]></xp:this.rendered>
 				<xp:eventHandler event="onclick" submit="true"
@@ -41,7 +48,9 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				</xp:eventHandler>
 			</xp:button>
 
-			<xp:button id="button4" styleClass="btn btn-warning">
+			<xp:button id="button4" styleClass="btn btn-default">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+				&#160;
 				<xp:this.value><![CDATA[#{javascript:currentDocument.isEditable() ? "Cancel" : "Close"}]]></xp:this.value>
 				<xp:eventHandler event="onclick" submit="true"
 					refreshMode="complete" immediate="true">
