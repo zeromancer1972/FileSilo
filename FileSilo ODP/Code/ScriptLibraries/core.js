@@ -8,6 +8,16 @@ actionDelete = function() {
 	dojo.byId($("#confirmdelete").attr("rel")).click();
 }
 
+confirmRemoveLogs = function() {
+	$("#confirmdremovelogs").modal( {
+		backdrop : "static"
+	});
+}
+
+actionRemoveLogs = function() {
+	$(".btnRemoveLogs").click();
+}
+
 dialogURL = function(urlCollection, urlKey) {
 	$("#urlCollection").val(urlCollection);
 	$("#urlKey").val(urlKey);
