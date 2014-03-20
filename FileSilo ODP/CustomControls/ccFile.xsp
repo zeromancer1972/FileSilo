@@ -254,7 +254,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					<xp:fileDownload rows="30" id="fileDownload1"
 						displayLastModified="true" value="#{document1.fileAttachment}"
 						allowDelete="true" hideWhen="true" style="width:100%"
-						displayCreated="false" deleteMessage="Delete this file?">
+						displayCreated="false" deleteMessage="Delete this file?" styleClass="table table-striped table-hover" disableTheme="true">
 					</xp:fileDownload>
 					<xp:br></xp:br>
 					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"

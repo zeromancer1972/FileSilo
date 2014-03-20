@@ -125,3 +125,11 @@ a.nav-disabled {
 	-webkit-border-top-left-radius: 3px;
 	-webkit-border-top-right-radius: 3px;
 }
+
+.table th span.xspTextComputedField {
+	font-weight: bold;
+}
+
+.table .xspColumn {
+	padding: 8px !important;
+}

@@ -103,7 +103,7 @@ var urlKey = url + "index.xsp?key=#{javascript:doc.getDocument().getItemValueStr
 dialogURL(urlCollection, urlKey);]]></xp:this.script>
 										</xp:eventHandler>
 										<xp:this.attrs>
-											<xp:attr name="data-placement" value="bottom">
+											<xp:attr name="data-placement" value="left">
 											</xp:attr>
 											<xp:attr name="data-toggle" value="tooltip">
 											</xp:attr>
@@ -165,7 +165,7 @@ dialogURL(urlCollection, urlKey);]]></xp:this.script>
 confirmDelete("#{id:delAction}")]]></xp:this.script>
 										</xp:eventHandler>
 										<xp:this.attrs>
-											<xp:attr name="data-placement" value="bottom">
+											<xp:attr name="data-placement" value="left">
 											</xp:attr>
 											<xp:attr name="data-toggle" value="tooltip">
 											</xp:attr>

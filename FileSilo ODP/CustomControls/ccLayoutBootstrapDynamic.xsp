@@ -136,7 +136,7 @@ sessionScope.put("page", "recent")}]]></xp:this.action>
 								<xp:this.styleClass><![CDATA[#{javascript:"dropdown-toggle "+(view.getPageName().indexOf("index")==-1 ? "nav-disabled" : "")}]]></xp:this.styleClass>
 								<xp:text>
 									<xp:this.value><![CDATA[#{javascript:var uploads = database.search("SELECT Form=\"file\" & @IsAvailable($PublicAccess)").getCount();
-var uploadtext = (uploads>0)?" ("+uploads.toString()+")":""; 
+var uploadtext = (uploads>0)?" ("+uploads.toString()+" uploads)":""; 
 
 @UserName().equals("Anonymous") ? "Howdy, stranger" : "Welcome, "+@Name("[CN]", @UserName())+uploadtext}]]></xp:this.value>
 								</xp:text>
@@ -190,10 +190,10 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 			</div>
 		</div>
 
-		<nav class="navbar navbar-default navbar-fixed-bottom " role="navigation"
+		<nav class="navbar navbar-inverse navbar-fixed-bottom " role="navigation"
 			id="footer">
 
-			<nav class="navbar navbar-default navbar-fixed-bottom">
+			<nav class="navbar navbar-inverse navbar-fixed-bottom">
 				<div class="container">
 					<ul class="nav navbar-nav" style="margin-left:-14px;">
 						<li>

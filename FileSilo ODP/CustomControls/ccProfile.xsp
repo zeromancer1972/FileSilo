@@ -11,7 +11,7 @@
 					</xp:this.action>
 				</xp:eventHandler>
 			</xp:button>
-			
+
 			<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
 				styleClass="btn btn-custom-green">
 				<xp:this.value><![CDATA[Save & close]]></xp:this.value>
@@ -28,7 +28,7 @@
 					</xp:this.action>
 				</xp:eventHandler>
 			</xp:button>
-			
+
 			<xp:button value="Edit" id="button3" styleClass="btn btn-default">
 
 				<xp:this.rendered><![CDATA[#{javascript:var ctx = com.ibm.domino.xsp.module.nsf.NotesContext.getCurrent()
@@ -40,7 +40,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xp:this.action>
 				</xp:eventHandler>
 			</xp:button>
-			
+
 			<xp:button id="button4" styleClass="btn btn-warning">
 				<xp:this.value><![CDATA[#{javascript:currentDocument.isEditable() ? "Cancel" : "Close"}]]></xp:this.value>
 				<xp:eventHandler event="onclick" submit="true"
@@ -50,55 +50,84 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 			</xp:button>
 		</xp:div>
 	</xp:div>
-	<xp:div styleClass="form-group">
-		<xp:label value="Mail address" id="profileMail_Label1" for="profileMail1"
-			disableTheme="true">
-		</xp:label>
-		&#160;
-		<xe:namePicker id="namePicker1" for="profileMail1"
-			dialogTitle="Choose names" rendered="#{javascript:currentDocument.isEditable()}">
-			<xe:this.dataProvider>
-				<xe:dominoNABNamePicker people="true"
-					addressBookSel="db-name">
-					<xe:this.addressBookDb><![CDATA[#{javascript:database.getServer()+"!!names.nsf"}]]></xe:this.addressBookDb>
-				</xe:dominoNABNamePicker>
-			</xe:this.dataProvider>
-		</xe:namePicker>
-		<xp:inputText value="#{document1.profileMail}" id="profileMail1"
-			styleClass="form-control">
-			<xp:this.attrs>
-				<xp:attr name="placeholder" value="Enter a valid SMTP or Notes mail address">
-				</xp:attr>
-			</xp:this.attrs>
-		</xp:inputText>
-	</xp:div>
-	<xp:div styleClass="form-group">
-		<xp:label value="Custom subject" id="label2" for="customMessage"
-			disableTheme="true">
-		</xp:label>
-		<xp:inputText id="customMessage" styleClass="form-control"
-			value="#{document1.profileMessage}">
-			<xp:this.attrs>
-				<xp:attr name="placeholder">
-					<xp:this.value><![CDATA[#{javascript:"You can use <DB> as placeholder for the database title"}]]></xp:this.value>
-				</xp:attr>
-			</xp:this.attrs>
-		</xp:inputText>
-	</xp:div>
-	<xp:div styleClass="form-group">
 
-		<xp:label value="Default number of days for expire date" id="label1"
-			for="profileAdjust" disableTheme="true">
-		</xp:label>
-		<xp:inputText id="profileAdjust" value="#{document1.profileAdjust}"
-			styleClass="form-control">
-			<xp:this.converter>
-				<xp:convertNumber type="number"></xp:convertNumber>
-			</xp:this.converter>
-			<xp:this.attrs>
-				<xp:attr name="placeholder" value="Enter a numeric value e.g. 30">
-				</xp:attr>
-			</xp:this.attrs>
-		</xp:inputText>
-	</xp:div>
+	<!-- Nav tabs -->
+	<ul class="nav nav-tabs">
+		<li class="active">
+			<a href="#general" data-toggle="tab">
+				<span class="glyphicon glyphicon-cog"></span>
+				&#160;Settings
+			</a>
+		</li>
+	</ul>
+
+	<div class="tab-content">
+		<div class="tab-pane fade in active" id="general">
+
+			<xp:div styleClass="form-group">
+				<xp:label value="Mail address" id="profileMail_Label1" for="profileMail1"
+					disableTheme="true">
+				</xp:label>
+				&#160;
+				<xe:namePicker id="namePicker1" for="profileMail1"
+					dialogTitle="Choose names" rendered="#{javascript:currentDocument.isEditable()}">
+					<xe:this.dataProvider>
+						<xe:dominoNABNamePicker people="true"
+							addressBookSel="db-name">
+							<xe:this.addressBookDb><![CDATA[#{javascript:database.getServer()+"!!names.nsf"}]]></xe:this.addressBookDb>
+						</xe:dominoNABNamePicker>
+					</xe:this.dataProvider>
+				</xe:namePicker>
+				<xp:inputText value="#{document1.profileMail}" id="profileMail1"
+					styleClass="form-control" title="Leave blank if you don't want a notification">
+					<xp:this.attrs>
+						<xp:attr name="placeholder" value="Enter a valid SMTP or Notes mail address">
+						</xp:attr>
+						<xp:attr name="data-placement" value="bottom">
+						</xp:attr>
+						<xp:attr name="data-toggle" value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+			<xp:div styleClass="form-group">
+				<xp:label value="Custom subject" id="label2" for="customMessage"
+					disableTheme="true">
+				</xp:label>
+				<xp:inputText id="customMessage" styleClass="form-control"
+					value="#{document1.profileMessage}"
+					title="If you receive notifications then this will be used a subject">
+					<xp:this.attrs>
+						<xp:attr name="placeholder">
+							<xp:this.value><![CDATA[#{javascript:"You can use <DB> as placeholder for the database title"}]]></xp:this.value>
+						</xp:attr>
+						<xp:attr name="data-placement" value="bottom">
+						</xp:attr>
+						<xp:attr name="data-toggle" value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+			<xp:div styleClass="form-group">
+
+				<xp:label value="Default number of days for expire date"
+					id="label1" for="profileAdjust" disableTheme="true">
+				</xp:label>
+				<xp:inputText id="profileAdjust" value="#{document1.profileAdjust}"
+					styleClass="form-control" title="The default period is 30 days if you leave it blank">
+					<xp:this.converter>
+						<xp:convertNumber type="number"></xp:convertNumber>
+					</xp:this.converter>
+					<xp:this.attrs>
+						<xp:attr name="placeholder" value="Enter a numeric value e.g. 30">
+						</xp:attr>
+						<xp:attr name="data-placement" value="bottom">
+						</xp:attr>
+						<xp:attr name="data-toggle" value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+		</div>
+	</div>
 </xp:view>
