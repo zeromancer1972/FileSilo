@@ -14,7 +14,7 @@ if(url.indexOf(".xsp")==-1){
 		<xp:bundle src="/app.properties" var="app"></xp:bundle>
 	</xp:this.resources>
 	
-	<xc:ccBSCKE></xc:ccBSCKE>
+	
 
 	<xp:div id="page" disableTheme="true">
 		<xc:ccStandby></xc:ccStandby>

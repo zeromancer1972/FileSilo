@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.0'
  replicaid='C1257BDF00312926'>
-<noteinfo noteid='6e6' unid='B49DE291F72A0682C1257BDF00744A59' sequence='46'>
+<noteinfo noteid='7ce' unid='B49DE291F72A0682C1257BDF00744A59' sequence='48'>
 <created><datetime dst='true'>20130907T231012,09+02</datetime></created>
-<modified><datetime>20140224T185624,25+01</datetime></modified>
-<revised><datetime>20140212T023402,20+01</datetime></revised>
-<lastaccessed><datetime>20140224T185624,25+01</datetime></lastaccessed>
-<addedtofile><datetime>20140212T022017,75+01</datetime></addedtofile></noteinfo>
+<modified><datetime>20140320T010300,48+01</datetime></modified>
+<revised><datetime>20140320T010300,47+01</datetime></revised>
+<lastaccessed><datetime>20140320T010300,48+01</datetime></lastaccessed>
+<addedtofile><datetime>20140320T005831,64+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
 <item name='$FormatNote' summary='true'>

@@ -77,6 +77,7 @@ var collectionname = doc.getItemValueString("fileID");
 log.add("Collection saved", log.getUserName() + " saved collection "+collectionname)}]]></xp:this.postSaveDocument>
 		</xp:dominoDocument>
 	</xp:this.data>
+	<xc:ccBSCKE></xc:ccBSCKE>
 	<xp:div id="theform">
 		<xp:div styleClass="actionbar">
 			<xp:div styleClass="">
