@@ -6,12 +6,12 @@
 	<xp:div id="list" styleClass="panel panel-default">
 		<div class="panel-heading" style="padding-bottom:24px">
 			<h3 class="panel-title">
-				Activities (entries will automatically be removed after 7 days)
+				Activities (entries will automatically be removed after
+				7 days)
 			</h3>
 			<span class="pull-right">
 				<xp:link escape="true" text="Remove all logs" id="link2"
-					styleClass="btn btn-danger"
-					rendered="#{javascript:!compositeData.widget}">
+					styleClass="btn btn-danger" rendered="#{javascript:!compositeData.widget}">
 					<i class="glyphicon glyphicon-trash"></i>
 					&#160;
 					<xp:eventHandler event="onclick" submit="false">
@@ -25,10 +25,13 @@
 			</span>
 			<xp:button value="btnRemoveLogs" id="button1" styleClass="btnRemoveLogs"
 				style="display:none">
-			<xp:eventHandler event="onclick" submit="true"
-				refreshMode="norefresh">
-				<xp:this.action><![CDATA[#{javascript:helper.removeLogs();}]]></xp:this.action>
-			</xp:eventHandler></xp:button>
+				<xp:eventHandler event="onclick" submit="true"
+					refreshMode="norefresh">
+					<xp:this.action><![CDATA[#{javascript:helper.removeLogs();}]]></xp:this.action>
+					<xp:this.onComplete>XSP.partialRefreshGet("#{id:page}");
+					</xp:this.onComplete>
+				</xp:eventHandler>
+			</xp:button>
 		</div>
 
 		<table class="table table-striped table-hover panel-body">

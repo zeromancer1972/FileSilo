@@ -1,24 +1,24 @@
 // core
-confirmDelete = function(id) {
+var confirmDelete = function(id) {
 	$("#confirmdelete").attr("rel", id).modal( {
 		backdrop : "static"
 	});
 }
-actionDelete = function() {
+var actionDelete = function() {
 	dojo.byId($("#confirmdelete").attr("rel")).click();
 }
 
-confirmRemoveLogs = function() {
+var confirmRemoveLogs = function() {
 	$("#confirmdremovelogs").modal( {
 		backdrop : "static"
 	});
 }
 
-actionRemoveLogs = function() {
+var actionRemoveLogs = function() {
 	$(".btnRemoveLogs").click();
 }
 
-dialogURL = function(urlCollection, urlKey) {
+var dialogURL = function(urlCollection, urlKey) {
 	$("#urlCollection").val(urlCollection);
 	$("#urlKey").val(urlKey);
 	$("#dialogurl").modal( {
@@ -26,13 +26,13 @@ dialogURL = function(urlCollection, urlKey) {
 	});
 }
 
-doLogoutDialog = function() {
+var doLogoutDialog = function() {
 	$("#confirmlogout").modal( {
 		backdrop : "static"
 	});
 }
 
-doLogout = function() {
+var doLogout = function() {
 	require( [ "dojo/cookie" ], function(cookie) {
 		if (cookie("DomAuthSessId")) {
 			cookie("DomAuthSessId", null, {
