@@ -21,6 +21,11 @@
 		<content-type>application/x-javascript</content-type>
 		<href>bootstrap-3.1.1-dist/js/bootstrap.min.js</href>
 	</resource>
+	
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>fileinput/bootstrap.file-input.js</href>
+	</resource>
 
 	<resource>
 		<content-type>application/x-javascript</content-type>

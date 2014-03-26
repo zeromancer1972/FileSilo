@@ -265,10 +265,13 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xp:fileDownload>
 					<xp:br></xp:br>
 					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
-						styleClass="">
+						title="Select a file from your local PC" styleClass="btn btn-primary">
 						<xp:eventHandler event="onchange" submit="false">
 							<xp:this.script><![CDATA[dojo.byId("#{id:button1}").click();]]></xp:this.script>
 						</xp:eventHandler>
+						<xp:this.attrs>
+								<xp:attr name="data-filename-placement" value="inside" />
+							</xp:this.attrs>
 					</xp:fileUpload>
 
 				</xp:div>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex">
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
 	<xp:this.data>
 		<xp:dominoDocument var="document1" formName="file">
 			<xp:this.querySaveDocument><![CDATA[#{javascript:var unique = @Unique();
@@ -24,6 +25,11 @@ upload.sendInfo();
 log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Key: "+currentDocument.getValue("fileKey"), currentDocument.getDocument().getUniversalID())}]]></xp:this.postSaveDocument>
 		</xp:dominoDocument>
 	</xp:this.data>
+	
+	<xp:scriptBlock id="scriptBlock1" type="text/javascript">
+		<xp:this.value><![CDATA[$('input[type=file]').bootstrapFileInput();]]></xp:this.value>
+	</xp:scriptBlock>
+
 	<xp:div id="panel">
 		<xp:div styleClass="panel panel-default">
 			<xp:div styleClass="panel-heading" rendered="false">
@@ -32,31 +38,32 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 				</xp:label>
 			</xp:div>
 			<div class="panel-heading">
-				<h4 class="panel-title">You can upload one file with this form. The upload
-					will be checked and approved afterwards by administrative
-					authorities</h4>
+				<h4 class="panel-title">
+					You can upload one file with this form. The upload
+					will
+					be checked and approved afterwards by
+					administrative authorities
+				</h4>
 			</div>
 			<xp:div styleClass="panel-body">
 
 
 				<div class="formgroup">
 					<xp:label value="Choose a file from your PC" id="label2"
-						for="fileUpload1" disableTheme="true">
+						for="fileUpload1" disableTheme="true" rendered="false">
 					</xp:label>
-					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
-						required="true" title="Select a file from your local PC">
-						<xp:this.validators>
-							<xp:validateRequired message="Please provide a file">
-							</xp:validateRequired>
-						</xp:this.validators>
-						<xp:this.attrs>
-							<xp:attr name="data-placement" value="bottom">
-							</xp:attr>
-							<xp:attr name="data-toggle" value="tooltip">
-							</xp:attr>
-						</xp:this.attrs>
-					</xp:fileUpload>
-					
+					<div>
+						<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
+							required="true" title="Select a file from your local PC" styleClass="btn btn-primary">
+							<xp:this.validators>
+								<xp:validateRequired message="Please provide a file">
+								</xp:validateRequired>
+							</xp:this.validators>
+							<xp:this.attrs>
+								<xp:attr name="data-filename-placement" value="inside" />
+							</xp:this.attrs>
+						</xp:fileUpload>
+					</div>
 				</div>
 				<br />
 				<div class="form-group">
@@ -65,23 +72,18 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 					</xp:label>
 					<xp:message id="message1" for="inputText1" styleClass="alert alert-danger msg">
 					</xp:message>
-					<xp:inputText id="inputText1"
-						value="#{document1.fileCreator}" required="true"
-						styleClass="form-control" title="Please enter your name">
+					<xp:inputText id="inputText1" value="#{document1.fileCreator}"
+						required="true" styleClass="form-control" title="Please enter your name">
 						<xp:this.validators>
-							<xp:validateRequired
-								message="Please enter your name">
+							<xp:validateRequired message="Please enter your name">
 							</xp:validateRequired>
 						</xp:this.validators>
 						<xp:this.attrs>
-							<xp:attr name="data-toggle"
-								value="tooltip">
+							<xp:attr name="data-toggle" value="tooltip">
 							</xp:attr>
-							<xp:attr name="placeholder"
-								value="Tell me who you are, e.g. John Doe">
+							<xp:attr name="placeholder" value="Tell me who you are, e.g. John Doe">
 							</xp:attr>
-							<xp:attr name="data-placement"
-								value="bottom">
+							<xp:attr name="data-placement" value="bottom">
 							</xp:attr>
 						</xp:this.attrs>
 						<xp:this.defaultValue><![CDATA[#{javascript:if(!@UserName().equals("Anonymous")) {
@@ -92,7 +94,8 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 
 				<div class="form-group">
 					<xp:button id="button1" styleClass="btn btn-custom-green btn-lg">
-						<span class="glyphicon glyphicon-cloud-upload"></span>
+						<span class="glyphicon glyphicon-cloud-upload">
+						</span>
 						&#160;Upload file
 						<xp:eventHandler event="onclick" submit="true"
 							refreshMode="complete">

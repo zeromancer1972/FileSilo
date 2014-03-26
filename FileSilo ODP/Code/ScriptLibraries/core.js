@@ -73,6 +73,7 @@ require( [ "dojo/_base/lang", "ibm/xsp/widget/layout/DateTextBox",
 });
 
 dojo.addOnLoad( function() {
+	$('input[type=file]').bootstrapFileInput();
 	dojo.query(".customerKey a").forEach( function(node, index, nodelist) {
 		dojo.connect(node, "click", function(evt) {
 			showKey(evt.target.innerHTML)
@@ -95,6 +96,8 @@ dojo.addOnLoad( function() {
 	$("[data-toggle=tooltip]").tooltip( {
 
 	});
+	
+
 })
 
 var showKey = function(id) {

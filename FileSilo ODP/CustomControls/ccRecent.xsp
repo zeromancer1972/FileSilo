@@ -6,8 +6,8 @@
 	<xp:div id="list" styleClass="panel panel-default">
 		<div class="panel-heading" style="padding-bottom:24px">
 			<h3 class="panel-title">
-				Activities (entries will automatically be removed after
-				7 days)
+				Activities (entries will be removed after
+				7 days automatically)
 			</h3>
 			<span class="pull-right">
 				<xp:link escape="true" text="Remove all logs" id="link2"
