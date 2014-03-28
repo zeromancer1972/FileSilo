@@ -196,7 +196,7 @@ log.add("Deletion", log.getUserName()+" deleted collection "+collectionname)}]]>
 			</tbody>
 		</table>
 		<div class="panel-footer">
-			<div style="padding: 5px 0px 20px 0px">
+			<div style="">
 				<xp:pager layout="Previous Group Next" partialRefresh="true"
 					id="pager1" for="repeat1">
 				</xp:pager>
