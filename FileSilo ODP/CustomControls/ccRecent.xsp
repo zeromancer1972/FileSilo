@@ -109,7 +109,7 @@ if(action.toLowerCase().indexOf("saved")!=-1){
 		<div class="panel-footer">
 			<div style="padding: 0px 0px 20px 0px">
 				<xp:pager layout="Previous Group Next" partialRefresh="true"
-					id="pager1" for="repeat1" disableTheme="true">
+					id="pager1" for="repeat1">
 				</xp:pager>
 			</div>
 		</div>

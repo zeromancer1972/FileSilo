@@ -175,7 +175,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+" uploads)":"";
 				</div><!-- /.navbar-collapse -->
 			</div>
 		</nav>
-
+		
 		<div class="pagehelp">			
 				<div class="container" style="padding-top:50px">
 					<xp:callback facetName="facetLeft" id="facetLeft"></xp:callback>
@@ -183,16 +183,13 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+" uploads)":"";
 		</div>
 
 		<div class="container" style="padding-bottom:70px">
-			<div class="row">
-				<div class="col-xs-12 col-md-12">
-					<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>
-				</div>
+			<div class="row">				
+					<xp:callback facetName="facetMiddle" id="facetMiddle"></xp:callback>				
 			</div>
 		</div>
 
 		<nav class="navbar navbar-inverse navbar-fixed-bottom " role="navigation"
 			id="footer">
-
 			<nav class="navbar navbar-inverse navbar-fixed-bottom">
 				<div class="container">
 					<ul class="nav navbar-nav" style="margin-left:-14px;">

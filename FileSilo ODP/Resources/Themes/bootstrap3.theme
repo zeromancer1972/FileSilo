@@ -1,27 +1,26 @@
-<theme extends="notes" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<theme extends="bootstrapv3.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
-	<resource>
-		<content-type>application/x-javascript</content-type>
-		<href>flick/js/jquery-1.10.2.js</href>
-	</resource>
+	<!--
+		<resource> <content-type>application/x-javascript</content-type>
+		<href>flick/js/jquery-1.10.2.js</href> </resource>
+	-->
+	
 	<resource>
 		<content-type>application/x-javascript</content-type>
 		<href>flick/js/jquery-ui-1.10.4.custom.min.js</href>
 	</resource>
+
 	<resource>
 		<content-type>text/css</content-type>
 		<href>flick/css/flick/jquery-ui-1.10.4.custom.min.css</href>
 	</resource>
-	<resource>
-		<content-type>text/css</content-type>
-		<href>bootstrap-3.1.1-dist/css/bootstrap.min.css</href>
-	</resource>
-	
-	<resource>
-		<content-type>application/x-javascript</content-type>
-		<href>bootstrap-3.1.1-dist/js/bootstrap.min.js</href>
-	</resource>
-	
+	<!--
+		<resource> <content-type>text/css</content-type>
+		<href>bootstrap-3.1.1-dist/css/bootstrap.min.css</href> </resource>
+
+		<resource> <content-type>application/x-javascript</content-type>
+		<href>bootstrap-3.1.1-dist/js/bootstrap.min.js</href> </resource>
+	-->
 	<resource>
 		<content-type>application/x-javascript</content-type>
 		<href>fileinput/bootstrap.file-input.js</href>

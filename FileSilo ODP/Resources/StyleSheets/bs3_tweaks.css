@@ -133,3 +133,15 @@ a.nav-disabled {
 .table .xspColumn {
 	padding: 8px !important;
 }
+
+/* BS4XPages tweaks */
+.container {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
