@@ -73,7 +73,7 @@ require( [ "dojo/_base/lang", "ibm/xsp/widget/layout/DateTextBox",
 });
 
 dojo.addOnLoad( function() {
-	$('input[type=file]').bootstrapFileInput();
+	$('.bsfile').bootstrapFileInput();
 	dojo.query(".customerKey a").forEach( function(node, index, nodelist) {
 		dojo.connect(node, "click", function(evt) {
 			showKey(evt.target.innerHTML)

@@ -53,15 +53,21 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 						for="fileUpload1" disableTheme="true" rendered="false">
 					</xp:label>
 					<div>
-						<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
-							required="true" title="Select a file from your local PC" styleClass="btn btn-primary">
+						<xp:fileUpload id="fileUpload1"
+							value="#{document1.fileAttachment}" required="true"
+							title="Select a file from your local PC">
 							<xp:this.validators>
-								<xp:validateRequired message="Please provide a file">
+								<xp:validateRequired
+									message="Please provide a file">
 								</xp:validateRequired>
 							</xp:this.validators>
 							<xp:this.attrs>
-								<xp:attr name="data-filename-placement" value="inside" />
+								<xp:attr name="data-filename-placement"
+									value="inside">
+									<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
+								</xp:attr>
 							</xp:this.attrs>
+							<xp:this.styleClass><![CDATA[#{javascript:@ClientType().equals("Web") ? "btn btn-primary bsfile" : ""}]]></xp:this.styleClass>
 						</xp:fileUpload>
 					</div>
 				</div>

@@ -264,14 +264,20 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						styleClass="table table-striped table-hover" disableTheme="true">
 					</xp:fileDownload>
 					<xp:br></xp:br>
-					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
-						title="Select a file from your local PC" styleClass="btn btn-primary">
-						<xp:eventHandler event="onchange" submit="false">
+					<xp:fileUpload id="fileUpload1"
+						value="#{document1.fileAttachment}"
+						title="Select a file from your local PC">
+						<xp:this.styleClass><![CDATA[#{javascript:@ClientType().equals("Web") ? "btn btn-primary bsfile" : ""}]]></xp:this.styleClass>
+						<xp:eventHandler event="onchange"
+							submit="false">
 							<xp:this.script><![CDATA[dojo.byId("#{id:button1}").click();]]></xp:this.script>
 						</xp:eventHandler>
 						<xp:this.attrs>
-								<xp:attr name="data-filename-placement" value="inside" />
-							</xp:this.attrs>
+							<xp:attr name="data-filename-placement"
+								value="inside">
+								<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
+							</xp:attr>
+						</xp:this.attrs>
 					</xp:fileUpload>
 
 				</xp:div>
