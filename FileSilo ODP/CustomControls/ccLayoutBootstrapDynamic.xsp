@@ -209,7 +209,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+" uploads)":"";
 					<ul class="nav navbar-nav navbar-right">
 						<li>
 							<xp:link disableTheme="true">
-								<xp:this.text><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']+" | © 2013, 2014 Oliver Busse, Apache License 2.0"}]]></xp:this.text>
+								<xp:this.text><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']+" | © 2013, 2014 Oliver Busse"}]]></xp:this.text>
 								<xp:this.attrs>
 									<xp:attr name="data-target" value="#aboutbox">
 
