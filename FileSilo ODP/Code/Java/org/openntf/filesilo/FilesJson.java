@@ -28,6 +28,12 @@ public class FilesJson implements Serializable {
 	@SuppressWarnings("unchecked")
 	public FilesJson() {
 		Session session = XSPUtil.getCurrentSession();
+
+		if (session.getEffectiveUserName().equals("Anonymous")) {
+			this.json = "{\"error\":\"you are not allowed to perform that operation\"}";
+			return;
+		}
+
 		ViewEntryCollection col = session.getCurrentDatabase().getView("files").getAllEntries();
 		ArrayList<Object> collections = new ArrayList<Object>();
 
@@ -39,11 +45,13 @@ public class FilesJson implements Serializable {
 		for (ViewEntry ent : col) {
 			Document doc = ent.getDocument();
 			HashMap<String, Object> collection = new HashMap<String, Object>();
+			collection.put("unid", doc.getUniversalID());
 			collection.put("id", doc.getItemValueString("fileId"));
 			collection.put("key", doc.getItemValueString("fileKey"));
 			collection.put("desc", doc.getItemValueString("fileMessage"));
 			collection.put("readers", doc.getItemValue("fileReaders"));
 			collection.put("authors", doc.getItemValue("fileAuthors"));
+			collection.put("upload", doc.hasItem("fileUpload"));
 			// date time stuff is a hassle...
 			List<DateTime> dtArray = doc.getItemValue("fileExpires");
 			try {
