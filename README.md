@@ -5,4 +5,4 @@ This is a simple XPages application to share files with others without using any
 
 Please notice:
 ==============
-With release 2.0.0 this application uses Bootstrap4XPages plugin.
+With release 2.0.0 this application uses Bootstrap4XPages plugin and the OpenNTF Domino API.
