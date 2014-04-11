@@ -205,6 +205,11 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+" uploads)":"";
 								FileSilo on GitHub
 						</a>
 						</li>
+						<li>
+						<xp:link escape="true" text="API" id="link6"
+							value="/api.xsp">
+						</xp:link>
+						</li>
 					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<li>
