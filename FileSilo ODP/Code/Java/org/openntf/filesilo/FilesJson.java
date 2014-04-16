@@ -5,7 +5,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Vector;
+
+import javax.faces.context.FacesContext;
 
 import org.openntf.domino.DateTime;
 import org.openntf.domino.Document;
@@ -20,6 +23,13 @@ import com.ibm.commons.util.io.json.JsonGenerator;
 import com.ibm.commons.util.io.json.JsonJavaFactory;
 import com.ibm.commons.util.io.json.JsonJavaObject;
 
+/**
+ * Class to produce JSON output of all collections in the database depending of
+ * your role and maybe the key in the URL
+ * 
+ * @author Oliver Busse (obusse@gmail.com)
+ * 
+ */
 public class FilesJson implements Serializable {
 
 	private static final long serialVersionUID = 3664069373171425206L;
@@ -27,58 +37,79 @@ public class FilesJson implements Serializable {
 
 	@SuppressWarnings("unchecked")
 	public FilesJson() {
-		Session session = XSPUtil.getCurrentSession();
-
-		if (session.getEffectiveUserName().equals("Anonymous")) {
-			this.json = "{\"error\":\"you are not allowed to perform that operation\"}";
-			return;
-		}
-
-		ViewEntryCollection col = session.getCurrentDatabase().getView("files").getAllEntries();
+		// collections
 		ArrayList<Object> collections = new ArrayList<Object>();
 
+		// JSON output
 		JsonJavaObject jsobj = new JsonJavaObject();
 
-		// store count of all files
-		jsobj.put("count", col.getCount());
+		// key parameter?
+		FacesContext context = FacesContext.getCurrentInstance();
+		Map<String, String> params = context.getExternalContext().getRequestParameterMap();
+		String key = params.get("key");
+		jsobj.put("key", key);
+		key = (key == null) ? "" : key;
+		int count = 0;
+
+		Session session = XSPUtil.getCurrentSession();
+		boolean isAdmin = session.getCurrentDatabase().queryAccessRoles(session.getEffectiveUserName()).contains("[Admin]");
+		boolean show = false;
+
+		ViewEntryCollection col = session.getCurrentDatabase().getView("files").getAllEntries();
 
 		for (ViewEntry ent : col) {
 			Document doc = ent.getDocument();
-			HashMap<String, Object> collection = new HashMap<String, Object>();
-			collection.put("unid", doc.getUniversalID());
-			collection.put("id", doc.getItemValueString("fileId"));
-			collection.put("key", doc.getItemValueString("fileKey"));
-			collection.put("desc", doc.getItemValueString("fileMessage"));
-			collection.put("readers", doc.getItemValue("fileReaders"));
-			collection.put("authors", doc.getItemValue("fileAuthors"));
-			collection.put("upload", doc.hasItem("fileUpload"));
-			// date time stuff is a hassle...
-			List<DateTime> dtArray = doc.getItemValue("fileExpires");
-			try {
-				collection.put("expires", dtArray.get(0).toString());
-			} catch (Exception e) {
-				collection.put("expires", null);
+
+			// put only visible collections in the output (admin usage or
+			// the key is equal)
+			// reader fields are natively covered by the allentries
+			// entrycollection
+
+			if (key.equals("")) {
+				show = isAdmin;
+			} else {
+				show = key.equalsIgnoreCase(doc.getItemValueString("fileKey"));
 			}
 
-			// files
-			Vector attachments = session.evaluate("@AttachmentNames", doc);
-			ArrayList<HashMap<String, Object>> atts = new ArrayList<HashMap<String, Object>>();
-			for (int i = 0; i < attachments.size(); i++) {
-				EmbeddedObject eo = doc.getAttachment(attachments.get(i).toString());
+			if (show) {
+				HashMap<String, Object> collection = new HashMap<String, Object>();
+				collection.put("unid", doc.getUniversalID());
+				collection.put("id", doc.getItemValueString("fileId"));
+				collection.put("key", doc.getItemValueString("fileKey"));
+				collection.put("desc", doc.getItemValueString("fileMessage"));
+				collection.put("readers", doc.getItemValue("fileReaders"));
+				collection.put("authors", doc.getItemValue("fileAuthors"));
+				collection.put("upload", doc.hasItem("fileUpload"));
+				// date time stuff is a hassle...
+				List<DateTime> dtArray = doc.getItemValue("fileExpires");
 				try {
-					HashMap<String, Object> file = new HashMap<String, Object>();
-					file.put("name", eo.getName());
-					file.put("type", eo.getType());
-					file.put("size", eo.getFileSize());
-					atts.add(file);
+					collection.put("expires", dtArray.get(0).toString());
 				} catch (Exception e) {
-					// no files
+					collection.put("expires", null);
 				}
-			}
-			collection.put("files", atts);
-			collections.add(collection);
-		}
 
+				// files
+				Vector attachments = session.evaluate("@AttachmentNames", doc);
+				ArrayList<HashMap<String, Object>> atts = new ArrayList<HashMap<String, Object>>();
+				for (int i = 0; i < attachments.size(); i++) {
+					EmbeddedObject eo = doc.getAttachment(attachments.get(i).toString());
+					try {
+						HashMap<String, Object> file = new HashMap<String, Object>();
+						file.put("name", eo.getName());
+						file.put("type", eo.getType());
+						file.put("size", eo.getFileSize());
+						atts.add(file);
+					} catch (Exception e) {
+						// no files
+					}
+				}
+				collection.put("files", atts);
+				collections.add(collection);
+				count++;
+			}
+		}
+		// store count of all files
+		jsobj.put("count", count);
 		jsobj.put("collections", collections);
 		this.json = "{}";
 		try {
