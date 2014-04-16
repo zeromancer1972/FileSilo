@@ -10,6 +10,8 @@ import java.util.Vector;
 
 import javax.faces.context.FacesContext;
 
+import lotus.domino.NotesException;
+
 import org.openntf.domino.DateTime;
 import org.openntf.domino.Document;
 import org.openntf.domino.EmbeddedObject;
@@ -22,6 +24,7 @@ import com.ibm.commons.util.io.json.JsonException;
 import com.ibm.commons.util.io.json.JsonGenerator;
 import com.ibm.commons.util.io.json.JsonJavaFactory;
 import com.ibm.commons.util.io.json.JsonJavaObject;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 /**
  * Class to produce JSON output of all collections in the database depending of
@@ -52,7 +55,8 @@ public class FilesJson implements Serializable {
 		int count = 0;
 
 		Session session = XSPUtil.getCurrentSession();
-		boolean isAdmin = session.getCurrentDatabase().queryAccessRoles(session.getEffectiveUserName()).contains("[Admin]");
+		boolean isAdmin = session.getCurrentDatabase().queryAccessRoles(
+				session.getEffectiveUserName()).contains("[Admin]");
 		boolean show = false;
 
 		ViewEntryCollection col = session.getCurrentDatabase().getView("files").getAllEntries();
@@ -80,6 +84,7 @@ public class FilesJson implements Serializable {
 				collection.put("readers", doc.getItemValue("fileReaders"));
 				collection.put("authors", doc.getItemValue("fileAuthors"));
 				collection.put("upload", doc.hasItem("fileUpload"));
+				collection.put("creator", getCommonName(doc.getItemValueString("fileCreator")));
 				// date time stuff is a hassle...
 				List<DateTime> dtArray = doc.getItemValue("fileExpires");
 				try {
@@ -115,16 +120,22 @@ public class FilesJson implements Serializable {
 		try {
 			this.json = JsonGenerator.toJson(JsonJavaFactory.instanceEx, jsobj);
 		} catch (JsonException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	public String getJson() {
 		return json;
+	}
+
+	private String getCommonName(String name) {
+		try {
+			return ExtLibUtil.getCurrentSession().createName(name).getCommon();
+		} catch (NotesException e) {
+			return name;
+		}
 	}
 
 }
