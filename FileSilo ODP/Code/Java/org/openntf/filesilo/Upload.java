@@ -8,7 +8,7 @@ import lotus.domino.NotesException;
 import lotus.domino.Session;
 import lotus.domino.View;
 
-import com.ibm.xsp.extlib.util.ExtLibUtil;
+import org.openntf.domino.utils.XSPUtil;
 
 public class Upload implements Serializable {
 	/**
@@ -26,7 +26,7 @@ public class Upload implements Serializable {
 		String dbtitle = "";
 		String dbpath = "";
 		try {
-			this.session = ExtLibUtil.getCurrentSession();
+			this.session = XSPUtil.getCurrentSession();
 			this.db = session.getCurrentDatabase();
 			dbtitle = db.getTitle();
 			dbpath = db.getFilePath();

@@ -10,8 +10,6 @@ import java.util.Vector;
 
 import javax.faces.context.FacesContext;
 
-import lotus.domino.NotesException;
-
 import org.openntf.domino.DateTime;
 import org.openntf.domino.Document;
 import org.openntf.domino.EmbeddedObject;
@@ -24,7 +22,6 @@ import com.ibm.commons.util.io.json.JsonException;
 import com.ibm.commons.util.io.json.JsonGenerator;
 import com.ibm.commons.util.io.json.JsonJavaFactory;
 import com.ibm.commons.util.io.json.JsonJavaObject;
-import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 /**
  * Class to produce JSON output of all collections in the database depending of
@@ -49,9 +46,12 @@ public class FilesJson implements Serializable {
 		// key parameter?
 		FacesContext context = FacesContext.getCurrentInstance();
 		Map<String, String> params = context.getExternalContext().getRequestParameterMap();
+
+		// key provided?
 		String key = params.get("key");
 		jsobj.put("key", key);
 		key = (key == null) ? "" : key;
+
 		int count = 0;
 
 		Session session = XSPUtil.getCurrentSession();
@@ -68,11 +68,13 @@ public class FilesJson implements Serializable {
 			// the key is equal)
 			// reader fields are natively covered by the allentries
 			// entrycollection
-
-			if (key.equals("")) {
-				show = isAdmin;
-			} else {
-				show = key.equalsIgnoreCase(doc.getItemValueString("fileKey"));
+			show = isAdmin;
+			if(!key.equals("")){
+				show = key.equalsIgnoreCase(doc.getItemValueString("fileKey"));	
+			}			
+			
+			if (params.get("upload") != null) {
+				show = doc.hasItem("fileUpload");
 			}
 
 			if (show) {
@@ -131,11 +133,7 @@ public class FilesJson implements Serializable {
 	}
 
 	private String getCommonName(String name) {
-		try {
-			return ExtLibUtil.getCurrentSession().createName(name).getCommon();
-		} catch (NotesException e) {
-			return name;
-		}
+		return XSPUtil.getCurrentSession().createName(name).getCommon();
 	}
 
 }

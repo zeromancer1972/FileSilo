@@ -28,7 +28,7 @@
 							<th>Link</th>
 						</tr>
 						<tr>
-							<td>Get a JSON response of all collections in the database</td>
+							<td>Get a JSON response of all collections in the database. Use key=value URL parameter to filter the result and upload=true to show only new uploads</td>
 							<td>
 								<xp:link escape="true" text="Show me" id="link2" value="/files.xsp"
 									target="_blank">
