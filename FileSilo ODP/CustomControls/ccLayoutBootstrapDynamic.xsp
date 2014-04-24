@@ -201,7 +201,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+" uploads)":"";
 						</a>
 						</li>
 						<li>
-							<a href="https://github.com/zeromancer1972/FileSilo" target="_blank">
+							<a href="http://zeromancer1972.github.io/FileSilo" target="_blank">
 								FileSilo on GitHub
 						</a>
 						</li>
