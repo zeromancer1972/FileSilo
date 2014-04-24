@@ -22,7 +22,7 @@
 					<div class="row">
 						<div class="col-lg-3">
 							<xp:image url="/oli_avatar.jpg" id="image1" style="width:100%">
-</xp:image>
+							</xp:image>
 						</div>
 						<div class="col-lg-9">
 							<p>Author: Oliver Busse</p>
@@ -36,11 +36,18 @@
 								License 2.0
 					</p>
 							<p>
-								Made with love and IBM XPages, using OpenNTF ExtLib, Bootstrap4XPages, OpenNTF Domino API and&#160;
+								Made with love and IBM XPages, using OpenNTF ExtLib,
+								Bootstrap4XPages, OpenNTF Domino API and&#160;
 								<a href="http://getbootstrap.com" target="_blank">
 									Twitter Bootstrap 3
-						</a>
+								</a>
 							</p>
+							<p>
+								<script
+									src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=kontakt@oliverbusse.com"
+									data-button="donate" data-name="Oliver Busse - FileSilo"></script>
+							</p>
+
 						</div>
 					</div>
 				</div>
