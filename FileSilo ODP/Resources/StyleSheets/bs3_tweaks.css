@@ -36,9 +36,9 @@ body {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #00a9ff 0%, #0088dd 100%);
 	/* W3C */
-	filter: progid :   DXImageTransform.Microsoft.gradient (    
-		startColorstr = 
-		 '#00a9ff', endColorstr =   '#0088dd', GradientType =   0 );
+	filter: progid :     DXImageTransform.Microsoft.gradient (     
+		 startColorstr =  
+		  '#00a9ff', endColorstr =     '#0088dd', GradientType =     0 );
 	/* IE6-9 */
 }
 
@@ -171,4 +171,8 @@ a.nav-disabled {
 	background-color: #f5f5f5;
 	border-color: #dddddd;
 	cursor: pointer;
+}
+
+.pagination {
+	margin: 0;
 }
