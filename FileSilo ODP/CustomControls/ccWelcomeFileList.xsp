@@ -87,7 +87,7 @@ dialogURL(urlCollection, urlKey);]]></xp:this.script>
 	</table>
 
 	<xp:pager layout="Previous Group Next" partialRefresh="true"
-		id="pager1" for="repeat1" disableTheme="true">
+		id="pager1" for="repeat1">
 	</xp:pager>
 
 </xp:view>
