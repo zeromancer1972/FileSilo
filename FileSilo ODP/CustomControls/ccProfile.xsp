@@ -3,7 +3,7 @@
 	<xp:div styleClass="actionbar">
 		<xp:div styleClass="">
 			<xp:button id="button1" rendered="#{javascript:currentDocument.isEditable()}"
-				styleClass="btn btn-default">
+				styleClass="btn btn-success">
 				<span class="glyphicon glyphicon-floppy-disk">
 				</span>
 				&#160;Save
@@ -16,7 +16,7 @@
 			</xp:button>
 
 			<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
-				styleClass="btn btn-default">
+				styleClass="btn btn-info">
 				<span class="glyphicon glyphicon-floppy-saved">
 				</span>
 				&#160;Save &amp; Close
@@ -34,7 +34,7 @@
 				</xp:eventHandler>
 			</xp:button>
 
-			<xp:button id="button3" styleClass="btn btn-default">
+			<xp:button id="button3" styleClass="btn btn-primary">
 				<span class="glyphicon glyphicon-edit">
 				</span>
 				&#160;Edit
@@ -48,7 +48,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				</xp:eventHandler>
 			</xp:button>
 
-			<xp:button id="button4" styleClass="btn btn-default">
+			<xp:button id="button4" styleClass="btn btn-danger">
 				<span class="glyphicon glyphicon-chevron-left"></span>
 				&#160;
 				<xp:this.value><![CDATA[#{javascript:currentDocument.isEditable() ? "Cancel" : "Close"}]]></xp:this.value>
