@@ -133,6 +133,7 @@ a.nav-disabled {
 	cursor: not-allowed;
 }
 
+/*
 .modal-header {
 	background-color: #33B9FF;
 	border-color: #666;
@@ -144,6 +145,7 @@ a.nav-disabled {
 	-webkit-border-top-left-radius: 3px;
 	-webkit-border-top-right-radius: 3px;
 }
+*/
 
 .table th span.xspTextComputedField {
 	font-weight: bold;
