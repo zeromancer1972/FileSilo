@@ -5,10 +5,10 @@
 	</xp:this.data>
 
 	<xp:div id="list" styleClass="panel panel-default">
-		<div class="panel-heading" style="padding-bottom: 24px;">
+		<div class="panel-heading" style="padding-bottom: 18px;">
 			<h3 class="panel-title">Collections in store</h3>
 			<span class="pull-right">
-				<a href="file.xsp" class="btn btn-custom-green">
+				<a href="file.xsp" class="btn btn-sm btn-custom-green">
 					<span class="glyphicon glyphicon-plus-sign"></span>
 					&#160;
 					Create collection
