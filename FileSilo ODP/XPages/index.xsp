@@ -41,6 +41,9 @@ return pagename!=null && pagename!="" ? pagename : "start"}]]></xe:this.defaultF
 					<xc:ccHelpRecent xp:key="recent"></xc:ccHelpRecent>
 
 					<xp:div xp:key="upload">
+						<span class="pull-right">
+							<span class="fa fa-cloud-upload bigicon"></span>
+						</span>
 						<h4>Upload a file</h4>You
 						just have to provide a file from your local file system and click
 						the &quot;upload&quot; button.

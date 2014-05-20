@@ -1,6 +1,11 @@
 <theme extends="bootstrapv3.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
-	
+	<!-- Fontawesome -->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css</href>
+	</resource>
+
 	<!-- Datepicker -->
 	<resource>
 		<content-type>application/x-javascript</content-type>
@@ -10,7 +15,7 @@
 		<content-type>text/css</content-type>
 		<href>bootstrap-datepicker-master/css/datepicker3.css</href>
 	</resource>
-	
+
 	<!-- Fileinput -->
 	<resource>
 		<content-type>application/x-javascript</content-type>

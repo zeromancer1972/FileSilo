@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="756" sequence="26" unid="93E27A17E494D299C1257C67002EA4EE">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="866" sequence="69" unid="93E27A17E494D299C1257C67002EA4EE">
 <created><datetime>20140121T092928,78+01</datetime></created>
-<modified><datetime>20140212T022356,10+01</datetime></modified>
-<revised><datetime>20140212T022356,09+01</datetime></revised>
-<lastaccessed><datetime>20140212T022356,10+01</datetime></lastaccessed>
-<addedtofile><datetime>20140212T022018,26+01</datetime></addedtofile></noteinfo>
+<modified><datetime dst="true">20140520T184130,78+02</datetime></modified>
+<revised><datetime dst="true">20140520T184130,77+02</datetime></revised>
+<lastaccessed><datetime dst="true">20140520T184130,78+02</datetime></lastaccessed>
+<addedtofile><datetime>20140320T005832,35+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE"><text>ccHelpWelcome.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+
 
 
 
 
 <item name="$FileNames" sign="true"><text>ccHelpWelcome.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
-
-
-
 
 </note>

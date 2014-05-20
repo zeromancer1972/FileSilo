@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="115a" sequence="9" unid="9A45B4F385BE1EC1C1257C7D006BA4C6">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="84a" sequence="44" unid="9A45B4F385BE1EC1C1257C7D006BA4C6">
 <created><datetime>20140212T203545,34+01</datetime></created>
-<modified><datetime>20140212T203620,95+01</datetime></modified>
-<revised><datetime>20140212T203620,94+01</datetime></revised>
-<lastaccessed><datetime>20140212T203620,95+01</datetime></lastaccessed>
-<addedtofile><datetime>20140212T203545,35+01</datetime></addedtofile></noteinfo>
+<modified><datetime dst="true">20140520T185422,93+02</datetime></modified>
+<revised><datetime dst="true">20140520T185422,92+02</datetime></revised>
+<lastaccessed><datetime dst="true">20140520T185422,93+02</datetime></lastaccessed>
+<addedtofile><datetime>20140320T005832,21+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<span class="pull-right">
+		<span class="fa fa-dashboard bigicon"></span>
+	</span>
 	<h4>Manage collections</h4>
 	<div>
 		There are only a few steps to create a download document for
@@ -8,7 +11,8 @@
 	</div>
 	<ul>
 		<li>
-			Click  the&#160;&quot;Create collection&quot; action button in the title bar to
+			Click the&#160;&quot;Create collection&quot; action button in the
+			title bar to
 			create a
 			new collection of files
 		</li>

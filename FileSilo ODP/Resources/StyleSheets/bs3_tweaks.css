@@ -36,9 +36,10 @@ body {
 	/* IE10+ */
 	background: linear-gradient(to bottom, #00a9ff 0%, #0088dd 100%);
 	/* W3C */
-	filter: progid :       DXImageTransform.Microsoft.gradient (      
-		  startColorstr =   
-		   '#00a9ff', endColorstr =       '#0088dd', GradientType =       0 );
+	filter: progid :         DXImageTransform.Microsoft.gradient (       
+		   startColorstr =    
+		    '#00a9ff', endColorstr =         '#0088dd', GradientType =        
+		0 );
 	/* IE6-9 */
 }
 
@@ -146,7 +147,6 @@ a.nav-disabled {
 	-webkit-border-top-right-radius: 3px;
 }
 */
-
 .table th span.xspTextComputedField {
 	font-weight: bold;
 }
@@ -177,4 +177,11 @@ a.nav-disabled {
 
 .pagination {
 	margin: 0;
+}
+
+.bigicon {
+	font-size: 94px;
+	opacity: 0.2;
+	filter: alpha(opacity =   20);
+	margin: 0 0 0 20px;
 }

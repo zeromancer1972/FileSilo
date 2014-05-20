@@ -8,10 +8,15 @@
 	<xc:ccLayoutBootstrap>
 		<xp:this.facets>
 			<xp:div xp:key="facetLeft">
-				<h4>Upload a file</h4>You
-				just have to provide a file from your
-				local file system and click the
-				&quot;upload&quot; button.
+				<div class="">
+					<span class="pull-right">
+						<span class="fa fa-cloud-upload bigicon"></span>
+					</span>
+					<h4>Upload a file</h4>You
+					just have to provide a file from your
+					local file system and click the
+					&quot;upload&quot; button.
+				</div>
 			</xp:div>
 			<xc:ccUpload xp:key="facetMiddle"></xc:ccUpload>
 		</xp:this.facets>

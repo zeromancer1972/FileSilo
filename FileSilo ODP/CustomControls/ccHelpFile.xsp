@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<span class="pull-right">
+		<span class="fa fa-folder-open bigicon"></span>
+	</span>
 	<h4>Setup a collection</h4>
 	<ul>
 		<li>The ID is just to identify the download document</li>

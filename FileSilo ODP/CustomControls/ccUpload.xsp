@@ -25,7 +25,7 @@ upload.sendInfo();
 log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Key: "+currentDocument.getValue("fileKey"), currentDocument.getDocument().getUniversalID())}]]></xp:this.postSaveDocument>
 		</xp:dominoDocument>
 	</xp:this.data>
-	
+
 	<xp:scriptBlock id="scriptBlock1" type="text/javascript">
 		<xp:this.value><![CDATA[$('input[type=file]').bootstrapFileInput();]]></xp:this.value>
 	</xp:scriptBlock>
@@ -53,17 +53,14 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 						for="fileUpload1" disableTheme="true" rendered="false">
 					</xp:label>
 					<div>
-						<xp:fileUpload id="fileUpload1"
-							value="#{document1.fileAttachment}" required="true"
-							title="Select a file from your local PC">
+						<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
+							required="true" title="Select a file from your local PC">
 							<xp:this.validators>
-								<xp:validateRequired
-									message="Please provide a file">
+								<xp:validateRequired message="Please provide a file">
 								</xp:validateRequired>
 							</xp:this.validators>
 							<xp:this.attrs>
-								<xp:attr name="data-filename-placement"
-									value="inside">
+								<xp:attr name="data-filename-placement" value="inside">
 									<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
 								</xp:attr>
 							</xp:this.attrs>
