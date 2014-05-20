@@ -64,7 +64,7 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 									<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
 								</xp:attr>
 							</xp:this.attrs>
-							<xp:this.styleClass><![CDATA[#{javascript:@ClientType().equals("Web") ? "btn btn-primary bsfile" : ""}]]></xp:this.styleClass>
+							<xp:this.styleClass><![CDATA[#{javascript:@ClientType().equals("Web") ? "btn btn-info bsfile" : ""}]]></xp:this.styleClass>
 						</xp:fileUpload>
 					</div>
 				</div>
