@@ -86,7 +86,11 @@ dojo.addOnLoad( function() {
 		e.preventDefault();
 	});
 	$(".datepicker").datepicker( {
-
+		startDate : new Date(),
+		todayBtn : true,
+		calendarWeeks : true,
+		autoclose : true,
+		todayHighlight : true
 	});
 	$(".select-all").focus( function(e) {
 		$(this).select();
@@ -96,7 +100,6 @@ dojo.addOnLoad( function() {
 	$("[data-toggle=tooltip]").tooltip( {
 
 	});
-	
 
 })
 
