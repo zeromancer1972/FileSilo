@@ -9,15 +9,21 @@
 
 	<div class="">
 		<xp:label id="label1">
-			<xp:this.value><![CDATA[#{javascript:((context.getLocale().toString().startsWith("en"))?"Current customer key: ":"Aktueller Kunden-Schlüssel: ")+sessionScope.get("customerKey")}]]></xp:this.value>
+			<xp:this.value><![CDATA[#{javascript:((context.getLocale().toString().startsWith("en"))?"Current customer key: ":"Aktueller Kunden-Schlüssel: ")}]]></xp:this.value>
+
 		</xp:label>
+		<strong>
+			<xp:label id="label2">
+				<xp:this.value><![CDATA[#{javascript:sessionScope.get("customerKey")}]]></xp:this.value>
+			</xp:label>
+		</strong>
 	</div>
 
 	<table class="table table-striped table-hover">
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Key</th>
+				<th>Files</th>
 				<th>Expires</th>
 				<th>&#160;</th>
 			</tr>
@@ -46,7 +52,13 @@
 							</xp:inputRichText>
 						</td>
 						<td>
-							<xp:inputText id="inputText1" value="#{doc.fileKey}">
+							<xp:inputText id="inputText1"
+								value="#{javascript:@Attachments()}">
+
+								<xp:this.converter>
+									<xp:convertNumber type="number"></xp:convertNumber>
+								</xp:this.converter>
+
 							</xp:inputText>
 						</td>
 
@@ -61,15 +73,12 @@
 
 						<td>
 							<span class="pull-right">
-								<xp:link
-									styleClass="btn btn-sm btn-info" escape="true" text=""
-									id="link7">
+								<xp:link styleClass="btn btn-sm btn-info" escape="true"
+									text="" id="link7">
 									<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
-									<span
-										class="glyphicon glyphicon-globe" title="Show URL">
+									<span class="glyphicon glyphicon-globe" title="Show URL">
 									</span>
-									<xp:eventHandler event="onclick"
-										submit="false">
+									<xp:eventHandler event="onclick" submit="false">
 										<xp:this.script><![CDATA[// dialog confirm
 var url = "#{javascript:context.getUrl().toString()}";
 url = url.substring(0, url.indexOf("index.xsp"));

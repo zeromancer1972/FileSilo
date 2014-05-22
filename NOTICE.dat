@@ -17,4 +17,4 @@ The project contains the following 3rd party code:
 4. The product contains BootstrapCK-Skin, a Bootstrap Skin for the CKEditor, which is available from https://github.com/Kunstmaan/BootstrapCK-Skin, which is under the MIT license
 5. The product contains Bootstrap File Input, which is available from https://github.com/grevory/bootstrap-file-input, which is under the Apache License v2
 6. The product contains Bootstrap Datepicker, which is available from https://github.com/eternicode/bootstrap-datepicker, which is under the Apache License v2
-7. The product uses Fontawesome icons, which is available from http://fortawesome.github.io/Font-Awesome/license/ and is under SIL OFL 1.1/MIT license
+7. The product uses Fontawesome icons, which is available from http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css, which is licensed under MIT license: http://fortawesome.github.io/Font-Awesome/license/ and is under SIL OFL 1.1/MIT license
