@@ -17,9 +17,7 @@
 							action="/names.nsf?login">
 							<div class="row">
 								<div class="col-lg-3">
-									<xp:image url="/1378607916_cloud-download.png" id="image1"
-										disableTheme="true">
-									</xp:image>
+									<span class="fa fa-unlock-alt bigicon"></span>
 								</div>
 								<div class="col-lg-9">
 									<fieldset>

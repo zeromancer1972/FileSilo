@@ -57,7 +57,7 @@ sessionScope.put("page", "start")}]]></xp:this.action>
 							<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Upload]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
 							<xp:link id="link1" disableTheme="true">
 								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass>
-								<span class="glyphicon glyphicon-cloud-upload">
+								<span class="fa fa-cloud-upload">
 								</span>
 								&#160;Upload a file
 
@@ -75,7 +75,7 @@ sessionScope.put("page", "upload")}]]></xp:this.action>
 							<xp:this.styleClass><![CDATA[#{javascript:try {sessionScope.get("page").indexOf("manage")!=-1 ? "active" : ""} catch(e){}}]]></xp:this.styleClass>
 							<xp:link disableTheme="true" id="link3">
 								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass>
-								<span class="glyphicon glyphicon-paperclip">
+								<span class="fa fa-dashboard">
 								</span>
 								&#160;Manage collections
 								<xp:eventHandler event="onclick" submit="true"
@@ -91,7 +91,7 @@ sessionScope.put("page", "manage")}]]></xp:this.action>
 							<xp:this.styleClass><![CDATA[#{javascript:try {sessionScope.get("page").indexOf("recent")!=-1 ? "active" : ""} catch(e){}}]]></xp:this.styleClass>
 							<xp:link disableTheme="true" id="link4">
 								<xp:this.styleClass><![CDATA[#{javascript:return view.getPageName().indexOf("index")==-1 ? "nav-disabled" : ""}]]></xp:this.styleClass>
-								<span class="glyphicon glyphicon-flash">
+								<span class="fa fa-spinner">
 								</span>
 								&#160;Activities
 								<xp:eventHandler event="onclick" submit="true"
@@ -148,7 +148,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+" uploads)":"";
 									<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
 									<xp:link
 										value="#{javascript:@UserName().equals('Anonymous')?'/login.xsp':'javascript:doLogoutDialog()'}">
-										<span class="glyphicon glyphicon-user">
+										<span class="fa fa-user">
 										</span>
 										&#160;
 										<xp:text>
@@ -160,7 +160,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+" uploads)":"";
 								<xp:panel tagName="li">
 									<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Profile]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
 									<xp:link disableTheme="true" id="link5" value="/profile.xsp">
-										<span class="glyphicon glyphicon-cog">
+										<span class="fa fa-cogs">
 										</span>
 										&#160;Settings
 										<xp:eventHandler event="onclick" submit="true"
