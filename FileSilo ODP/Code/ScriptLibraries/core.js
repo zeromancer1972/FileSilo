@@ -115,15 +115,27 @@ $(document).on(
 		function(e) {
 			var $this = $(this);
 			if (!$this.hasClass('panel-collapsed')) {
-				$this.parents('.panel').find('.panel-body').hide();
+				$this.parents('.panel').find('.panel-body').fadeOut(
+						{
+							complete : function() {
+								$this.find('i').removeClass(
+										'glyphicon-chevron-up').addClass(
+										'glyphicon-chevron-down');
+							}
+						});
 				$this.addClass('panel-collapsed');
-				$this.find('i').removeClass('glyphicon-chevron-up').addClass(
-						'glyphicon-chevron-down');
+
 			} else {
-				$this.parents('.panel').find('.panel-body').show();
+				$this.parents('.panel').find('.panel-body').fadeIn(
+						{
+							complete : function() {
+								$this.find('i').removeClass(
+										'glyphicon-chevron-down').addClass(
+										'glyphicon-chevron-up');
+							}
+						});
 				$this.removeClass('panel-collapsed');
-				$this.find('i').removeClass('glyphicon-chevron-down').addClass(
-						'glyphicon-chevron-up');
+
 			}
 		});
 

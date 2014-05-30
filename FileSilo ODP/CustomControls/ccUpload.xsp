@@ -114,7 +114,7 @@ log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Ke
 
 				<xp:div id="uploadmessage" styleClass="lotusMessage2 lotusSuccess alert alert-success">
 					<xp:this.rendered><![CDATA[#{javascript:return sessionScope.get("uploadSuccessful")!=null}]]></xp:this.rendered>
-					<img class="lotusIcon lotusIconMsgSuccess" src="/icons/ecblank.gif" />
+					
 					<xp:div styleClass="lotusMessageBody">
 						<xp:label id="label3">
 							<xp:this.value><![CDATA[#{javascript:var success = (context.getLocale().equals(Locale.GERMAN))?"Die Datei wurde erfolgreich hochgeladen.":"The file was uploaded successfully.";

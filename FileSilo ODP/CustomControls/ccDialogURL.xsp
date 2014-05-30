@@ -16,9 +16,7 @@
 				<div class="modal-body">
 					<div class="row">
 						<div class="col-lg-2">
-							<xp:image url="/1394307573_link.png" id="image1"
-								disableTheme="true">
-							</xp:image>
+							<span class="fa fa-globe bigicon"></span>
 						</div>
 						<div class="col-lg-10">
 							<div class="form-group">
