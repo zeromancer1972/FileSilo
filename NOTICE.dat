@@ -18,3 +18,4 @@ The project contains the following 3rd party code:
 5. The product contains Bootstrap File Input, which is available from https://github.com/grevory/bootstrap-file-input, which is under the Apache License v2
 6. The product contains Bootstrap Datepicker, which is available from https://github.com/eternicode/bootstrap-datepicker, which is under the Apache License v2
 7. The product uses Fontawesome icons, which is available from http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css, which is licensed under MIT license: http://fortawesome.github.io/Font-Awesome/license/ and is under SIL OFL 1.1/MIT license
+8. The product contains Apache Commons HTTP Client, which is available from http://hc.apache.org/httpcomponents-client-ga/, which is under the Apache License v2
