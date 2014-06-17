@@ -36,8 +36,9 @@
 								Apache License 2.0
 							</p>
 							<p>
-								Made with love and IBM XPages, using
-								Pushover, 
+								Made with love and IBM XPages, using&#160;
+								<a href="https://pushover.net/" target="_blank">Pushover</a>
+								,
 								OpenNTF ExtLib,
 								Bootstrap4XPages and&#160;
 								<a href="http://getbootstrap.com" target="_blank">
