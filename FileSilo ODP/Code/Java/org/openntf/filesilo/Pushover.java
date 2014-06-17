@@ -53,7 +53,6 @@ public class Pushover implements Serializable {
 	public void send() throws ClientProtocolException, IOException, JsonException,
 			IllegalStateException {
 		if (this.userToken.equals("") || this.appToken.equals("") || this.message.equals("")) {
-			log.add("Pushover: invalid config", "User Token, App Token, Message must not be blank");
 			return;
 		}
 
