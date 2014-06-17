@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="16d6" sequence="2" unid="C92659E524D9693CC1257CFA0060654A">
+<created><datetime dst="true">20140617T193253,86+02</datetime></created>
+<modified><datetime dst="true">20140617T193253,89+02</datetime></modified>
+<revised><datetime dst="true">20140617T193253,88+02</datetime></revised>
+<lastaccessed><datetime dst="true">20140617T193253,89+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140617T193253,87+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$TITLE"><text>httpmime-4.3.4.jar</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+<item name="$Flags"><text>34567Cg~,</text></item>
+
+
+
+<item name="$FileNames" sign="true"><text>httpmime-4.3.4.jar</text></item></note>

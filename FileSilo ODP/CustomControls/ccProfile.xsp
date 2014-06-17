@@ -68,6 +68,12 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				&#160;Settings
 			</a>
 		</li>
+		<li>
+			<a href="#pushover" data-toggle="tab">
+				<span class="glyphicon glyphicon-cog"></span>
+				&#160;Pushover
+			</a>
+		</li>
 	</ul>
 
 	<div class="tab-content">
@@ -117,8 +123,8 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xp:this.attrs>
 				</xp:inputText>
 			</xp:div>
-			<xp:div styleClass="form-group">
 
+			<xp:div styleClass="form-group">
 				<xp:label value="Default number of days for expire date"
 					id="label1" for="profileAdjust" disableTheme="true">
 				</xp:label>
@@ -137,6 +143,65 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xp:this.attrs>
 				</xp:inputText>
 			</xp:div>
+		</div>
+		<div class="tab-pane fade in" id="pushover">
+			<xp:div styleClass="form-group">
+				<xp:label value="Pushover User Token" id="label3" for="profilePushover"
+					disableTheme="true">
+				</xp:label>
+				<xp:inputText id="profilePushover" styleClass="form-control"
+					value="#{document1.profileUserToken}" title="Your Pushover User Token">
+					<xp:this.attrs>
+						<xp:attr name="placeholder">
+							<xp:this.value><![CDATA[#{javascript:"Your Pushover User Token key goes here"}]]></xp:this.value>
+						</xp:attr>
+						<xp:attr name="data-placement" value="bottom">
+						</xp:attr>
+						<xp:attr name="data-toggle" value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+			<xp:div styleClass="form-group">
+				<xp:label value="Pushover App Token" id="label4" for="profilePushover"
+					disableTheme="true">
+				</xp:label>
+				<xp:inputText id="inputText1" styleClass="form-control"
+					value="#{document1.profileAppToken}" title="Your Pushover App Token">
+					<xp:this.attrs>
+						<xp:attr name="placeholder">
+							<xp:this.value><![CDATA[#{javascript:"Your Pushover App Token key goes here"}]]></xp:this.value>
+						</xp:attr>
+						<xp:attr name="data-placement" value="bottom">
+						</xp:attr>
+						<xp:attr name="data-toggle" value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+			<xp:div styleClass="form-group">
+				<xp:label value="Pushover URL" id="label5" for="profilePushover"
+					disableTheme="true">
+				</xp:label>
+				<xp:inputText id="inputText2" styleClass="form-control"
+					value="#{document1.profileURL}" title="Your Pushover notification URL">
+					<xp:this.attrs>
+						<xp:attr name="placeholder">
+							<xp:this.value><![CDATA[#{javascript:"Your Pushover notification URL goes here"}]]></xp:this.value>
+						</xp:attr>
+						<xp:attr name="data-placement" value="bottom">
+						</xp:attr>
+						<xp:attr name="data-toggle" value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+			<div class="well">
+				For more information about Pushover visit&#160;
+				<xp:link escape="true" text="Pushover.net" id="link1"
+					value="https://pushover.net" target="_blank">
+				</xp:link>
+			</div>
 		</div>
 	</div>
 </xp:view>

@@ -79,6 +79,9 @@ if(action.toLowerCase().indexOf("deletion")!=-1){
 }
 if(action.toLowerCase().indexOf("saved")!=-1){
 	return "glyphicon glyphicon-ok";
+}
+if(action.toLowerCase().indexOf("pushover")!=-1){
+	return "glyphicon glyphicon-phone";
 }}]]></xp:this.styleClass>
 								</xp:panel>
 								<xp:inputText id="inputText2" value="#{doc.logSubject}">
