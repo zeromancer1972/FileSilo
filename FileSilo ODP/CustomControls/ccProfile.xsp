@@ -70,7 +70,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 		</li>
 		<li>
 			<a href="#pushover" data-toggle="tab">
-				<span class="glyphicon glyphicon-cog"></span>
+				<span class="glyphicon glyphicon-phone"></span>
 				&#160;Pushover
 			</a>
 		</li>
