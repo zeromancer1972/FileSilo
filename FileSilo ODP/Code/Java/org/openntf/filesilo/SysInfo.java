@@ -4,30 +4,21 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import lotus.domino.NotesException;
-
 import org.openntf.domino.utils.XSPUtil;
-
-import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class SysInfo implements Serializable {
 
 	private static final long serialVersionUID = -6709687405993515378L;
 
-	private int aclLevel;
-	private int aclOptions;
-	private String userName;
+	private final int aclLevel;
+	private final int aclOptions;
+	private final String userName;
 
 	public SysInfo() {
-		try {
-			this.userName = ExtLibUtil.getCurrentSession().getEffectiveUserName();
-			this.aclLevel = ExtLibUtil.getCurrentDatabase().queryAccess(this.userName);
-			this.aclOptions = ExtLibUtil.getCurrentDatabase().queryAccessPrivileges(this.userName);
-		} catch (NotesException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
+		this.userName = XSPUtil.getCurrentSession().getEffectiveUserName();
+		this.aclLevel = XSPUtil.getCurrentDatabase().queryAccess(this.userName);
+		this.aclOptions = XSPUtil.getCurrentDatabase().queryAccessPrivileges(this.userName);
 	}
 
 	public static long getSerialVersionUID() {
