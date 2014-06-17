@@ -22,6 +22,7 @@ public class Upload implements Serializable {
 	private Session session;
 	private Document profile = null;
 	private Database db;
+	private String creator = "";
 	private String adr = "";
 	private String msg = "A new upload has been posted in <DB>";
 	private int adjust = 30;
@@ -87,6 +88,10 @@ public class Upload implements Serializable {
 		}
 	}
 
+	public void setCreator(final String creator) {
+		this.creator = creator;
+	}
+
 	public void sendPushover() {
 		if (this.profile == null)
 			return;
@@ -94,7 +99,7 @@ public class Upload implements Serializable {
 		Pushover p = new Pushover();
 		p.setUserToken(this.userToken);
 		p.setAppToken(this.appToken);
-		p.setMessage(this.msg);
+		p.setMessage(this.creator + ": " + this.msg);
 		p.setUrl(this.url);
 		try {
 			p.send();
