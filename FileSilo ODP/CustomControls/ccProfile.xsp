@@ -197,6 +197,18 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xp:this.attrs>
 				</xp:inputText>
 			</xp:div>
+			<xp:div styleClass="form-group">
+				<xp:label value="For anonymous uploads only" id="label6" for="profilePOAnonymous"
+					disableTheme="true">
+				</xp:label>
+				<xp:radioGroup id="profilePOAnonymous"
+					value="#{document1.profilePOAnonymous}" defaultValue="1"
+					title="Send notifications to all or only anonymous uploads"
+					layout="pageDirection">
+					<xp:selectItem itemLabel="yes" itemValue="1"></xp:selectItem>
+					<xp:selectItem itemLabel="no" itemValue="0"></xp:selectItem>
+				</xp:radioGroup>
+			</xp:div>
 			<div class="well">
 				For more information about Pushover visit&#160;
 				<xp:link escape="true" text="Pushover.net" id="link1"

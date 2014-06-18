@@ -13,6 +13,7 @@ import org.apache.http.client.ClientProtocolException;
 import org.openntf.domino.utils.XSPUtil;
 
 import com.ibm.commons.util.io.json.JsonException;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class Upload implements Serializable {
 	/**
@@ -31,6 +32,7 @@ public class Upload implements Serializable {
 	private String userToken;
 	private String appToken;
 	private String url;
+	private boolean send = false;
 
 	public Upload() {
 		String dbtitle = "";
@@ -57,6 +59,12 @@ public class Upload implements Serializable {
 			this.userToken = doc.getItemValueString("profileUserToken");
 			this.appToken = doc.getItemValueString("profileAppToken");
 			this.url = doc.getItemValueString("profileURL");
+			if (doc.getItemValueString("profilePOAnonymous").equals("1")) {
+				this.send = ExtLibUtil.getCurrentSession().getEffectiveUserName().equals(
+						"Anonymous");
+			} else {
+				this.send = true;
+			}
 
 			doc.recycle();
 		} catch (NotesException e) {
@@ -72,7 +80,8 @@ public class Upload implements Serializable {
 	public void sendInfo() {
 		if (this.profile == null)
 			return;
-		sendPushover();
+		if (this.send)
+			sendPushover();
 		try {
 			Document mail = this.db.createDocument();
 			if (this.adr.equals(""))
@@ -99,7 +108,7 @@ public class Upload implements Serializable {
 		Pushover p = new Pushover();
 		p.setUserToken(this.userToken);
 		p.setAppToken(this.appToken);
-		p.setMessage(this.creator + ": " + this.msg);
+		p.setMessage(this.msg + " by " + this.creator);
 		p.setUrl(this.url);
 		try {
 			p.send();
