@@ -6,8 +6,8 @@ var writer = facesContext.getResponseWriter();
 var response = externalContext.getResponse();
 response.setContentType("application/json"); 
 response.setHeader("Cache-Control", "no-cache");
-var filesjson = new org.openntf.filesilo.api.FilesJson();
+var filesjson = new org.openntf.filesilo.api.ActivitiesJson();
 writer.write(filesjson.getJson()); 
 writer.endDocument();}]]></xp:this.afterRenderResponse>
-	This page response a JSON of all collections in the database
+	This page response a JSON of all activities in the database
 </xp:view>

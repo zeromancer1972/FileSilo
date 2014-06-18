@@ -35,6 +35,14 @@
 								</xp:link>
 							</td>
 						</tr>
+						<tr>
+							<td>Get a JSON response of all activities in the database.</td>
+							<td>
+								<xp:link escape="true" text="Show me" id="link3" value="/activities.xsp"
+									target="_blank">
+								</xp:link>
+							</td>
+						</tr>
 					</table>
 					<div class="panel-footer">
 						Use them at your own risk.

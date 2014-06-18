@@ -1,4 +1,4 @@
-package org.openntf.filesilo;
+package org.openntf.filesilo.api;
 
 import java.io.IOException;
 import java.io.Serializable;
