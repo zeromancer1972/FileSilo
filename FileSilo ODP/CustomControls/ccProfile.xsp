@@ -85,7 +85,8 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				</xp:label>
 				&#160;
 				<xe:namePicker id="namePicker1" for="profileMail1"
-					dialogTitle="Choose names" rendered="#{javascript:currentDocument.isEditable()}">
+					dialogTitle="Choose names"
+					rendered="#{javascript:currentDocument.isEditable()}">
 					<xe:this.dataProvider>
 						<xe:dominoNABNamePicker people="true"
 							addressBookSel="db-name">

@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
  maintenanceversion='1.1' replicaid='C1257BDF00312926'>
-<noteinfo noteid='122' unid='13E7A552113DB85BC1257BDF0031293E' sequence='21'>
+<noteinfo noteid='122' unid='13E7A552113DB85BC1257BDF0031293E' sequence='0'>
 <created><datetime dst='true'>20130907T105658,22+02</datetime></created>
-<modified><datetime dst='true'>20140617T220328,35+02</datetime></modified>
-<revised><datetime dst='true'>20140617T220328,34+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20140617T220328,35+02</datetime></lastaccessed>
+<modified><datetime dst='true'>20140618T173234,11+02</datetime></modified>
+<revised><datetime dst='true'>20140618T123930,45+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20140618T173234,11+02</datetime></lastaccessed>
 <addedtofile><datetime>20140320T005813,82+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <item name='IconBitmap' summary='true'>
@@ -26,16 +26,16 @@ AAAAAAACICABAAD/////+A4DgA==
 <item name='$TemplateServerName'><text>CN=Oliver Busse/O=ulcbs</text></item>
 <item name='$TemplateModTime'><datetime>20140224T123128,38+01</datetime></item>
 <item name='$TemplateFileName'><text>D:\Lotus\Notes\Data\templates\filesilo_140224.ntf</text></item>
-<item name='$Daos'><text>0</text></item>
 <item name='$PIRCRefreshModTime'><datetime>20140328T194319,07+01</datetime></item>
 <item name='$DefaultClientXPage'><text>index.xsp</text></item>
 <item name='$TITLE'><text>FileSilo DEV
 #1FileSilo</text></item>
 <item name='$DBTheme'><text>bootstrap3.theme</text></item>
+<item name='$DefaultXPage'><text>index.xsp</text></item>
 <item name='$Flags'><text>J!</text></item>
 <item name='$LaunchXPageRunOnServer'><text>0</text></item>
 <item name='$FlagsNoRefresh'><text>rv</text></item>
 <item name='$AllowPost8HTML'><text>1</text></item>
 <item name='$AllowRESTDbAPI'><number>2</number></item>
-<item name='$DefaultXPage'><text>index.xsp</text></item></note>
+<item name='$Daos'><text>0</text></item></note>
 
