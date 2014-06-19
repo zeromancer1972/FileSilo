@@ -22,6 +22,7 @@ print(e)
 }
 sessionScope.put("uploadSuccessful", url)
 upload.setCreator(currentDocument.getValue("fileCreator"));
+upload.setUpload(currentDocument.getDocument());
 upload.sendInfo();
 log.add("Upload", currentDocument.getValue("fileCreator")+" added a new file. Key: "+currentDocument.getValue("fileKey"), currentDocument.getDocument().getUniversalID())}]]></xp:this.postSaveDocument>
 		</xp:dominoDocument>

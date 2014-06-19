@@ -2,7 +2,9 @@ package org.openntf.filesilo;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
+import java.util.Vector;
 
 import org.openntf.domino.utils.XSPUtil;
 
@@ -13,12 +15,15 @@ public class SysInfo implements Serializable {
 	private final int aclLevel;
 	private final int aclOptions;
 	private final String userName;
+	@SuppressWarnings("unchecked")
+	private final Vector userRoles;
 
 	public SysInfo() {
 
 		this.userName = XSPUtil.getCurrentSession().getEffectiveUserName();
 		this.aclLevel = XSPUtil.getCurrentDatabase().queryAccess(this.userName);
 		this.aclOptions = XSPUtil.getCurrentDatabase().queryAccessPrivileges(this.userName);
+		this.userRoles = XSPUtil.getCurrentDatabase().queryAccessRoles(this.userName);
 	}
 
 	public static long getSerialVersionUID() {
@@ -83,6 +88,16 @@ public class SysInfo implements Serializable {
 
 	public String getUserName() {
 		return userName;
+	}
+
+	@SuppressWarnings("unchecked")
+	public String getUserRoles() {
+		String roles = "";
+		Enumeration en = this.userRoles.elements();
+		while (en.hasMoreElements()) {
+			roles += en.nextElement() + ", ";
+		}
+		return roles.substring(0, roles.length() - 2);
 	}
 
 }

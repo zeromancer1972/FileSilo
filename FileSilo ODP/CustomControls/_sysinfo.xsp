@@ -10,6 +10,10 @@
 		<xp:label value="#{javascript:sysinfo.aclLevel}" id="label2"></xp:label>
 	</div>
 	<div class="form-group">
+		<label>Roles</label>
+		<xp:label value="#{javascript:sysinfo.userRoles}" id="label4"></xp:label>
+	</div>
+	<div class="form-group">
 
 		<xp:section id="section1" header="Options" initClosed="true">
 			<xp:repeat id="repeat1" rows="30"

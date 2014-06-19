@@ -27,6 +27,7 @@ public class Upload implements Serializable {
 	private String adr = "";
 	private String msg = "A new upload has been posted in <DB>";
 	private int adjust = 30;
+	private Document upload = null;
 
 	// Pushover
 	private String userToken;
@@ -109,6 +110,18 @@ public class Upload implements Serializable {
 		p.setUserToken(this.userToken);
 		p.setAppToken(this.appToken);
 		p.setMessage(this.msg + " by " + this.creator);
+
+		// when a document is exposed try to compute the URL to that upload
+		if (this.upload != null) {
+			if (this.url.indexOf(".xsp") != -1) {
+				// cutoff the xsp part and compute the file url
+				this.url = this.url.substring(0, this.url.lastIndexOf("/"));
+			}
+			try {
+				this.url += "/file.xsp?action=openDocument&documentId=" + upload.getUniversalID();
+			} catch (NotesException e) {
+			}
+		}
 		p.setUrl(this.url);
 		try {
 			p.send();
@@ -129,6 +142,10 @@ public class Upload implements Serializable {
 
 	public int getAdjust() {
 		return adjust;
+	}
+
+	public void setUpload(final Document upload) {
+		this.upload = upload;
 	}
 
 }
