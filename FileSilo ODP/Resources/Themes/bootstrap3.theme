@@ -1,9 +1,13 @@
 <theme extends="bootstrapv3.1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
-	<!-- Fontawesome -->
-	<resource>
+	<!-- FontAwesome -->
+	<resource rendered="#{javascript:context.getUrl().getScheme().equals('http')}">
 		<content-type>text/css</content-type>
-		<href>http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css</href>
+		<href>http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css</href>
+	</resource>
+	<resource rendered="#{javascript:context.getUrl().getScheme().equals('https')}">
+		<content-type>text/css</content-type>
+		<href>https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css</href>
 	</resource>
 
 	<!-- Datepicker -->
