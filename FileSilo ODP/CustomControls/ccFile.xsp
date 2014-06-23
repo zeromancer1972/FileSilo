@@ -94,7 +94,8 @@ log.add("Collection saved", log.getUserName() + " saved collection "+collectionn
 					</xp:eventHandler>
 				</xp:button>
 
-				<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}" styleClass="btn btn-info">
+				<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
+					styleClass="btn btn-info">
 					<span class="glyphicon glyphicon-floppy-saved">
 					</span>
 					&#160;Save &amp; Close
@@ -137,10 +138,11 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xp:eventHandler>
 				</xp:button>
 				<xp:panel tagName="span"
-					styleClass="pull-right badge glyphicon glyphicon-cloud-upload" style="font-size:30px"
+					styleClass="pull-right badge glyphicon glyphicon-cloud-upload"
+					style="font-size:30px"
 					title="This collection was uploaded. If you save it, the upload flag will be removed">
 					<xp:this.rendered><![CDATA[#{javascript:currentDocument.getDocument().getItemValueString("fileUpload").equals("1")}]]></xp:this.rendered>
-					
+
 					<xp:this.attrs>
 						<xp:attr name="data-placement" value="left">
 						</xp:attr>
@@ -261,20 +263,18 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						displayLastModified="true" value="#{document1.fileAttachment}"
 						allowDelete="true" hideWhen="true" style="width:100%"
 						displayCreated="false" deleteMessage="Delete this file?"
-						styleClass="table table-striped table-hover" disableTheme="true">
+						styleClass="table table-striped table-hover"
+						disableTheme="true">
 					</xp:fileDownload>
 					<xp:br></xp:br>
-					<xp:fileUpload id="fileUpload1"
-						value="#{document1.fileAttachment}"
+					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
 						title="Select a file from your local PC">
 						<xp:this.styleClass><![CDATA[#{javascript:@ClientType().equals("Web") ? "btn btn-info bsfile" : ""}]]></xp:this.styleClass>
-						<xp:eventHandler event="onchange"
-							submit="false">
+						<xp:eventHandler event="onchange" submit="false">
 							<xp:this.script><![CDATA[dojo.byId("#{id:button1}").click();]]></xp:this.script>
 						</xp:eventHandler>
 						<xp:this.attrs>
-							<xp:attr name="data-filename-placement"
-								value="inside">
+							<xp:attr name="data-filename-placement" value="inside">
 								<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
 							</xp:attr>
 						</xp:this.attrs>

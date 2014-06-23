@@ -97,7 +97,11 @@ public class SysInfo implements Serializable {
 		while (en.hasMoreElements()) {
 			roles += en.nextElement() + ", ";
 		}
-		return roles.substring(0, roles.length() - 2);
+		if (roles.length() > 2) {
+			return roles.substring(0, roles.length() - 2);
+		} else {
+			return roles;
+		}
 	}
 
 }

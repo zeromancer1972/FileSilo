@@ -150,8 +150,10 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 				<xp:label value="Pushover User Token" id="label3" for="profilePushover"
 					disableTheme="true">
 				</xp:label>
-				<xp:inputText id="profilePushover" styleClass="form-control"
-					value="#{document1.profileUserToken}" title="Your Pushover User Token">
+				<xp:inputText id="profilePushover"
+					styleClass="form-control" value="#{document1.profileUserToken}"
+					title="Your Pushover User Token" password="true"
+					redisplay="true">
 					<xp:this.attrs>
 						<xp:attr name="placeholder">
 							<xp:this.value><![CDATA[#{javascript:"Your Pushover User Token key goes here"}]]></xp:this.value>
@@ -168,7 +170,8 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					disableTheme="true">
 				</xp:label>
 				<xp:inputText id="inputText1" styleClass="form-control"
-					value="#{document1.profileAppToken}" title="Your Pushover App Token">
+					value="#{document1.profileAppToken}"
+					title="Your Pushover App Token" password="true" redisplay="true">
 					<xp:this.attrs>
 						<xp:attr name="placeholder">
 							<xp:this.value><![CDATA[#{javascript:"Your Pushover App Token key goes here"}]]></xp:this.value>

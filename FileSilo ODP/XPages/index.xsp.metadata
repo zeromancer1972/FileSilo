@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="8b6" sequence="103" unid="00006250052CE23AC1257C8700516419">
+<noteinfo noteid="8b6" sequence="106" unid="00006250052CE23AC1257C8700516419">
 <created><datetime>20140222T154900,41+01</datetime></created>
-<modified><datetime dst="true">20140520T185029,52+02</datetime></modified>
-<revised><datetime dst="true">20140520T185029,51+02</datetime></revised>
-<lastaccessed><datetime dst="true">20140520T185029,52+02</datetime></lastaccessed>
+<modified><datetime dst="true">20140621T180830,50+02</datetime></modified>
+<revised><datetime dst="true">20140621T180830,49+02</datetime></revised>
+<lastaccessed><datetime dst="true">20140621T180830,50+02</datetime></lastaccessed>
 <addedtofile><datetime>20140320T005832,75+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
 <item name="$Flags"><text>gC~4K</text></item>
 <item name="$TITLE" sign="true"><text>index.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 
+<item name="$FileNames" sign="true"><text>index.xsp</text></item>
+<item name="$DesignerVersion"><text>8.5</text></item>
 
 
 
-
-<item name="$FileNames" sign="true"><text>index.xsp</text></item></note>
+</note>

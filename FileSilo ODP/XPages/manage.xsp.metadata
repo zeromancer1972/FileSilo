@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.0" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="74a" sequence="65" unid="E540AD57A636286DC1257C400063BA93">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="852" sequence="99" unid="E540AD57A636286DC1257C400063BA93">
 <created><datetime>20131213T190918,27+01</datetime></created>
-<modified><datetime>20140212T022755,76+01</datetime></modified>
-<revised><datetime>20140212T022755,75+01</datetime></revised>
-<lastaccessed><datetime>20140212T022755,76+01</datetime></lastaccessed>
-<addedtofile><datetime>20140212T022018,20+01</datetime></addedtofile></noteinfo>
+<modified><datetime dst="true">20140621T180830,38+02</datetime></modified>
+<revised><datetime dst="true">20140621T180830,37+02</datetime></revised>
+<lastaccessed><datetime dst="true">20140621T180830,38+02</datetime></lastaccessed>
+<addedtofile><datetime>20140320T005832,25+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
 <item name="$TITLE"><text>manage.xsp</text></item>
@@ -12,9 +12,9 @@
 
 
 <item name="$FileNames" sign="true"><text>manage.xsp</text></item>
-<item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 
+<item name="$DesignerVersion"><text>8.5</text></item>
 
 </note>
