@@ -24,7 +24,7 @@ body {
 
 /* TWEAKS */
 
-.pagehelp {
+._pagehelp {
 	background: rgb(0, 169, 255); /* Old browsers */
 	background: -moz-linear-gradient(top, rgba(0, 169, 255, 1) 1%,
 		rgba(0, 61, 142, 1) 100% ); /* FF3.6+ */
@@ -44,6 +44,18 @@ body {
 		  '#00a9ff', endColorstr =     '#003d8e', GradientType =     0 );
 	/* IE6-9 */
 }
+
+.pagehelp {
+	background: rgb(0,0,0); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(0,0,0,1) 25%, rgba(255,0,0,1) 62%, rgba(249,249,0,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(25%,rgba(0,0,0,1)), color-stop(62%,rgba(255,0,0,1)), color-stop(100%,rgba(249,249,0,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 25%,rgba(255,0,0,1) 62%,rgba(249,249,0,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,1) 25%,rgba(255,0,0,1) 62%,rgba(249,249,0,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,1) 25%,rgba(255,0,0,1) 62%,rgba(249,249,0,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,1) 25%,rgba(255,0,0,1) 62%,rgba(249,249,0,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#f9f900',GradientType=0 ); /* IE6-9 */
+	
+	}
 
 .navbar-inverse {
 	background: rgb(71, 71, 71); /* Old browsers */
