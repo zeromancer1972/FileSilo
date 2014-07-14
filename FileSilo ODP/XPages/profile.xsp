@@ -13,9 +13,8 @@
 		<xp:navigationRule outcome="welcome" viewId="/index.xsp"></xp:navigationRule>
 		<xp:navigationRule outcome="close" viewId="/index.xsp"></xp:navigationRule>
 	</xp:this.navigationRules>
-	<xp:this.beforePageLoad><![CDATA[#{javascript:if(session.getEffectiveUserName().equals("Anonymous")){
-	sessionScope.put("page", "start")
-	context.reloadPage()
+	<xp:this.beforePageLoad><![CDATA[#{javascript:if(!database.queryAccessRoles(session.getEffectiveUserName()).contains("[Profile]")){
+	context.redirectToPage("index.xsp")
 }}]]></xp:this.beforePageLoad>
 	<xc:ccLayoutBootstrapDynamic>
 		<xp:this.facets>
