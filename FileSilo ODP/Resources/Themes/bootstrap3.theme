@@ -21,6 +21,7 @@
 	</resource>
 
 	<!-- Fileinput -->
+
 	<resource>
 		<content-type>application/x-javascript</content-type>
 		<href>fileinput/bootstrap.file-input.js</href>

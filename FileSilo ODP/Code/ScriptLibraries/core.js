@@ -73,12 +73,18 @@ require( [ "dojo/_base/lang", "ibm/xsp/widget/layout/DateTextBox",
 });
 
 dojo.addOnLoad( function() {
+	// file upload
 	$('.bsfile').bootstrapFileInput();
 	dojo.query(".customerKey a").forEach( function(node, index, nodelist) {
 		dojo.connect(node, "click", function(evt) {
 			showKey(evt.target.innerHTML)
 		})
 	})
+	
+	// file download trash (thanks to @flinden68)
+	$(".table a[role='button']").addClass("btn btn-danger");
+	$(".table a[role='button']").html("<icon class='glyphicon glyphicon-trash'></icon>");
+	
 	$('.disabled').focus( function() {
 		$(this).blur();
 	});

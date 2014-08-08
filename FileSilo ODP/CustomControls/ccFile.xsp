@@ -263,10 +263,11 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						displayLastModified="true" value="#{document1.fileAttachment}"
 						allowDelete="true" hideWhen="true" style="width:100%"
 						displayCreated="false" deleteMessage="Delete this file?"
-						styleClass="table table-striped table-hover"
-						disableTheme="true">
+						disableTheme="true"
+						styleClass="table table-hover table-striped">
 					</xp:fileDownload>
 					<xp:br></xp:br>
+
 					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
 						title="Select a file from your local PC">
 						<xp:this.styleClass><![CDATA[#{javascript:@ClientType().equals("Web") ? "btn btn-info bsfile" : ""}]]></xp:this.styleClass>
