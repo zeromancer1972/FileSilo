@@ -128,7 +128,7 @@ dialogAttachments("#{javascript:collection.getAttachmentList(entry.getDocument()
 											value="tooltip">
 										</xp:attr>
 									</xp:this.attrs>
-								</xp:link>
+								</xp:link>&#160;
 							</td>
 							<td>
 								<span class="pull-right">
@@ -155,7 +155,7 @@ dialogURL(urlCollection, urlKey);]]></xp:this.script>
 							</td>
 							<td>
 								<xp:link escape="true" id="link3">
-									<xp:this.text><![CDATA[#{javascript:@Name("[Abbreviate]",doc.getValue("fileReaders"))}]]></xp:this.text>
+									<xp:this.text><![CDATA[#{javascript:@Name("[Abbreviate]",doc.getValue("fileReaders"))}]]></xp:this.text>&#160;
 									<xp:eventHandler event="onclick" submit="true"
 										refreshMode="complete">
 										<xp:this.action>
@@ -168,7 +168,7 @@ dialogURL(urlCollection, urlKey);]]></xp:this.script>
 							</td>
 							<td>
 								<xp:link escape="true" id="link4">
-									<xp:this.text><![CDATA[#{javascript:@Name("[Abbreviate]",doc.getValue("fileAuthors"))}]]></xp:this.text>
+									<xp:this.text><![CDATA[#{javascript:@Name("[Abbreviate]",doc.getValue("fileAuthors"))}]]></xp:this.text>&#160;
 									<xp:eventHandler event="onclick" submit="true"
 										refreshMode="complete">
 										<xp:this.action>
@@ -185,7 +185,7 @@ dialogURL(urlCollection, urlKey);]]></xp:this.script>
 	var exp = doc.getItemValueDateTime("fileExpires");
 	return exp.getDateOnly();
 } catch(e) {
-}}]]></xp:this.text>
+}}]]></xp:this.text>&#160;
 									<xp:eventHandler event="onclick" submit="true"
 										refreshMode="complete">
 										<xp:this.action>
