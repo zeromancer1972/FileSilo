@@ -20,4 +20,35 @@ public class Helper implements Serializable {
 		}
 	}
 
+	/**
+	 * http://stackoverflow.com/questions/3758606/how-to-convert-byte-size-into-
+	 * human-readable-format-in-java
+	 * 
+	 * @param bytes
+	 * @param si
+	 * @return
+	 */
+	public static String humanReadableByteCount(final long bytes, final boolean si) {
+		int unit = si ? 1000 : 1024;
+		if (bytes < unit)
+			return bytes + " B";
+		int exp = (int) (Math.log(bytes) / Math.log(unit));
+		String pre = (si ? "kMGTPE" : "KMGTPE").charAt(exp - 1) + (si ? "" : "i");
+		return String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre);
+
+	}
+
+	public static String humanReadableByteCount(final long size[], final boolean si) {
+		long bytes = 0;
+		for (int x = 0; x < size.length; x++) {
+			bytes += size[x];
+		}
+		int unit = si ? 1000 : 1024;
+		if (bytes < unit)
+			return bytes + " B";
+		int exp = (int) (Math.log(bytes) / Math.log(unit));
+		String pre = (si ? "kMGTPE" : "KMGTPE").charAt(exp - 1) + (si ? "" : "i");
+		return String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre);
+	}
+
 }

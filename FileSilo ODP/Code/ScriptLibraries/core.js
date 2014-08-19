@@ -26,6 +26,13 @@ var dialogURL = function(urlCollection, urlKey) {
 	});
 }
 
+var dialogAttachments = function(docid) {
+	$("#attachmentList").html(docid);
+	$("#dialogatts").modal( {
+		backdrop : "static"
+	});
+}
+
 var doLogoutDialog = function() {
 	$("#confirmlogout").modal( {
 		backdrop : "static"
