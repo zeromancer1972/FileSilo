@@ -263,8 +263,7 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						displayLastModified="true" value="#{document1.fileAttachment}"
 						allowDelete="true" hideWhen="true" style="width:100%"
 						displayCreated="false" deleteMessage="Delete this file?"
-						disableTheme="true"
-						styleClass="table table-hover table-striped">
+						disableTheme="true" styleClass="table table-hover table-striped">
 					</xp:fileDownload>
 					<xp:br></xp:br>
 
@@ -294,11 +293,10 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						<xp:this.dojoAttributes>
 							<xp:dojoAttribute name="height" value="200">
 							</xp:dojoAttribute>
-							<xp:dojoAttribute name="skin">
-								<xp:this.value><![CDATA[#{javascript:return @ClientType().equals("Web") ? "BootstrapCK-Skin,/"+database.getFilePath()+"/bscke/" : ""}]]></xp:this.value>
+							<xp:dojoAttribute name="toolbarType" value="Medium">
 							</xp:dojoAttribute>
+							
 						</xp:this.dojoAttributes>
-						<xp:this.dojoType><![CDATA[#{javascript:return @ClientType().equals("Web") ? "org.openntf.filesilo.CKEDITOR" : ""}]]></xp:this.dojoType>
 					</xp:inputRichText>
 				</xp:div>
 			</div>

@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="1116" sequence="914" unid="FCD2B5C9F8ED5218C1257BE0004458CF">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="1116" sequence="949" unid="FCD2B5C9F8ED5218C1257BE0004458CF">
 <created><datetime dst="true">20130908T142631,83+02</datetime></created>
-<modified><datetime dst="true">20140520T181624,69+02</datetime></modified>
-<revised><datetime dst="true">20140520T181624,68+02</datetime></revised>
-<lastaccessed><datetime dst="true">20140520T181624,69+02</datetime></lastaccessed>
+<modified><datetime dst="true">20140822T171554,51+02</datetime></modified>
+<revised><datetime dst="true">20140822T161148,72+02</datetime></revised>
+<lastaccessed><datetime dst="true">20140822T171554,51+02</datetime></lastaccessed>
 <addedtofile><datetime>20140320T005833,31+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
@@ -14,10 +14,10 @@
 
 
 
+
+
+<item name="$FileNames" sign="true"><text>ccFile.xsp</text></item>
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-
-
-
-<item name="$FileNames" sign="true"><text>ccFile.xsp</text></item></note>
+</note>

@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="118e" sequence="10" unid="1EC201D813F27126C1257CA10005DAD9">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="118e" sequence="54" unid="1EC201D813F27126C1257CA10005DAD9">
 <created><datetime>20140320T020357,05+01</datetime></created>
-<modified><datetime dst="true">20140422T193949,83+02</datetime></modified>
-<revised><datetime dst="true">20140422T193949,82+02</datetime></revised>
-<lastaccessed><datetime dst="true">20140422T193949,83+02</datetime></lastaccessed>
+<modified><datetime dst="true">20140819T233944,37+02</datetime></modified>
+<revised><datetime dst="true">20140819T233944,36+02</datetime></revised>
+<lastaccessed><datetime dst="true">20140819T233944,37+02</datetime></lastaccessed>
 <addedtofile><datetime>20140320T020357,07+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>org/openntf/filesilo/Helper.java</text></item>
 
-
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>org/openntf/filesilo/Helper.java</text></item></note>
+<item name="$FileNames" sign="true"><text>org/openntf/filesilo/Helper.java</text></item>
+
+</note>

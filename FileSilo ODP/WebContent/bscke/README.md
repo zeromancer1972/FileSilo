@@ -1,28 +1,35 @@
-# About [BootstrapCK-Skin][BootstrapCK-Skin]
+BootstrapCK Skin
+====================
 
-!Update: This skin is for CKeditor3 use. Want the new CKeditor4 skin? https://github.com/Kunstmaan/BootstrapCK4-Skin
+The BootstrapCK-Skin is a skin for [CKEditor4](http://ckeditor.com/) based on [Twitter Bootstrap3](http://getbootstrap.com/) styles.
 
-The [BootstrapCK-Skin][BootstrapCK-Skin] is a skin for [CKEditor][CKEditor] based on [Twitter Bootstrap][Twitter Bootstrap] styles.<br />
-Some things couldn't be changed inside the skin, like the smileys and the position of the browse buttons when inserting an image or a flash.<br />
-Here's how you fix that:
+[Sass](http://sass-lang.com/) is used to rewrite the editor's styles and [Grunt](http://gruntjs.com/) to be able to watch, convert and minify the sass into css files. These files aren't really needed for the simple use of the skin, but handy if you want to make some adjustments to it.
 
-## Smileys
+For more information about skins, please check the [CKEditor Skin SDK](http://docs.cksource.com/CKEditor_4.x/Skin_SDK)
+documentation.
 
-Go to <code>plugins > smiley > dialogs</code> , and replace <code>smiley.js</code> with [this one][this one].<br />
-And grab your new images over [here][here].
+## Installation
 
-## Browse buttons
+**Just skin please**
 
-Go to <code>plugins > image > dialogs > image.js</code> and to <code>plugins > flash > dialogs > flash.js</code><br />
-In both, change the margin-top to 17px (instead of 10px).
+Add the whole bootstrapck folder to the skin folder.<br />
+In ckeditor.js and config.js change the skin name to "bootstrapck".<br />
+Done!
 
-# Demo
-[http://kunstmaan.github.com/BootstrapCK-Skin/][http://kunstmaan.github.com/BootstrapCK-Skin/]
+**The whole skin - sass - grunt package**
 
-[BootstrapCK-Skin]: https://github.com/Kunstmaan/BootstrapCK-Skin "BootstrapCK-Skin"
-[CKEditor]: http://ckeditor.com/ "CKEditor"
-[Twitter Bootstrap]: http://twitter.github.com/bootstrap/ "Twitter Bootstrap"
-[this one]: http://kunstmaan.github.com/BootstrapCK-Skin/smiley.js "smiley.js"
-[here]: http://kunstmaan.github.com/BootstrapCK-Skin/smileys.zip "smileys.zip"
-[http://kunstmaan.github.com/BootstrapCK-Skin/]: http://kunstmaan.github.com/BootstrapCK-Skin/ "Demo"
-[kunstmaan]: http://www.kunstmaan.be "Kunstmaan"
+All the sass files are included in the bootstrapck folder, so first follow the 'just skin please'-steps<br />
+Now add the Gruntfile.js and the package.json to de ckeditor folder.
+
+    npm install
+    grunt build
+
+You can start tampering now.
+
+## Demo
+
+http://kunstmaan.github.io/BootstrapCK4-Skin/
+
+### Previous version
+
+If you would like to get the Bootstrap2 skin for CKeditor3, [here](https://github.com/Kunstmaan/BootstrapCK-Skin)'s the previous version.
