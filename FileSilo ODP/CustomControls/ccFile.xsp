@@ -77,7 +77,7 @@ var collectionname = doc.getItemValueString("fileID");
 log.add("Collection saved", log.getUserName() + " saved collection "+collectionname)}]]></xp:this.postSaveDocument>
 		</xp:dominoDocument>
 	</xp:this.data>
-	<xc:ccBSCKE></xc:ccBSCKE>
+
 	<xp:div id="theform">
 		<xp:div styleClass="actionbar">
 			<xp:div styleClass="">
@@ -293,10 +293,14 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 						<xp:this.dojoAttributes>
 							<xp:dojoAttribute name="height" value="200">
 							</xp:dojoAttribute>
-							<xp:dojoAttribute name="toolbarType" value="Medium">
+							<xp:dojoAttribute value="Full">
+								<xp:this.name><![CDATA[#{javascript:dojo.config.get("toolbartype")}]]></xp:this.name>
 							</xp:dojoAttribute>
-							
+							<xp:dojoAttribute name="skin">
+								<xp:this.value><![CDATA[#{javascript:return @ClientType().equals("Web") && dojo.fp2 ? "BootstrapCK-Skin,/"+database.getFilePath()+"/bscke/" : ""}]]></xp:this.value>
+							</xp:dojoAttribute>
 						</xp:this.dojoAttributes>
+						<xp:this.dojoType><![CDATA[#{javascript:return @ClientType().equals("Web") && dojo.fp2 ? "org.openntf.filesilo.CKEDITOR" : ""}]]></xp:this.dojoType>
 					</xp:inputRichText>
 				</xp:div>
 			</div>
@@ -402,5 +406,5 @@ dojo.attr(node, "ondragstart", "event.dataTransfer.setData('DownloadURL', 'appli
 );]]></xp:this.value>
 		<xp:this.loaded><![CDATA[${javascript:context.getUserAgent().isChrome() && @Attachments() != 0}]]></xp:this.loaded>
 	</xp:scriptBlock>
-
+	<xc:ccBSCKE></xc:ccBSCKE>
 </xp:view>

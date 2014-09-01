@@ -81,7 +81,7 @@ return fileCount}]]></xp:this.text>
 							</td>
 							<td>
 							<xp:link escape="true" id="link9">
-								<xp:this.text><![CDATA[#{javascript:var fileSize = @AttachmentLengths()==0?"":helper.humanReadableByteCount(@AttachmentLengths(), true);
+								<xp:this.text><![CDATA[#{javascript:var fileSize = @AttachmentLengths()==0?"":helper.byteName(@AttachmentLengths(), true);
 return fileSize}]]></xp:this.text>
 								<xp:eventHandler event="onclick"
 									submit="true" refreshMode="complete">
