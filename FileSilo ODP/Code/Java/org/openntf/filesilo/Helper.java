@@ -21,22 +21,22 @@ public class Helper implements Serializable {
 	}
 
 	
-	public static String byteName(final long bytes, final boolean si) {
-		int unit = si ? 1000 : 1024;
-		if (bytes < unit)
-			return bytes + " B";
-		int exp = (int) (Math.log(bytes) / Math.log(unit));
-		String pre = (si ? "kMGTPE" : "KMGTPE").charAt(exp - 1) + (si ? "" : "i");
-		return String.format("%.1f %sB", bytes / Math.pow(unit, exp), pre);
+	public static String byteName(final long size, final boolean kilo) {
+		int unit = kilo ? 1000 : 1024;
+		if (size < unit)
+			return size + " B";
+		int exp = (int) (Math.log(size) / Math.log(unit));
+		String pre = (kilo ? "kMGTPE" : "KMGTPE").charAt(exp - 1) + (kilo ? "" : "i");
+		return String.format("%.1f %sB", size / Math.pow(unit, exp), pre);
 
 	}
 
-	public static String byteName(final long size[], final boolean si) {
+	public static String byteName(final long size[], final boolean kilo) {
 		long bytes = 0;
 		for (int x = 0; x < size.length; x++) {
 			bytes += size[x];
 		}
-		return byteName(bytes, si);
+		return byteName(bytes, kilo);
 	}
 
 }

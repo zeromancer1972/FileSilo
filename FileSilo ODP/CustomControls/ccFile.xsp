@@ -7,9 +7,11 @@
     <![CDATA[#{javascript:
 
     /***
+     * taken from http://stackoverflow.com/questions/13101615/auto-save-doc-after-delete-of-attachment-in-file-download-control/13136473#13136473
+     * with permission by the author
      * adds an additional method to "delete action"
      * of a UIFileDownload control
-     *  
+     * 
      * @param UIFileDownload component
      * @author Sven Hasselbach
      * @category SSJS
