@@ -9,3 +9,9 @@ With release 2.0.0 this application uses Bootstrap4XPages plugin and the OpenNTF
 OpenNTF Version
 ===============
 You can find the NSF version on OpenNTF here: http://www.openntf.org/main.nsf/project.xsp?r=project/FileSilo/summary
+
+Testimonials
+============
+"I have installed release 2.0.3 “September” which was easy to install and works like a charm.
+A great app for sharing online content instead of a file system.
+The UI is very intuitive. I have not tried if there is a mobile interface, since hosting a free public domino app seems to be a pain." - Patrick Kwinten http://www.openntf.org/main.nsf/project.xsp?r=project/FileSilo/reviews/554ECB6014EB1B9186257D7000406D05
