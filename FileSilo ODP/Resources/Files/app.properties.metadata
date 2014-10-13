@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="6ae" sequence="93" unid="2C76BE29847670FAC1257BDF00313896">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="6ae" sequence="106" unid="2C76BE29847670FAC1257BDF00313896">
 <created><datetime dst="true">20130907T105737,50+02</datetime></created>
-<modified><datetime dst="true">20140522T045210,31+02</datetime></modified>
-<revised><datetime dst="true">20140522T045210,30+02</datetime></revised>
-<lastaccessed><datetime dst="true">20140522T045210,31+02</datetime></lastaccessed>
+<modified><datetime dst="true">20140903T190713,45+02</datetime></modified>
+<revised><datetime dst="true">20140903T142057,47+02</datetime></revised>
+<lastaccessed><datetime dst="true">20140903T190713,45+02</datetime></lastaccessed>
 <addedtofile><datetime>20140320T005830,16+01</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
