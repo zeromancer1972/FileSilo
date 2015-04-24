@@ -1,0 +1,241 @@
+body {
+	background: url(light_mosaic.png) #eee;
+}
+
+.ckeditor * {
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+}
+
+@media ( min-width : 992px) {
+	.modal-lg {
+		width: 900px;
+	}
+}
+
+.pagehelp {
+	margin-bottom: 20px;
+	color: #fff;
+	min-height: 160px;
+	padding-top: 0px;
+}
+
+/* TWEAKS */
+
+.pagehelp {
+	background: rgb(0, 169, 255); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(0, 169, 255, 1) 1%,
+		rgba(0, 61, 142, 1) 100% ); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, rgba(0,
+		169, 255, 1) ), color-stop(100%, rgba(0, 61, 142, 1) ) );
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(0, 169, 255, 1) 1%,
+		rgba(0, 61, 142, 1) 100% ); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(0, 169, 255, 1) 1%,
+		rgba(0, 61, 142, 1) 100% ); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(0, 169, 255, 1) 1%,
+		rgba(0, 61, 142, 1) 100% ); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(0, 169, 255, 1) 1%,
+		rgba(0, 61, 142, 1) 100% ); /* W3C */
+	filter: progid :     DXImageTransform.Microsoft.gradient (     
+		 startColorstr =  
+		  '#00a9ff', endColorstr =     '#003d8e', GradientType =     0 );
+	/* IE6-9 */
+}
+
+/* FIFA WORLDCUP WINNER 2014 - GERMANY */
+.__pagehelp {
+	background: rgb(0,0,0); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(0,0,0,1) 25%, rgba(255,0,0,1) 62%, rgba(249,249,0,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(25%,rgba(0,0,0,1)), color-stop(62%,rgba(255,0,0,1)), color-stop(100%,rgba(249,249,0,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 25%,rgba(255,0,0,1) 62%,rgba(249,249,0,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,1) 25%,rgba(255,0,0,1) 62%,rgba(249,249,0,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,1) 25%,rgba(255,0,0,1) 62%,rgba(249,249,0,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,1) 25%,rgba(255,0,0,1) 62%,rgba(249,249,0,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#f9f900',GradientType=0 ); /* IE6-9 */
+	
+	}
+
+.navbar-inverse {
+	background: rgb(71, 71, 71); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(71, 71, 71, 1) 0%,
+		rgba(0, 0, 0, 1) 100% ); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(71,
+		71, 71, 1) ), color-stop(100%, rgba(0, 0, 0, 1) ) );
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(71, 71, 71, 1) 0%,
+		rgba(0, 0, 0, 1) 100% ); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(71, 71, 71, 1) 0%,
+		rgba(0, 0, 0, 1) 100% ); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(71, 71, 71, 1) 0%,
+		rgba(0, 0, 0, 1) 100% ); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(71, 71, 71, 1) 0%,
+		rgba(0, 0, 0, 1) 100% ); /* W3C */
+	filter: progid :   DXImageTransform.Microsoft.gradient (    
+		startColorstr = 
+		 '#474747', endColorstr =   '#000000', GradientType =   0 );
+	/* IE6-9 */
+}
+
+.modal-header {
+	background: rgb(71, 71, 71); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(71, 71, 71, 1) 0%,
+		rgba(0, 0, 0, 1) 100% ); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(71,
+		71, 71, 1) ), color-stop(100%, rgba(0, 0, 0, 1) ) );
+	/* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(71, 71, 71, 1) 0%,
+		rgba(0, 0, 0, 1) 100% ); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(71, 71, 71, 1) 0%,
+		rgba(0, 0, 0, 1) 100% ); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, rgba(71, 71, 71, 1) 0%,
+		rgba(0, 0, 0, 1) 100% ); /* IE10+ */
+	background: linear-gradient(to bottom, rgba(71, 71, 71, 1) 0%,
+		rgba(0, 0, 0, 1) 100% ); /* W3C */
+	filter: progid : DXImageTransform.Microsoft.gradient (   startColorstr =
+		'#474747', endColorstr = '#000000', GradientType = 0 ); /* IE6-9 */
+	border-color: #666;
+	color: #fff;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	-moz-border-top-left-radius: 3px;
+	-moz-border-top-right-radius: 3px;
+	-webkit-border-top-left-radius: 3px;
+	-webkit-border-top-right-radius: 3px;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    text-shadow: 1px 1px 2px #000;
+}
+
+.msg {
+	display: block;
+}
+
+.actionbar .btn {
+	margin-right: 4px;
+}
+
+.btn-custom-green {
+	background-color: #abd100;
+	color: white;
+	border-color: #abd100;
+}
+
+.btn-custom-green:hover,.btn-custom-green:focus,.btn-custom-green:active
+	{
+	background-color: #C4DF4D;
+	border-color: #C4DF4D;
+	color: white;
+}
+
+#footer {
+	font-size: 0.8em;
+}
+
+.actionbar { /*border-bottom: solid 1px #ccc;*/
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+
+.tab-pane {
+	padding: 10px;
+	border-left: solid 1px #ddd;
+	border-right: solid 1px #ddd;
+	border-bottom: solid 1px #ddd;
+	background-color: #fff;
+}
+
+.logindialog {
+	-webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	-moz-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+}
+
+th {
+	font-weight: bold;
+}
+
+.tundra .dijitSelect .dijitButtonContents,.tundra .dijitSelect,.tundra .dijitTextBox
+	{
+	background: none;
+}
+
+.dijitPlaceHolder {
+	font-style: inherit;
+}
+
+.panel-title {
+	font-weight: bold;
+}
+
+.tiny td {
+	font-size: 0.8em;
+}
+
+.clickable {
+	cursor: pointer;
+}
+
+.panel-heading span {
+	margin-top: -20px;
+	font-size: 15px;
+}
+
+.form-group label {
+	display: block;
+}
+
+.form-group label.left {
+	display: inline-table;
+}
+
+.disabled {
+	background-color: #eee;
+	cursor: not-allowed;
+}
+
+a.nav-disabled {
+	cursor: not-allowed;
+}
+
+.table th span.xspTextComputedField {
+	font-weight: bold;
+}
+
+.table .xspColumn {
+	padding: 8px !important;
+}
+
+/* BS4XPages tweaks */
+.container {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.row {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.pagination>.active>a,.pagination>.active>span,.pagination>.active>a:hover,.pagination>.active>span:hover,.pagination>.active>a:focus,.pagination>.active>span:focus
+	{
+	z-index: 2;
+	color: #999999;
+	background-color: #f5f5f5;
+	border-color: #dddddd;
+	cursor: pointer;
+}
+
+.pagination {
+	margin: 0;
+}
+
+.bigicon {
+	font-size: 94px;
+	opacity: 0.2;
+	filter: alpha(opacity =           20);
+	margin: 0 0 0 20px;
+}

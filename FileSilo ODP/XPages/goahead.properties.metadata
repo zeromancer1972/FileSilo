@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="17ce" sequence="2" unid="F73046E6EF559EFBC1257D0000713C13">
+<created><datetime dst="true">20140623T223649,47+02</datetime></created>
+<modified><datetime dst="true">20140623T223649,49+02</datetime></modified>
+<revised><datetime dst="true">20140623T223649,48+02</datetime></revised>
+<lastaccessed><datetime dst="true">20140623T223649,49+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20140623T223649,47+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<item name="$Flags"><text>gC~4K2</text></item>
+<item name="$TITLE"><text>goahead.properties</text></item>
+
+
+<item name="$FileNames" sign="true"><text>goahead.properties</text></item></note>

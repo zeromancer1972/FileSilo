@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<div id="dialogurl" class="modal fade">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">
+						x
+					</button>
+					<xp:text disableTheme="true" styleClass="modal-title panel-title"
+						tagName="h3">
+						<xp:this.value><![CDATA[#{javascript:"URLs to this collection"}]]></xp:this.value>
+					</xp:text>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-lg-2">
+							<span class="fa fa-globe bigicon"></span>
+						</div>
+						<div class="col-lg-10">
+							<div class="form-group">
+								<label for="urlCollection">URL to this collection
+								</label>
+								<input class="form-control select-all" type="text"
+									id="urlCollection" name="urlCollection"></input>
+							</div>
+							<div class="form-group">
+								<label for="urlKey">URL to this customer key
+								</label>
+								<input class="form-control select-all" type="text" id="urlKey"
+									name="urlKey"></input>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="row">
+						<div class="col-lg-12">
+							<button type="button" class="btn btn-block btn-custom-green"
+								data-dismiss="modal">OK</button>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+</xp:view>

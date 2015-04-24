@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xpt="http://www.openntf.org/xsp/xpt" xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.resources>
+		<xp:bundle src="/app.properties" var="app"></xp:bundle>
+	</xp:this.resources>
+
+	<div id="aboutbox" class="modal fade" data-backdrop="static">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">
+						x
+					</button>
+					<xp:text disableTheme="true" styleClass="modal-title panel-title"
+						tagName="h3">
+						<xp:this.value><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']}]]></xp:this.value>
+					</xp:text>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-lg-3">
+							<xp:image url="/oli_avatar.jpg" id="image1" style="width:100%">
+							</xp:image>
+						</div>
+						<div class="col-lg-9">
+							<p>Author: Oliver Busse</p>
+							<p>
+								<a href="http://about.me/oliverbusse" target="_blank">
+									http://about.me/oliverbusse
+								</a>
+							</p>
+							<p>
+								This software is licensed under the
+								Apache License 2.0
+							</p>
+							<p>
+								Made with love and IBM XPages, using&#160;
+								<a href="https://pushover.net/" target="_blank">Pushover</a>
+								,
+								OpenNTF ExtLib,
+								Bootstrap4XPages and&#160;
+								<a href="http://getbootstrap.com" target="_blank">
+									Twitter Bootstrap 3
+								</a>
+							</p>
+							<p>
+								If you like this application I encourage
+								you to donate as this
+								takes a lot of
+								time to develop and maintain it. Thank
+								you!
+							</p>
+							<p>
+								<script
+									src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=kontakt@oliverbusse.com"
+									data-button="donate" data-name="Oliver Busse - FileSilo">
+								</script>
+							</p>
+							<p>
+								<a href="https://twitter.com/search?q=%23codefortim&amp;src=typd"
+									target="_blank">
+									#codefortim
+								</a>
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<xc:_sysinfo></xc:_sysinfo>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-block btn-custom-green"
+						data-dismiss="modal">
+						OK
+					</button>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+</xp:view>
