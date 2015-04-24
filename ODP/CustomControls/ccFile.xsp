@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:xc="http://www.ibm.com/xsp/custom" enableModifiedFlag="true"
+	modifiedMessage="You have unsaved changes. do you want to discard your changes?"
+	modifiedControl="button1">
+	<xp:this.beforeRenderResponse>
+    <![CDATA[#{javascript:
+
+    /***
+     * taken from http://stackoverflow.com/questions/13101615/auto-save-doc-after-delete-of-attachment-in-file-download-control/13136473#13136473
+     * with permission by the author
+     * adds an additional method to "delete action"
+     * of a UIFileDownload control
+     * 
+     * @param UIFileDownload component
+     * @author Sven Hasselbach
+     * @category SSJS
+     * @category UI
+     * @version 0.3
+     */
+    function overrideFileDownloadAction( fDownload ){
+        if( fDownload === null )
+            return;
+        rekOverrideFileDownloadAction( fDownload, fDownload );
+    }
+
+    function rekOverrideFileDownloadAction( component:javax.faces.component.UIOutput, fDownload:com.ibm.xsp.component.UIFileDownload  ){
+        try{
+            var children:java.util.List = component.getChildren();
+            var it:java.util.Iterator = children.iterator();
+            var curChild:javax.faces.component.UIOutput;
+
+            while( it.hasNext() ){
+                curChild = it.next();
+                if( typeof( curChild ) === 'com.ibm.xsp.component.xp.XspEventHandler' ){
+
+                    var group = new com.ibm.xsp.actions.ActionGroup();
+                    var list = new java.util.ArrayList();
+                    group.setComponent( fDownload );
+                    list.add( curChild.getAction() );
+                    list.add( mBinding );
+                    group.setActions( list );
+                    curChild.setAction(group);
+                }
+                rekOverrideFileDownloadAction( curChild , fDownload );
+            }
+        }catch(e){}    
+    }
+
+    var mBinding = facesContext.getApplication().createMethodBinding("#{javascript:document1.save()}", null );
+    overrideFileDownloadAction( getComponent( 'fileDownload1' ) );
+    }]]>
+	</xp:this.beforeRenderResponse>
+	<xp:this.data>
+		<xp:dominoDocument var="document1" formName="file">
+
+			<xp:this.querySaveDocument><![CDATA[#{javascript:try {
+var doc = currentDocument.getDocument(true); 
+var itReaders:NotesItem = doc.getFirstItem("fileReaders")
+var itAuthors:NotesItem = doc.getFirstItem("fileAuthors")
+itReaders.setReaders(true);
+itAuthors.setAuthors(true);
+var itAdmin:NotesItem = doc.replaceItemValue("fileAdmin", "[Admin]")
+
+
+itAdmin.setAuthors(true);
+if(doc.hasItem("fileUpload")){
+	doc.removeItem("$PublicAccess")
+	doc.removeItem("fileUpload")
+}
+
+
+} catch(e) {}}]]></xp:this.querySaveDocument>
+			<xp:this.postNewDocument><![CDATA[#{javascript:currentDocument.setValue("fileCreator", session.getEffectiveUserName())}]]></xp:this.postNewDocument>
+			<xp:this.postSaveDocument><![CDATA[#{javascript:// canonicalize
+rights.setNames(doc);
+
+var collectionname = doc.getItemValueString("fileID");
+log.add("Collection saved", log.getUserName() + " saved collection "+collectionname)}]]></xp:this.postSaveDocument>
+		</xp:dominoDocument>
+	</xp:this.data>
+
+	<xp:div id="theform">
+		<xp:div styleClass="actionbar">
+			<xp:div styleClass="">
+				<xp:button id="button1" rendered="#{javascript:currentDocument.isEditable()}"
+					styleClass="btn btn-success btn-sm">
+					<span class="glyphicon glyphicon-floppy-disk">
+					</span>
+					&#160;Save
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:saveDocument var="document1"></xp:saveDocument>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+
+				<xp:button id="button2" rendered="#{javascript:currentDocument.isEditable()}"
+					styleClass="btn btn-info btn-sm">
+					<span class="glyphicon glyphicon-floppy-saved">
+					</span>
+					&#160;Save &amp; Close
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+
+							<xp:actionGroup>
+								<xp:saveDocument var="document1"></xp:saveDocument>
+								<xp:executeScript>
+									<xp:this.script><![CDATA[#{javascript:return "close"}]]></xp:this.script>
+								</xp:executeScript>
+							</xp:actionGroup>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+
+				<xp:button id="button3" styleClass="btn btn-primary btn-sm">
+					<span class="glyphicon glyphicon-edit">
+					</span>
+					&#160;Edit
+					<xp:this.rendered><![CDATA[#{javascript:var ctx = com.ibm.domino.xsp.module.nsf.NotesContext.getCurrent()
+return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEditable()}]]></xp:this.rendered>
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete">
+						<xp:this.action>
+							<xp:changeDocumentMode mode="edit"></xp:changeDocumentMode>
+						</xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+
+				<xp:button id="button4" styleClass="btn btn-danger btn-sm">
+					<span class="glyphicon glyphicon-chevron-left"></span>
+					&#160;
+
+					<xp:this.value><![CDATA[#{javascript:currentDocument.isEditable() ? "Cancel" : "Close"}]]></xp:this.value>
+					<xp:eventHandler event="onclick" submit="true"
+						refreshMode="complete" immediate="true">
+						<xp:this.action><![CDATA[#{javascript:return (session.getEffectiveUserName().equals("Anonymous"))?"welcome":"cancel"}]]></xp:this.action>
+					</xp:eventHandler>
+				</xp:button>
+				<xp:panel tagName="span"
+					styleClass="pull-right badge glyphicon glyphicon-cloud-upload"
+					style="font-size:30px"
+					title="This collection was uploaded. If you save it, the upload flag will be removed">
+					<xp:this.rendered><![CDATA[#{javascript:currentDocument.getDocument().getItemValueString("fileUpload").equals("1")}]]></xp:this.rendered>
+
+					<xp:this.attrs>
+						<xp:attr name="data-placement" value="left">
+						</xp:attr>
+						<xp:attr name="data-toggle" value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:panel>
+			</xp:div>
+		</xp:div>
+
+		<!-- Nav tabs -->
+		<ul class="nav nav-tabs nav-justified">
+			<li class="active">
+				<a href="#general" data-toggle="tab">
+					<span class="glyphicon glyphicon-hdd"></span>
+					&#160;General
+				</a>
+			</li>
+			<li>
+				<a href="#desc" data-toggle="tab">
+					<span class="glyphicon glyphicon-info-sign"></span>
+					&#160;Description
+				</a>
+			</li>
+			<xp:panel tagName="li">
+				<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
+				<a href="#access" data-toggle="tab">
+					<span class="glyphicon glyphicon-lock"></span>
+					&#160;Access control
+				</a>
+			</xp:panel>
+
+			<xp:panel tagName="li">
+				<xp:this.rendered><![CDATA[#{javascript:@IsMember("[Admin]", database.queryAccessRoles(session.getEffectiveUserName()))}]]></xp:this.rendered>
+				<a href="#misc" data-toggle="tab">
+					<span class="glyphicon glyphicon-calendar"></span>
+					&#160;Expire date
+				</a>
+			</xp:panel>
+		</ul>
+		<div class="tab-content">
+			<div class="tab-pane fade in active" id="general">
+				<xp:div styleClass="form-group">
+
+					<xp:label value="ID *&#160;" id="fileID_Label1" for="fileID1"
+						disableTheme="true">
+					</xp:label>
+					<xp:message id="message1" for="fileID1" styleClass="alert alert-danger msg">
+					</xp:message>
+					<xp:inputText value="#{document1.fileID}" id="fileID1"
+						required="true" styleClass="form-control" disableTheme="true"
+						title="Give your collection a unique name">
+						<xp:this.validators>
+							<xp:validateRequired message="An ID is required">
+							</xp:validateRequired>
+							<xp:validateLength minimum="3"
+								message="The ID's length must be 3 characters or more">
+							</xp:validateLength>
+						</xp:this.validators>
+						<xp:this.attrs>
+							<xp:attr name="placeholder" value="e.g. Important Updates">
+							</xp:attr>
+							<xp:attr name="data-placement" value="bottom">
+							</xp:attr>
+							<xp:attr name="data-toggle" value="tooltip">
+							</xp:attr>
+						</xp:this.attrs>
+					</xp:inputText>
+
+				</xp:div>
+				<xp:div styleClass="form-group">
+					<xp:label value="Customer key *&#160;" id="fileKey_Label1"
+						for="fileKey1" disableTheme="true">
+					</xp:label>
+
+					<xp:message id="message2" for="fileKey1" styleClass="alert alert-danger msg">
+					</xp:message>
+					<div class="input-group">
+						<xp:inputText value="#{document1.fileKey}" id="fileKey1"
+							title="Give your collection a unique ID. This ID will be used to find the collection."
+							required="true" styleClass="form-control" disableTheme="true">
+							<xp:this.validators>
+								<xp:validateRequired message="A key is required">
+								</xp:validateRequired>
+							</xp:this.validators>
+							<xp:this.attrs>
+								<xp:attr name="placeholder" value="e.g. CustomerName">
+								</xp:attr>
+								<xp:attr name="data-placement" value="bottom">
+								</xp:attr>
+								<xp:attr name="data-toggle" value="tooltip">
+								</xp:attr>
+							</xp:this.attrs>
+
+						</xp:inputText>
+
+						<span class="input-group-btn">
+							<xp:button disableTheme="true" id="button5" styleClass="btn btn-default"
+								rendered="#{javascript:currentDocument.isEditable()}">
+								<span class=""></span>
+								&#160;Generate customer key
+								<xp:eventHandler event="onclick" submit="true"
+									refreshMode="partial" refreshId="fileKey1" disableValidators="true">
+									<xp:this.action><![CDATA[#{javascript:getComponent("fileKey1").setValue(@Unique())}]]></xp:this.action>
+								</xp:eventHandler>
+							</xp:button>
+						</span>
+					</div>
+				</xp:div>
+				<xp:div styleClass="form-group">
+
+					<xp:label value="Attachments&#160;" id="fileAttachment_Label1"
+						for="fileAttachment1" disableTheme="true">
+					</xp:label>
+
+<!-- 
+					<xp:fileDownload rows="0" id="fileDownload1"
+						displayLastModified="true" value="#{document1.fileAttachment}"
+						allowDelete="true" hideWhen="true" style="width:100%"
+						displayCreated="false" deleteMessage="Delete this file?"
+						disableTheme="true" styleClass="table table-hover table-striped">
+					</xp:fileDownload>
+					<xp:br></xp:br>
+
+					<xp:fileUpload id="fileUpload1" value="#{document1.fileAttachment}"
+						title="Select a file from your local PC">
+						<xp:this.styleClass><![CDATA[#{javascript:@ClientType().equals("Web") ? "btn btn-info bsfile" : ""}]]></xp:this.styleClass>
+						<xp:eventHandler event="onchange" submit="false">
+							<xp:this.script><![CDATA[dojo.byId("#{id:button1}").click();]]></xp:this.script>
+						</xp:eventHandler>
+						<xp:this.attrs>
+							<xp:attr name="data-filename-placement" value="inside">
+								<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
+							</xp:attr>
+						</xp:this.attrs>
+					</xp:fileUpload>
+					 -->
+					<xc:ccMultiFileUpload
+						document="#{document1}" fieldName="fileAttachment" maxSizeMB="100">
+					</xc:ccMultiFileUpload>
+				</xp:div>
+			</div>
+			<div class="tab-pane fade" id="desc">
+				<xp:div styleClass="form-group">
+					<xp:label id="label1" value="Description " for="inputRichText1"
+						disableTheme="true">
+					</xp:label>
+
+					<xp:inputRichText id="inputRichText1" value="#{document1.fileMessage}"
+						disableTheme="true" styleClass="ckeditor">
+						<xp:this.dojoAttributes>
+							<xp:dojoAttribute name="height" value="200">
+							</xp:dojoAttribute>
+							<xp:dojoAttribute value="Full">
+								<xp:this.name><![CDATA[#{javascript:dojo.config.get("toolbartype")}]]></xp:this.name>
+							</xp:dojoAttribute>
+						
+						</xp:this.dojoAttributes>
+						
+					</xp:inputRichText>
+				</xp:div>
+			</div>
+			<div class="tab-pane fade" id="access">
+
+				<xp:div styleClass="form-group">
+					<xp:label value="Readers&#160;" id="fileReaders_Label1"
+						for="fileReaders1" disableTheme="true" styleClass="left">
+					</xp:label>
+					<xe:namePicker id="namePicker1" for="fileReaders1"
+						dialogTitle="Choose names" rendered="#{javascript:currentDocument.isEditable()}">
+						<xe:this.dataProvider>
+							<xe:dominoNABNamePicker people="true"
+								addressBookSel="db-name">
+								<xe:this.addressBookDb><![CDATA[#{javascript:database.getServer()+"!!names.nsf"}]]></xe:this.addressBookDb>
+							</xe:dominoNABNamePicker>
+						</xe:this.dataProvider>
+					</xe:namePicker>
+
+					<xp:inputText value="#{document1.fileReaders}" id="fileReaders1"
+						title="Click on the icon to choose names" multipleSeparator=","
+						multipleTrim="true" styleClass="form-control disabled">
+						<xp:this.attrs>
+							<xp:attr name="data-placement" value="bottom">
+							</xp:attr>
+							<xp:attr name="data-toggle" value="tooltip">
+							</xp:attr>
+						</xp:this.attrs>
+					</xp:inputText>
+
+				</xp:div>
+
+				<xp:div styleClass="form-group">
+					<xp:label value="Authors&#160;" id="fileAuthors_Label1"
+						for="fileAuthors1" disableTheme="true" styleClass="left">
+					</xp:label>
+					<xe:namePicker id="namePicker2" for="fileAuthors1"
+						dialogTitle="Choose names" rendered="#{javascript:currentDocument.isEditable()}">
+						<xe:this.dataProvider>
+							<xe:dominoNABNamePicker people="true"
+								addressBookSel="db-name">
+								<xe:this.addressBookDb><![CDATA[#{javascript:database.getServer()+"!!names.nsf"}]]></xe:this.addressBookDb>
+							</xe:dominoNABNamePicker>
+						</xe:this.dataProvider>
+					</xe:namePicker>
+					<xp:inputText value="#{document1.fileAuthors}" id="fileAuthors1"
+						title="Click on the icon to choose names" multipleSeparator=","
+						multipleTrim="true" styleClass="form-control disabled">
+						<xp:this.attrs>
+							<xp:attr name="data-placement" value="bottom">
+							</xp:attr>
+							<xp:attr name="data-toggle" value="tooltip">
+							</xp:attr>
+						</xp:this.attrs>
+					</xp:inputText>
+
+				</xp:div>
+			</div>
+			<div class="tab-pane fade" id="misc">
+				<xp:div styleClass="form-group">
+					<xp:label value="Expires&#160;" id="fileExpires_Label1"
+						for="fileExpires1" disableTheme="true">
+					</xp:label>
+
+					<xp:inputText value="#{document1.fileExpires}" id="fileExpires1"
+						title="Click in the field to get a datepicker. Choose a date on this collection will be removed automatically or keep it blank to remain it forever."
+						styleClass="form-control datepicker">
+						<xp:this.converter>
+							<xp:convertDateTime pattern="MM/dd/yyyy"></xp:convertDateTime>
+						</xp:this.converter>
+						<xp:this.attrs>
+							<xp:attr name="data-placement" value="bottom">
+							</xp:attr>
+							<xp:attr name="data-toggle" value="tooltip">
+							</xp:attr>
+						</xp:this.attrs>
+					</xp:inputText>
+
+				</xp:div>
+			</div>
+			<div class="pull-right" style="margin-top:10px;">
+				<xp:div styleClass="form-group">
+					<xp:label value="Created by&#160;" id="fileCreator_Label1"
+						for="fileCreator1" disableTheme="true" styleClass="left">
+					</xp:label>
+
+					<xp:inputText id="fileCreator1" styleClass="form-control"
+						disabled="true">
+						<xp:this.value><![CDATA[#{javascript:var creator = currentDocument.getDocument(true).getItemValueString("fileCreator");
+return @Name("[Abbreviate]", creator)}]]></xp:this.value>
+					</xp:inputText>
+				</xp:div>
+			</div>
+		</div>
+	</xp:div>
+
+	<xp:scriptBlock>
+		<xp:this.value><![CDATA[dojo.query(".xspLinkFileDownload").forEach(
+function(node, index, arr) {
+dojo.attr(node, "draggable", "true");
+dojo.attr(node, "ondragstart", "event.dataTransfer.setData('DownloadURL', 'application/octet-stream:" + node.innerText + ":" + node.href + "')");
+}
+);]]></xp:this.value>
+		<xp:this.loaded><![CDATA[${javascript:context.getUserAgent().isChrome() && @Attachments() != 0}]]></xp:this.loaded>
+	</xp:scriptBlock>
+	<xc:ccBSCKE></xc:ccBSCKE>
+</xp:view>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="filter" maintenanceversion="1.3" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="6d2" sequence="2" unid="AB4BA94FE1233EC4C1257E2600352AA9">
+<created><datetime dst="true">20150413T114043,29+02</datetime></created>
+<modified><datetime dst="true">20150424T210218,83+02</datetime></modified>
+<revised><datetime dst="true">20150424T210218,82+02</datetime></revised>
+<lastaccessed><datetime dst="true">20150424T210218,82+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150413T114043,31+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$TITLE" sign="true"><text>UploadController.js</text></item>
+<item name="$Flags"><text>h534Q</text></item>
+<item name="$PublicAccess" sign="true"><text>1</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+</note>

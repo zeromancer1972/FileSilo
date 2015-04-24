@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+	<span class="pull-right">
+		<span class="fa fa-folder-open bigicon"></span>
+	</span>
+	<h4>Setup a collection</h4>
+	<ul>
+		<li>The ID is just to identify the download document</li>
+		<li>
+			The customer key is used later by your customer to access
+			all the
+			documents you defined
+		</li>
+		<li>
+			You can calculate a customer key by clicking on the
+			"generate
+			customer key" link
+		</li>
+		<li>
+			Add files to the document. You have to save the document
+			after each
+			file you add. You can add more than one file to a
+			document
+		</li>
+		<li>
+			You can add additional reader and authors name to each
+			download
+			document if the customer (or you) are able to log
+			into the
+			application. These names are Notes names.
+		</li>
+	</ul>
+</xp:view>
