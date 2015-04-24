@@ -105,7 +105,7 @@ function UploadController() {
 			var files = document.getElementById(dojo.attr(_self.source, "id")).files;
 			var responseHTML = '';
 			if (files && files.length > 0) {
-				responseHTML = '<table class="table table-bordered table-striped" style="width:100%;">';
+				responseHTML = '<table class="table table-striped" style="width:100%;">';
 				responseHTML += '<thead style="color:#545454;"><tr><th style="font-weight:bold;width:46px">Size</th><th style="font-weight:bold">Files to Upload</th></tr></thead><tbody  style="color:#a0a0a0">';
 				for ( var i = 0; i < files.length; i++) {
 					_self.file = files[i];
