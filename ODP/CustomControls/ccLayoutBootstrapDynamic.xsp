@@ -47,9 +47,11 @@ if(url.indexOf(".xsp")==-1){
 						id="link2"
 						style="margin-left:-15px">
 						<xp:this.styleClass><![CDATA[#{javascript:return "navbar-brand " + (view.getPageName().indexOf("index")==-1 ? "nav-disabled" : "")}]]></xp:this.styleClass>
-						<span
-							class="fa fa-cloud-download"></span>
-						&#160;
+						<xp:image
+							url="/we4it-logo.png"
+							id="image1" style="margin-top:-4px">
+						</xp:image>
+						&#160;&#160;&#160;
 						<xp:text
 							value="#{javascript:@DbTitle()}">
 						</xp:text>
@@ -263,7 +265,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+" uploads)":"";
 			role="navigation"
 			id="footer">
 			<nav
-				class="navbar navbar-inverse navbar-fixed-bottom">
+				class="navbar navbar-default navbar-fixed-bottom">
 				<div
 					class="container">
 					<ul
