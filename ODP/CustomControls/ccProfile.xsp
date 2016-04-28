@@ -227,6 +227,18 @@ return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEd
 					</xp:this.attrs>
 				</xp:inputText>
 			</xp:div>
+			<xp:div
+				styleClass="form-group">
+				<xp:label
+					value="Show search panel for Anonymous user"
+					disableTheme="true"
+					for="profileShowSearch">
+				</xp:label>
+				<xp:checkBox
+					id="profileShowSearch"
+					value="#{document1.profileShowSearch}">
+				</xp:checkBox>
+			</xp:div>
 		</div>
 		<div
 			class="tab-pane fade-in"
