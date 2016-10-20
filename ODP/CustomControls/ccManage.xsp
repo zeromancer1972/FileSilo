@@ -213,7 +213,8 @@ dialogURL(urlCollection, urlKey);]]></xp:this.script>
 										</xp:attr>
 									</xp:this.attrs>
 								</xp:link>
-								&#160;</td>
+								&#160;
+							</td>
 							<td>
 								<xp:link
 									escape="true"
@@ -330,7 +331,7 @@ log.add("Deletion", log.getUserName()+" deleted collection "+collectionname)}]]>
 											</xp:this.onComplete>
 										</xp:eventHandler>
 									</xp:link>
-									
+
 								</span>
 							</td>
 						</tr>
@@ -343,10 +344,29 @@ log.add("Deletion", log.getUserName()+" deleted collection "+collectionname)}]]>
 			<div
 				style="">
 				<xp:pager
-					layout="Previous Group Next"
 					partialRefresh="true"
+					xp:key="footerPager"
 					id="pager1"
-					for="repeat1">
+					for="repeat1"
+					panelPosition="left"
+					styleClass="bootstrapPager">
+					<xp:pagerControl
+						type="Previous"
+						id="pagerControl1"
+						styleClass="bootstrapPagerPrevious">
+						<xp:this.value><![CDATA[«]]></xp:this.value>
+					</xp:pagerControl>
+					<xp:pagerControl
+						type="Group"
+						id="pagerControl2"
+						styleClass="bootstrapPagerMiddle">
+					</xp:pagerControl>
+					<xp:pagerControl
+						type="Next"
+						id="pagerControl3"
+						styleClass="bootstrapPagerNext">
+						<xp:this.value><![CDATA[»]]></xp:this.value>
+					</xp:pagerControl>
 				</xp:pager>
 			</div>
 		</div>

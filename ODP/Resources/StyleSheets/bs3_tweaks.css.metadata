@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="46e" sequence="231" unid="B9C95A980EDE6596C1257C67002EA479">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="46e" sequence="263" unid="B9C95A980EDE6596C1257C67002EA479">
 <created><datetime>20140121T092927,61+01</datetime></created>
-<modified><datetime dst="true">20150413T114402,63+02</datetime></modified>
-<revised><datetime dst="true">20150413T114402,62+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150413T114402,62+02</datetime></lastaccessed>
+<modified><datetime dst="true">20161020T110047,75+02</datetime></modified>
+<revised><datetime dst="true">20161018T144416,94+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161020T110047,74+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20150403T162306,36+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name="$Flags"><text>34C=Q</text></item>
 <item name="$TITLE"><text>bs3_tweaks.css</text></item>

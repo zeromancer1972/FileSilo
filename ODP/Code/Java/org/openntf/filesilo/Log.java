@@ -6,7 +6,8 @@ import java.util.Date;
 import lotus.domino.Document;
 import lotus.domino.NotesException;
 
-import org.openntf.domino.utils.XSPUtil;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
+
 
 public class Log implements Serializable {
 
@@ -18,10 +19,10 @@ public class Log implements Serializable {
 
 	public void add(String subject, String message) {
 		try {
-			Document doc = XSPUtil.getCurrentDatabase().createDocument();
+			Document doc = ExtLibUtil.getCurrentDatabase().createDocument();
 			doc.replaceItemValue("Form", "log");
 			doc.replaceItemValue("$PublicAccess", "1");
-			doc.replaceItemValue("logTimestamp", XSPUtil.getCurrentSession().createDateTime(new Date()));
+			doc.replaceItemValue("logTimestamp", ExtLibUtil.getCurrentSession().createDateTime(new Date()));
 			doc.replaceItemValue("logSubject", subject);
 			doc.replaceItemValue("logMessage", message);
 			doc.save(true, false);
@@ -32,10 +33,10 @@ public class Log implements Serializable {
 	}
 	public void add(String subject, String message, String unid) {
 		try {
-			Document doc = XSPUtil.getCurrentDatabase().createDocument();
+			Document doc = ExtLibUtil.getCurrentDatabase().createDocument();
 			doc.replaceItemValue("Form", "log");
 			doc.replaceItemValue("$PublicAccess", "1");
-			doc.replaceItemValue("logTimestamp", XSPUtil.getCurrentSession().createDateTime(new Date()));
+			doc.replaceItemValue("logTimestamp", ExtLibUtil.getCurrentSession().createDateTime(new Date()));
 			doc.replaceItemValue("logSubject", subject);
 			doc.replaceItemValue("logMessage", message);
 			doc.replaceItemValue("logUnid", unid);
@@ -47,7 +48,7 @@ public class Log implements Serializable {
 	}
 	
 	public String getUserName() throws NotesException{
-		return XSPUtil.getCurrentSession().createName(XSPUtil.getCurrentSession().getEffectiveUserName()).getAbbreviated();
+		return ExtLibUtil.getCurrentSession().createName(ExtLibUtil.getCurrentSession().getEffectiveUserName()).getAbbreviated();
 	}
 
 }

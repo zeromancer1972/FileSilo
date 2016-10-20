@@ -6,7 +6,7 @@ import java.util.Vector;
 import lotus.domino.Document;
 import lotus.domino.Session;
 
-import org.openntf.domino.utils.XSPUtil;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class RightsManagement implements Serializable {
 
@@ -26,7 +26,7 @@ public class RightsManagement implements Serializable {
 	 */
 	@SuppressWarnings("unchecked")
 	public void setNames(Document doc) {
-		Session session = XSPUtil.getCurrentSession();
+		Session session = ExtLibUtil.getCurrentSession();
 		Vector names = null;
 		String items[] = { "fileAdmin", "fileReaders", "fileAuthors" };
 		try {

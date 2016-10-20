@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="57a" sequence="8" unid="3A90CF22BA1A5A33C1257CFB00619FEE">
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="57a" sequence="45" unid="3A90CF22BA1A5A33C1257CFB00619FEE">
 <created><datetime dst="true">20140618T194619,34+02</datetime></created>
-<modified><datetime dst="true">20150413T114006,75+02</datetime></modified>
-<revised><datetime dst="true">20150413T114006,74+02</datetime></revised>
-<lastaccessed><datetime dst="true">20150413T114006,74+02</datetime></lastaccessed>
+<modified><datetime dst="true">20161020T110048,55+02</datetime></modified>
+<revised><datetime dst="true">20161020T103651,13+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161020T110048,54+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20150403T162307,66+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>org/openntf/filesilo/api/FilesJson.java</text></item>

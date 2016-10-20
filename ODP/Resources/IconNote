@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
  maintenanceversion='1.7' replicaid='C1257BDF00312926'>
-<noteinfo noteid='126' unid='13E7A552113DB85BC1257BDF0031293E' sequence='6'>
+<noteinfo noteid='126' unid='13E7A552113DB85BC1257BDF0031293E' sequence='15'>
 <created><datetime dst='true'>20130907T105658,22+02</datetime></created>
-<modified><datetime dst='true'>20161018T144418,46+02</datetime></modified>
-<revised><datetime dst='true'>20161018T144418,45+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20161018T144418,45+02</datetime></lastaccessed>
+<modified><datetime dst='true'>20161020T110050,11+02</datetime></modified>
+<revised><datetime dst='true'>20161020T110050,10+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20161020T110050,10+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20150403T162259,12+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///4Af//8AD//4AAH/8AAA/+AAAH/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAA
@@ -23,10 +24,6 @@ d30fAAAAAPHXd33Xd3d913d9HwAAAADx13d913d3fdd3fR8AAAAA8R3d0dd3d30d3dEfAAAAAA8R
 EREdd3fRERER8AAAAAAA////Ed3dEf///wAAAAAAAAAAAPERER8AAAAAAAAAAAAAAAAP///wAAAA
 AAAAAAACICABAAD/////+A4DgA==
 </rawitemdata></item>
-<item name='$TemplateServerName'><text>CN=Oliver Busse/O=ulcbs</text></item>
-<item name='$TemplateModTime'><datetime>20140224T123128,38+01</datetime></item>
-<item name='$TemplateFileName'><text>D:\Lotus\Notes\Data\templates\filesilo_140224.ntf</text></item>
-<item name='$PIRCRefreshModTime'><datetime>20140328T194319,07+01</datetime></item>
 <item name='$DefaultClientXPage'><text>index.xsp</text></item>
 <item name='$DBTheme'><text>bootstrap3.theme</text></item>
 <item name='$LaunchXPageRunOnServer'><text>0</text></item>
@@ -34,8 +31,10 @@ AAAAAAACICABAAD/////+A4DgA==
 <item name='$AllowRESTDbAPI'><number>2</number></item>
 <item name='$Daos'><text>0</text></item>
 <item name='$DefaultXPage'><text>index.xsp</text></item>
-<item name='$TITLE'><text>FileSilo DEV
-#1FileSilo</text></item>
 <item name='$Flags'><text>J7!</text></item>
-<item name='$FlagsNoRefresh'><text>rv</text></item></note>
+<item name='$TITLE'><text>FileSilo DEV</text></item>
+<item name='$PIRCRefreshModTime'><datetime dst='true'>20161020T110047,66+02</datetime></item>
+<item name='$TemplateModTime'><datetime dst='true'>20161020T105807,72+02</datetime></item>
+<item name='$TemplateServerName'><text>CN=Oliver Busse/O=DEV-We4IT</text></item>
+<item name='$TemplateFileName'><text>D:\NOTES\Data\templates\ulcsilo_161020.ntf</text></item></note>
 

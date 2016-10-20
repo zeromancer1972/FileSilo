@@ -21,7 +21,7 @@ if(url.indexOf(".xsp")==-1){
 		id="page"
 		disableTheme="true">
 		<nav
-			class="navbar-header navbar-inverse navbar-fixed-top"
+			class="navbar-header navbar-default navbar-fixed-top"
 			role="navigation">
 			<div
 				class="container">
@@ -47,17 +47,14 @@ if(url.indexOf(".xsp")==-1){
 						id="link2"
 						style="margin-left:-15px">
 						<xp:this.styleClass><![CDATA[#{javascript:return "navbar-brand " + (view.getPageName().indexOf("index")==-1 ? "nav-disabled" : "")}]]></xp:this.styleClass>
-						
 						<xp:image
 							url="/we4it-logo.png"
-							id="image1" style="margin-top:0px">
+							id="image1" style="margin-top:-4px">
 						</xp:image>
-						<!-- 
 						&#160;&#160;&#160;
 						<xp:text
 							value="#{javascript:@DbTitle()}">
 						</xp:text>
-						 -->
 						<xp:eventHandler
 							event="onclick"
 							submit="true"
@@ -268,7 +265,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+" uploads)":"";
 			role="navigation"
 			id="footer">
 			<nav
-				class="navbar navbar-inverse navbar-fixed-bottom">
+				class="navbar navbar-default navbar-fixed-bottom">
 				<div
 					class="container">
 					<ul

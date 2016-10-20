@@ -1,31 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xp:view xmlns:xp="http://www.ibm.com/xsp/core">
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core">
 	<xp:this.data>
-		<xp:dominoView var="view1" viewName="logs"></xp:dominoView>
+		<xp:dominoView
+			var="view1"
+			viewName="logs"></xp:dominoView>
 	</xp:this.data>
-	<xp:div id="list" styleClass="panel panel-default">
-		<div class="panel-heading" style="#{javascript:compositeData.widget ? '':'padding-bottom:24px'}">
-			<h3 class="panel-title">
+	<xp:div
+		id="list"
+		styleClass="panel panel-default">
+		<div
+			class="panel-heading"
+			style="#{javascript:compositeData.widget ? '':'padding-bottom:24px'}">
+			<h3
+				class="panel-title">
 				Activities (entries will be removed after
 				7 days automatically)
 			</h3>
-			<span class="pull-right">
-				<xp:link escape="true" text="Remove all logs" id="link2"
-					styleClass="btn btn-danger btn-sm" rendered="#{javascript:!compositeData.widget}">
-					<i class="glyphicon glyphicon-trash"></i>
+			<span
+				class="pull-right">
+				<xp:link
+					escape="true"
+					text="Remove all logs"
+					id="link2"
+					styleClass="btn btn-danger btn-sm"
+					rendered="#{javascript:!compositeData.widget}">
+					<i
+						class="glyphicon glyphicon-trash"></i>
 					&#160;
-					<xp:eventHandler event="onclick" submit="false">
+					<xp:eventHandler
+						event="onclick"
+						submit="false">
 						<xp:this.script><![CDATA[confirmRemoveLogs()]]></xp:this.script>
 					</xp:eventHandler>
 				</xp:link>
 				&#160;&#160;&#160;
-				<span class="clickable">
-					<i class="glyphicon glyphicon-chevron-up"></i>
+				<span
+					class="clickable">
+					<i
+						class="glyphicon glyphicon-chevron-up"></i>
 				</span>
 			</span>
-			<xp:button value="btnRemoveLogs" id="button1" styleClass="btnRemoveLogs"
+			<xp:button
+				value="btnRemoveLogs"
+				id="button1"
+				styleClass="btnRemoveLogs"
 				style="display:none">
-				<xp:eventHandler event="onclick" submit="true"
+				<xp:eventHandler
+					event="onclick"
+					submit="true"
 					refreshMode="norefresh">
 					<xp:this.action><![CDATA[#{javascript:helper.removeLogs();}]]></xp:this.action>
 					<xp:this.onComplete>XSP.partialRefreshGet("#{id:page}");
@@ -34,11 +57,15 @@
 			</xp:button>
 		</div>
 
-		<table class="table table-striped table-hover panel-body">
+		<table
+			class="table table-striped table-hover panel-body">
 			<colgroup>
-				<col style="width:20%" />
-				<col style="width:20%" />
-				<col style="width:60%" />
+				<col
+					style="width:20%" />
+				<col
+					style="width:20%" />
+				<col
+					style="width:60%" />
 			</colgroup>
 			<thead>
 				<tr>
@@ -47,29 +74,42 @@
 					<th>Details</th>
 				</tr>
 			</thead>
-			<tbody class="#{javascript:compositeData.widget?'tiny':''}">
-				<xp:repeat id="repeat1" rows="#{javascript:compositeData.widget?7:20}"
-					value="#{view1}" var="entry" disableOutputTag="true">
+			<tbody
+				class="#{javascript:compositeData.widget?'tiny':''}">
+				<xp:repeat
+					id="repeat1"
+					rows="#{javascript:compositeData.widget?7:20}"
+					value="#{view1}"
+					var="entry"
+					disableOutputTag="true">
 					<xp:panel>
 						<xp:this.data>
-							<xp:dominoDocument var="doc" action="openDocument"
+							<xp:dominoDocument
+								var="doc"
+								action="openDocument"
 								documentId="#{javascript:entry.getDocument().getUniversalID()}"
 								formName="file">
 							</xp:dominoDocument>
 						</xp:this.data>
 						<tr>
 							<td>
-								<xp:panel tagName="span" styleClass="glyphicon glyphicon-time">
+								<xp:panel
+									tagName="span"
+									styleClass="glyphicon glyphicon-time">
 								</xp:panel>
-								<xp:inputText id="inputText1" value="#{doc.logTimestamp}">
+								<xp:inputText
+									id="inputText1"
+									value="#{doc.logTimestamp}">
 									<xp:this.converter>
-										<xp:convertDateTime type="both">
+										<xp:convertDateTime
+											type="both">
 										</xp:convertDateTime>
 									</xp:this.converter>
 								</xp:inputText>
 							</td>
 							<td>
-								<xp:panel tagName="span">
+								<xp:panel
+									tagName="span">
 									<xp:this.styleClass><![CDATA[#{javascript:var action = doc.getDocument().getItemValueString("logSubject");
 if(action.toLowerCase().indexOf("upload")!=-1){
 	return "glyphicon glyphicon-cloud-upload";
@@ -84,19 +124,31 @@ if(action.toLowerCase().indexOf("pushover")!=-1){
 	return "glyphicon glyphicon-phone";
 }}]]></xp:this.styleClass>
 								</xp:panel>
-								<xp:inputText id="inputText2" value="#{doc.logSubject}">
+								<xp:inputText
+									id="inputText2"
+									value="#{doc.logSubject}">
 								</xp:inputText>
 							</td>
 							<td>
-								<xp:inputText id="inputText3" value="#{doc.logMessage}">
+								<xp:inputText
+									id="inputText3"
+									value="#{doc.logMessage}">
 									<xp:this.rendered><![CDATA[#{javascript:return doc.getItemValueString("logSubject").toLowerCase().indexOf("upload")==-1}]]></xp:this.rendered>
 								</xp:inputText>
-								<xp:link escape="true" text="#{doc.logMessage}" id="link1">
+								<xp:link
+									escape="true"
+									text="#{doc.logMessage}"
+									id="link1">
 									<xp:this.rendered><![CDATA[#{javascript:return doc.getItemValueString("logSubject").toLowerCase().indexOf("upload")!=-1}]]></xp:this.rendered>
-									<xp:eventHandler event="onclick" submit="true"
-										refreshMode="complete" immediate="true">
+									<xp:eventHandler
+										event="onclick"
+										submit="true"
+										refreshMode="complete"
+										immediate="true">
 										<xp:this.action>
-											<xp:openPage name="/file.xsp" target="openDocument">
+											<xp:openPage
+												name="/file.xsp"
+												target="openDocument">
 												<xp:this.documentId><![CDATA[#{javascript:doc.getItemValueString("logUnid")}]]></xp:this.documentId>
 											</xp:openPage>
 										</xp:this.action>
@@ -109,10 +161,34 @@ if(action.toLowerCase().indexOf("pushover")!=-1){
 				</xp:repeat>
 			</tbody>
 		</table>
-		<div class="panel-footer">
-			<div style="">
-				<xp:pager layout="Previous Group Next" partialRefresh="true"
-					id="pager1" for="repeat1">
+		<div
+			class="panel-footer">
+			<div
+				style="">
+				<xp:pager
+					partialRefresh="true"
+					xp:key="footerPager"
+					id="pager1"
+					for="repeat1"
+					panelPosition="left"
+					styleClass="bootstrapPager">
+					<xp:pagerControl
+						type="Previous"
+						id="pagerControl1"
+						styleClass="bootstrapPagerPrevious">
+						<xp:this.value><![CDATA[«]]></xp:this.value>
+					</xp:pagerControl>
+					<xp:pagerControl
+						type="Group"
+						id="pagerControl2"
+						styleClass="bootstrapPagerMiddle">
+					</xp:pagerControl>
+					<xp:pagerControl
+						type="Next"
+						id="pagerControl3"
+						styleClass="bootstrapPagerNext">
+						<xp:this.value><![CDATA[»]]></xp:this.value>
+					</xp:pagerControl>
 				</xp:pager>
 			</div>
 		</div>

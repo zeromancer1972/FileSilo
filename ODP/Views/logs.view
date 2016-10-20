@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.4'
+<note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.7'
  replicaid='C1257BDF00312926'>
-<noteinfo noteid='40e' unid='0559549331C36DEAC1257C7D006A99E1' sequence='12'>
+<noteinfo noteid='40e' unid='0559549331C36DEAC1257C7D006A99E1' sequence='27'>
 <created><datetime>20140212T202422,09+01</datetime></created>
-<modified><datetime dst='true'>20150413T114402,87+02</datetime></modified>
-<revised><datetime dst='true'>20150413T114402,86+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20160406T150215,59+02</datetime></lastaccessed>
+<modified><datetime dst='true'>20161020T110048,47+02</datetime></modified>
+<revised><datetime dst='true'>20161020T095706,56+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20161020T110048,46+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20150403T162305,87+02</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name='$FormatNote' summary='true'>
 <rawitemdata type='4'>

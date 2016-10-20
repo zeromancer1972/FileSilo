@@ -10,7 +10,6 @@ import lotus.domino.Session;
 import lotus.domino.View;
 
 import org.apache.http.client.ClientProtocolException;
-import org.openntf.domino.utils.XSPUtil;
 
 import com.ibm.commons.util.io.json.JsonException;
 import com.ibm.xsp.extlib.util.ExtLibUtil;
@@ -39,7 +38,7 @@ public class Upload implements Serializable {
 		String dbtitle = "";
 		String dbpath = "";
 		try {
-			this.session = XSPUtil.getCurrentSession();
+			this.session = ExtLibUtil.getCurrentSession();
 			this.db = session.getCurrentDatabase();
 			dbtitle = db.getTitle();
 			dbpath = db.getFilePath();

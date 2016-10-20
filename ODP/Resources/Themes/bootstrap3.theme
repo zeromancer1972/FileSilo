@@ -1,5 +1,5 @@
 <theme
-	extends="bootstrap3"
+	extends=""
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
 	<resource>
@@ -14,13 +14,13 @@
 	<!-- FontAwesome -->
 	<resource
 		rendered="#{javascript:context.getUrl().getScheme().equals('http')}">
-		<content-type>application/x-javascript</content-type>
-		<href>http://use.fontawesome.com/529e8b64fa.js</href>
+		<content-type>text/css</content-type>
+		<href>http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css</href>
 	</resource>
 	<resource
 		rendered="#{javascript:context.getUrl().getScheme().equals('https')}">
-		<content-type>application/x-javascript</content-type>
-		<href>https://use.fontawesome.com/529e8b64fa.js</href>
+		<content-type>text/css</content-type>
+		<href>https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css</href>
 	</resource>
 
 	<!-- Datepicker -->
@@ -45,6 +45,10 @@
 	<resource>
 		<content-type>text/css</content-type>
 		<href>bs3_tweaks.css</href>
+	</resource>
+	<resource>
+		<content-type>text/css</content-type>
+		<href>pager.css</href>
 	</resource>
 	!-- set page title and favicon -->
 	<control
