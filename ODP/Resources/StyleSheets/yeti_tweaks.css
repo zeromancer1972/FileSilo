@@ -1,0 +1,14 @@
+@import url("//fonts.googleapis.com/css?family=Open+Sans:300");
+
+* { /*font-family: "Open Sans", sans-serif;*/
+	
+}
+
+body {
+	font-family: "Open Sans", sans-serif;
+}
+
+label {
+	font-weight: bold;
+	font-size: 1em;
+}

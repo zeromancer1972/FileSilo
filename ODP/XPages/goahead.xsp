@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view xmlns:xp="http://www.ibm.com/xsp/core" style="background:url(dark_mosaic.png) #333;height:100%;margin:0 auto">
+	<xp:div
+		style="width:100%;height:100%;margin:0 auto;padding:0;zoom:1;vertical-align:middle;text-align:center;font-family:monospace;font-size:12em;color:#fff">
+		&lt;/bitching&gt;
+		<br />
+		&lt;doing&gt;
+	</xp:div>
+	<!-- easter egg -->
+</xp:view>

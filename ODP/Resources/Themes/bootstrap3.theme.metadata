@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="472" sequence="296" unid="901057ECCD0DC241C1257C67002EA476">
+<created><datetime>20140121T092927,58+01</datetime></created>
+<modified><datetime dst="true">20161020T121559,31+02</datetime></modified>
+<revised><datetime dst="true">20161020T121559,30+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161020T121559,30+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150403T162306,38+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$Flags"><text>34567Cg~`</text></item>
+<item name="$TITLE"><text>bootstrap3.theme</text></item>
+<item name="$DesignerVersion"><text>8.5.3</text></item>
+
+
+<item name="$FileNames" sign="true"><text>bootstrap3.theme</text></item>
+<item name="$CSSFiles"><textlist><text>bootstrap/dist/css/bootstrap.min.css</text><text>yeti/bootstrap.css</text><text>yeti_tweaks.css</text><text>http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css</text><text>https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css</text><text>bootstrap-datepicker-master/css/datepicker3.css</text><text>bs3_tweaks.css</text><text>pager.css</text></textlist></item></note>

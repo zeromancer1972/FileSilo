@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xc="http://www.ibm.com/xsp/custom">
+	<xp:this.data>
+		<xp:dominoView
+			var="view1"
+			viewName="files"></xp:dominoView>
+	</xp:this.data>
+	<xp:div
+		id="list"
+		styleClass="panel panel-default">
+		<div
+			class="panel-heading"
+			style="padding-bottom: 18px;">
+			<h3
+				class="panel-title">Collections in store</h3>
+			<span
+				class="pull-right">
+				<a
+					href="file.xsp"
+					class="btn btn-sm btn-info">
+					<span
+						class="glyphicon glyphicon-plus-sign"></span>
+					&#160; Create collection
+				</a>
+			</span>
+		</div>
+		<table
+			class="table table-striped table-hover panel-body">
+			<colgroup>
+				<col
+					style="width:2%" />
+				<col
+					style="width:48%" />
+				<col
+					style="width:12%" />
+				<col
+					style="width:3%" />
+				<col
+					style="width:1%" />
+				<col
+					style="width:1%" />
+				<col
+					style="width:10%" />
+				<col
+					style="width:10%" />
+				<col
+					style="width:3%" />
+			</colgroup>
+			<thead>
+				<tr>
+					<th></th>
+					<th>ID</th>
+					<th>Size</th>
+					<th>Key</th>
+					<th>&#160;</th>
+					<th>&#160;</th>
+					<th>Readers</th>
+					<th>Authors</th>
+					<th>Expires</th>
+					<th>&#160;</th>
+				</tr>
+			</thead>
+			<tbody>
+				<xp:repeat
+					id="repeat1"
+					rows="30"
+					value="#{view1}"
+					var="entry"
+					disableOutputTag="true">
+					<xp:panel>
+						<xp:this.data>
+							<xp:dominoDocument
+								var="doc"
+								action="openDocument"
+								documentId="#{javascript:entry.getDocument().getUniversalID()}"
+								formName="file">
+							</xp:dominoDocument>
+						</xp:this.data>
+						<tr>
+							<td>
+								<xp:panel
+									tagName="span"
+									styleClass="glyphicon glyphicon-cloud-upload">
+									<xp:this.rendered><![CDATA[#{javascript:doc.getItemValueString("fileUpload").equals("1")}]]></xp:this.rendered>
+								</xp:panel>
+							</td>
+							<td>
+								<b>
+									<xp:link
+										escape="true"
+										id="link1">
+										<xp:this.text><![CDATA[#{javascript:var fileCount = doc.getValue("fileID")+(@Attachments() > 0 ? (@Attachments() > 1 ? " ("+@Attachments()+" files)" : " ("+@Attachments()+" file)") : "");
+
+return fileCount}]]></xp:this.text>
+										<xp:eventHandler
+											event="onclick"
+											submit="true"
+											refreshMode="complete">
+											<xp:this.action>
+												<xp:openPage
+													name="/file.xsp"
+													target="openDocument"
+													documentId="#{javascript:doc.getDocument().getUniversalID()}">
+												</xp:openPage>
+											</xp:this.action>
+										</xp:eventHandler>
+									</xp:link>
+								</b>
+								<xp:br></xp:br>
+								<xp:inputRichText
+									id="inputRichText1"
+									value="#{doc.fileMessage}"
+									disableTheme="true">
+								</xp:inputRichText>
+							</td>
+							<td>
+								<xp:link
+									escape="true"
+									id="link9">
+									<xp:this.text><![CDATA[#{javascript:var fileSize = @AttachmentLengths()==0?"":helper.byteName(@AttachmentLengths(), true);
+return fileSize}]]></xp:this.text>
+									<xp:eventHandler
+										event="onclick"
+										submit="true"
+										refreshMode="complete">
+										<xp:this.action>
+											<xp:openPage
+												name="/file.xsp"
+												target="openDocument"
+												documentId="#{javascript:doc.getDocument().getUniversalID()}">
+											</xp:openPage>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:link>
+							</td>
+							<td>
+								<xp:link
+									escape="true"
+									id="link2">
+									<xp:this.text><![CDATA[#{javascript:doc.getValue("fileKey")}]]></xp:this.text>
+									<xp:eventHandler
+										event="onclick"
+										submit="true"
+										refreshMode="complete">
+										<xp:this.action>
+											<xp:openPage
+												name="/file.xsp"
+												target="openDocument"
+												documentId="#{javascript:doc.getDocument().getUniversalID()}">
+											</xp:openPage>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:link>
+							</td>
+							<td>
+								<xp:link
+									styleClass="btn btn-sm btn-primary"
+									escape="true"
+									title="Display all attachments of this collection"
+									id="link8">
+									<xp:this.rendered><![CDATA[#{javascript:@Attachments() > 0}]]></xp:this.rendered>
+									<span
+										class="fa fa-database"></span>
+									<xp:eventHandler
+										event="onclick"
+										submit="false">
+										<xp:this.script><![CDATA[// dialog atts
+
+dialogAttachments("#{javascript:collection.getAttachmentList(entry.getDocument().getUniversalID())}");]]></xp:this.script>
+									</xp:eventHandler>
+									<xp:this.attrs>
+										<xp:attr
+											name="data-placement"
+											value="left">
+										</xp:attr>
+										<xp:attr
+											name="data-toggle"
+											value="tooltip">
+										</xp:attr>
+									</xp:this.attrs>
+								</xp:link>
+								&#160;
+							</td>
+							<td>
+								<xp:link
+									styleClass="btn btn-sm btn-primary"
+									escape="true"
+									title="Display URLs to this collection"
+									id="link7">
+									<xp:this.rendered><![CDATA[#{javascript:@ClientType().equals("Web")}]]></xp:this.rendered>
+									<span
+										class="fa fa-globe"></span>
+									<xp:eventHandler
+										event="onclick"
+										submit="false">
+										<xp:this.script><![CDATA[// dialog urls
+var url = "#{javascript:context.getUrl().toString()}";
+url = url.substring(0, url.indexOf("index.xsp"));
+var urlCollection = url + "file.xsp?action=openDocument&documentId=#{javascript:doc.getDocument().getUniversalID()}";
+var urlKey = url + "index.xsp?key=#{javascript:doc.getDocument().getItemValueString('fileKey')}";
+dialogURL(urlCollection, urlKey);]]></xp:this.script>
+									</xp:eventHandler>
+									<xp:this.attrs>
+										<xp:attr
+											name="data-placement"
+											value="right">
+										</xp:attr>
+										<xp:attr
+											name="data-toggle"
+											value="tooltip">
+										</xp:attr>
+									</xp:this.attrs>
+								</xp:link>
+								&#160;
+							</td>
+							<td>
+								<xp:link
+									escape="true"
+									id="link3">
+									<xp:this.text><![CDATA[#{javascript:@Name("[Abbreviate]",doc.getValue("fileReaders"))}]]></xp:this.text>
+									&#160;
+									<xp:eventHandler
+										event="onclick"
+										submit="true"
+										refreshMode="complete">
+										<xp:this.action>
+											<xp:openPage
+												name="/file.xsp"
+												target="openDocument"
+												documentId="#{javascript:doc.getDocument().getUniversalID()}">
+											</xp:openPage>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:link>
+							</td>
+							<td>
+								<xp:link
+									escape="true"
+									id="link4">
+									<xp:this.text><![CDATA[#{javascript:@Name("[Abbreviate]",doc.getValue("fileAuthors"))}]]></xp:this.text>
+									&#160;
+									<xp:eventHandler
+										event="onclick"
+										submit="true"
+										refreshMode="complete">
+										<xp:this.action>
+											<xp:openPage
+												name="/file.xsp"
+												target="openDocument"
+												documentId="#{javascript:doc.getDocument().getUniversalID()}">
+											</xp:openPage>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:link>
+							</td>
+							<td>
+								<xp:link
+									escape="true"
+									id="link5">
+									<xp:this.text><![CDATA[#{javascript:try {
+	var exp = doc.getItemValueDateTime("fileExpires");
+	return exp.getDateOnly();
+} catch(e) {
+}}]]></xp:this.text>
+									&#160;
+									<xp:eventHandler
+										event="onclick"
+										submit="true"
+										refreshMode="complete">
+										<xp:this.action>
+											<xp:openPage
+												name="/file.xsp"
+												target="openDocument"
+												documentId="#{javascript:doc.getDocument().getUniversalID()}">
+											</xp:openPage>
+										</xp:this.action>
+									</xp:eventHandler>
+								</xp:link>
+							</td>
+							<td>
+								<span
+									class="pull-right">
+									<xp:link
+										styleClass="btn btn-sm btn-danger"
+										escape="true"
+										text=""
+										id="link6"
+										title="Delete collection">
+										<span
+											class="glyphicon glyphicon-trash">
+										</span>
+										<xp:eventHandler
+											event="onclick"
+											submit="false">
+											<xp:this.script><![CDATA[// dialog confirm
+confirmDelete("#{id:delAction}")]]></xp:this.script>
+										</xp:eventHandler>
+										<xp:this.attrs>
+											<xp:attr
+												name="data-placement"
+												value="left">
+											</xp:attr>
+											<xp:attr
+												name="data-toggle"
+												value="tooltip">
+											</xp:attr>
+										</xp:this.attrs>
+									</xp:link>
+									<xp:link
+										text="action"
+										id="delAction"
+										style="display:none">
+										<xp:eventHandler
+											event="onclick"
+											submit="true"
+											refreshMode="partial"
+											refreshId="list">
+											<xp:this.action>
+												<xp:actionGroup>
+													<xp:executeScript>
+														<xp:this.script><![CDATA[#{javascript:var collectionname = doc.getItemValueString("fileID");
+doc.getDocument().remove(false);
+log.add("Deletion", log.getUserName()+" deleted collection "+collectionname)}]]></xp:this.script>
+													</xp:executeScript>
+												</xp:actionGroup>
+											</xp:this.action>
+											<xp:this.onComplete>
+												<![CDATA[XSP.partialRefreshGet("#{id:usermenu}")]]>
+											</xp:this.onComplete>
+										</xp:eventHandler>
+									</xp:link>
+
+								</span>
+							</td>
+						</tr>
+					</xp:panel>
+				</xp:repeat>
+			</tbody>
+		</table>
+		<div
+			class="panel-footer">
+			<div
+				style="">
+				<xp:pager
+					partialRefresh="true"
+					xp:key="footerPager"
+					id="pager1"
+					for="repeat1"
+					panelPosition="left"
+					styleClass="bootstrapPager">
+					<xp:pagerControl
+						type="Previous"
+						id="pagerControl1"
+						styleClass="bootstrapPagerPrevious">
+						<xp:this.value><![CDATA[«]]></xp:this.value>
+					</xp:pagerControl>
+					<xp:pagerControl
+						type="Group"
+						id="pagerControl2"
+						styleClass="bootstrapPagerMiddle">
+					</xp:pagerControl>
+					<xp:pagerControl
+						type="Next"
+						id="pagerControl3"
+						styleClass="bootstrapPagerNext">
+						<xp:this.value><![CDATA[»]]></xp:this.value>
+					</xp:pagerControl>
+				</xp:pager>
+			</div>
+		</div>
+	</xp:div>
+	<xc:ccDialogAttachments></xc:ccDialogAttachments>
+</xp:view>

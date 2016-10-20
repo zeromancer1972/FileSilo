@@ -1,0 +1,21 @@
+OpenNTF FileSilo Template
+(C)Copyright 2013, 2014 Oliver Busse
+
+#codefortim
+
+This product includes software contributed to
+OpenNTF Alliance (http://www.OpenNTF.org/)
+
+This product is licensed under the terms of the Apache 2.0 license.
+
+The project contains the following 3rd party code:
+
+0. The product utilizes software from OpenNTF, e.g. Bootstrap 4 XPages and the OpenNTF Domino API (www.openntf.org)
+1. The product contains Twitter Bootstrap, which is available from http://getbootstrap.com/, which is under the Apache License v2
+2. The product contains the Standby Dialog Custom control by Fredrik Norling http://openntf.org/XSnippets.nsf/snippet.xsp?id=standby-dialog-custom-control, which is under the Apache License v2
+3. The product contains a snippet by Sven Hasselbach found at http://stackoverflow.com/questions/13101615/auto-save-doc-after-delete-of-attachment-in-file-download-control/13136473#13136473, which is licensed under Creative Commons Attribution ShareAlike 3.0 Unported http://creativecommons.org/licenses/by-sa/3.0/
+4. The product contains BootstrapCK-Skin, a Bootstrap Skin for the CKEditor, which is available from https://github.com/Kunstmaan/BootstrapCK-Skin, which is under the MIT license
+5. The product contains Bootstrap File Input, which is available from https://github.com/grevory/bootstrap-file-input, which is under the Apache License v2
+6. The product contains Bootstrap Datepicker, which is available from https://github.com/eternicode/bootstrap-datepicker, which is under the Apache License v2
+7. The product uses Fontawesome icons, which is available from http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css, which is licensed under MIT license: http://fortawesome.github.io/Font-Awesome/license/ and is under SIL OFL 1.1/MIT license
+8. The product contains Apache Commons HTTP Client, which is available from http://hc.apache.org/httpcomponents-client-ga/, which is under the Apache License v2

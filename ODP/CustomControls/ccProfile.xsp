@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xp:view
+	xmlns:xp="http://www.ibm.com/xsp/core"
+	xmlns:xe="http://www.ibm.com/xsp/coreex"
+	xmlns:on="http://www.openntf.org/domino/xsp">
+	<xp:div
+		styleClass="actionbar">
+		<xp:div
+			styleClass="">
+			<xp:button
+				id="button1"
+				rendered="#{javascript:currentDocument.isEditable()}"
+				styleClass="btn btn-success btn-sm">
+				<span
+					class="glyphicon glyphicon-floppy-disk">
+				</span>
+				&#160;Save
+				<xp:eventHandler
+					event="onclick"
+					submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+						<xp:saveDocument
+							var="document1"></xp:saveDocument>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:button
+				id="button2"
+				rendered="#{javascript:currentDocument.isEditable()}"
+				styleClass="btn btn-info btn-sm">
+				<span
+					class="glyphicon glyphicon-floppy-saved">
+				</span>
+				&#160;Save &amp; Close
+				<xp:eventHandler
+					event="onclick"
+					submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+						<xp:actionGroup>
+							<xp:saveDocument
+								var="document1"></xp:saveDocument>
+							<xp:executeScript>
+								<xp:this.script><![CDATA[#{javascript:return "close"}]]></xp:this.script>
+							</xp:executeScript>
+						</xp:actionGroup>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:button
+				id="button3"
+				styleClass="btn btn-primary btn-sm">
+				<span
+					class="glyphicon glyphicon-edit">
+				</span>
+				&#160;Edit
+				<xp:this.rendered><![CDATA[#{javascript:var ctx = com.ibm.domino.xsp.module.nsf.NotesContext.getCurrent()
+return ctx.isDocEditable(currentDocument.getDocument()) && !currentDocument.isEditable()}]]></xp:this.rendered>
+				<xp:eventHandler
+					event="onclick"
+					submit="true"
+					refreshMode="complete">
+					<xp:this.action>
+						<xp:changeDocumentMode
+							mode="edit"></xp:changeDocumentMode>
+					</xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+			<xp:button
+				id="button4"
+				styleClass="btn btn-danger btn-sm">
+				<span
+					class="glyphicon glyphicon-chevron-left"></span>
+				&#160;
+				<xp:this.value><![CDATA[#{javascript:currentDocument.isEditable() ? "Cancel" : "Close"}]]></xp:this.value>
+				<xp:eventHandler
+					event="onclick"
+					submit="true"
+					refreshMode="complete"
+					immediate="true">
+					<xp:this.action><![CDATA[#{javascript:return (session.getEffectiveUserName().equals("Anonymous"))?"welcome":"cancel"}]]></xp:this.action>
+				</xp:eventHandler>
+			</xp:button>
+		</xp:div>
+	</xp:div>
+
+	<!-- Nav tabs -->
+	<ul
+		class="nav nav-tabs nav-justified">
+		<li
+			class="active">
+			<a
+				href="#general"
+				data-toggle="tab">
+				<span
+					class="glyphicon glyphicon-cog"></span>
+				&#160;General
+			</a>
+		</li>
+		<li>
+			<a
+				href="#mail"
+				data-toggle="tab">
+				<span
+					class="glyphicon glyphicon-envelope"></span>
+				&#160;Mail Compositing
+			</a>
+		</li>
+		<li>
+			<a
+				href="#pushover"
+				data-toggle="tab">
+				<span
+					class="glyphicon glyphicon-phone"></span>
+				&#160;Pushover
+			</a>
+		</li>
+	</ul>
+	<div
+		class="tab-content">
+		<div
+			class="tab-pane fade in active"
+			id="general">
+			<xp:div
+				styleClass="form-group">
+				<xp:label
+					value="Mail address"
+					id="profileMail_Label1"
+					for="profileMail1"
+					disableTheme="true">
+				</xp:label>
+				&#160;
+				<xe:namePicker
+					id="namePicker1"
+					for="profileMail1"
+					dialogTitle="Choose names"
+					rendered="#{javascript:currentDocument.isEditable()}">
+					<xe:this.dataProvider>
+						<xe:dominoNABNamePicker
+							people="true"
+							addressBookSel="db-name">
+							<xe:this.addressBookDb><![CDATA[#{javascript:database.getServer()+"!!names.nsf"}]]></xe:this.addressBookDb>
+						</xe:dominoNABNamePicker>
+					</xe:this.dataProvider>
+				</xe:namePicker>
+				<xp:inputText
+					value="#{document1.profileMail}"
+					id="profileMail1"
+					styleClass="form-control"
+					title="Leave blank if you don't want a notification">
+					<xp:this.attrs>
+						<xp:attr
+							name="placeholder"
+							value="Enter a valid SMTP or Notes mail address">
+						</xp:attr>
+						<xp:attr
+							name="data-placement"
+							value="bottom">
+						</xp:attr>
+						<xp:attr
+							name="data-toggle"
+							value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+			<xp:div
+				styleClass="form-group">
+				<xp:label
+					value="Custom subject"
+					id="label2"
+					for="customMessage"
+					disableTheme="true">
+				</xp:label>
+				<xp:inputText
+					id="customMessage"
+					styleClass="form-control"
+					value="#{document1.profileMessage}"
+					title="If you receive notifications then this will be used a subject">
+					<xp:this.attrs>
+						<xp:attr
+							name="placeholder">
+							<xp:this.value><![CDATA[#{javascript:"You can use <DB> as placeholder for the database title"}]]></xp:this.value>
+						</xp:attr>
+						<xp:attr
+							name="data-placement"
+							value="bottom">
+						</xp:attr>
+						<xp:attr
+							name="data-toggle"
+							value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+			<xp:div
+				styleClass="form-group">
+				<xp:label
+					value="Default number of days for expire date"
+					id="label1"
+					for="profileAdjust"
+					disableTheme="true">
+				</xp:label>
+				<xp:inputText
+					id="profileAdjust"
+					value="#{document1.profileAdjust}"
+					styleClass="form-control"
+					title="The default period is 30 days if you leave it blank">
+					<xp:this.converter>
+						<xp:convertNumber
+							type="number"></xp:convertNumber>
+					</xp:this.converter>
+					<xp:this.attrs>
+						<xp:attr
+							name="placeholder"
+							value="Enter a numeric value e.g. 30">
+						</xp:attr>
+						<xp:attr
+							name="data-placement"
+							value="bottom">
+						</xp:attr>
+						<xp:attr
+							name="data-toggle"
+							value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+			<xp:div
+				styleClass="form-group">
+				<xp:label
+					value="Show search panel for Anonymous user"
+					disableTheme="true"
+					for="profileShowSearch">
+				</xp:label>
+				<xp:checkBox
+					id="profileShowSearch"
+					value="#{document1.profileShowSearch}">
+				</xp:checkBox>
+			</xp:div>
+		</div>
+		<div
+			class="tab-pane fade-in"
+			id="mail">
+			<xp:div
+				styleClass="form-group">
+				<xp:label
+					value="Subject"
+					id="label7"
+					for="profileMailSubject">
+				</xp:label>
+				<xp:inputText
+					id="profileMailSubject"
+					value="#{document1.profileMailSubject}">
+				</xp:inputText>
+			</xp:div>
+			<xp:div
+				styleClass="form-group">
+				<xp:label
+					value="Body"
+					id="label8"
+					for="profileMailBody">
+				</xp:label>
+				<xp:inputRichText
+					id="profileMailBody"
+					value="#{document1.profileMailBody}">
+				</xp:inputRichText>
+			</xp:div>
+		</div>
+		<div
+			class="tab-pane fade in"
+			id="pushover">
+			<xp:div
+				styleClass="form-group">
+				<xp:label
+					value="Pushover User Token"
+					id="label3"
+					for="profilePushover"
+					disableTheme="true">
+				</xp:label>
+				<xp:inputText
+					id="profilePushover"
+					styleClass="form-control"
+					value="#{document1.profileUserToken}"
+					title="Your Pushover User Token"
+					redisplay="true">
+					<xp:this.attrs>
+						<xp:attr
+							name="placeholder">
+							<xp:this.value><![CDATA[#{javascript:"Your Pushover User Token key goes here"}]]></xp:this.value>
+						</xp:attr>
+						<xp:attr
+							name="data-placement"
+							value="bottom">
+						</xp:attr>
+						<xp:attr
+							name="data-toggle"
+							value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+			<xp:div
+				styleClass="form-group">
+				<xp:label
+					value="Pushover App Token"
+					id="label4"
+					for="profilePushover"
+					disableTheme="true">
+				</xp:label>
+				<xp:inputText
+					id="inputText1"
+					styleClass="form-control"
+					value="#{document1.profileAppToken}"
+					title="Your Pushover App Token"
+					redisplay="true">
+					<xp:this.attrs>
+						<xp:attr
+							name="placeholder">
+							<xp:this.value><![CDATA[#{javascript:"Your Pushover App Token key goes here"}]]></xp:this.value>
+						</xp:attr>
+						<xp:attr
+							name="data-placement"
+							value="bottom">
+						</xp:attr>
+						<xp:attr
+							name="data-toggle"
+							value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+			<xp:div
+				styleClass="form-group">
+				<xp:label
+					value="Pushover URL"
+					id="label5"
+					for="profilePushover"
+					disableTheme="true">
+				</xp:label>
+				<xp:inputText
+					id="inputText2"
+					styleClass="form-control"
+					value="#{document1.profileURL}"
+					title="Your Pushover notification URL">
+					<xp:this.attrs>
+						<xp:attr
+							name="placeholder">
+							<xp:this.value><![CDATA[#{javascript:"Your Pushover notification URL goes here"}]]></xp:this.value>
+						</xp:attr>
+						<xp:attr
+							name="data-placement"
+							value="bottom">
+						</xp:attr>
+						<xp:attr
+							name="data-toggle"
+							value="tooltip">
+						</xp:attr>
+					</xp:this.attrs>
+				</xp:inputText>
+			</xp:div>
+			<xp:div
+				styleClass="form-group">
+				<xp:label
+					value="For anonymous uploads only"
+					id="label6"
+					for="profilePOAnonymous"
+					disableTheme="true">
+				</xp:label>
+				<xp:radioGroup
+					id="profilePOAnonymous"
+					value="#{document1.profilePOAnonymous}"
+					defaultValue="1"
+					title="Send notifications to all or only anonymous uploads"
+					layout="pageDirection">
+					<xp:selectItem
+						itemLabel="yes"
+						itemValue="1"></xp:selectItem>
+					<xp:selectItem
+						itemLabel="no"
+						itemValue="0"></xp:selectItem>
+				</xp:radioGroup>
+			</xp:div>
+			<div
+				class="well">
+				For more information about Pushover visit&#160;
+				<xp:link
+					escape="true"
+					text="Pushover.net"
+					id="link1"
+					value="https://pushover.net"
+					target="_blank">
+				</xp:link>
+			</div>
+		</div>
+	</div>
+</xp:view>
