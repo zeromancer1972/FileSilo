@@ -49,12 +49,14 @@ if(url.indexOf(".xsp")==-1){
 						<xp:this.styleClass><![CDATA[#{javascript:return "navbar-brand " + (view.getPageName().indexOf("index")==-1 ? "nav-disabled" : "")}]]></xp:this.styleClass>
 						<xp:image
 							url="/we4it-logo.png"
-							id="image1" style="margin-top:-4px">
+							id="image1" style="margin-top:0px">
 						</xp:image>
+						<!-- 
 						&#160;&#160;&#160;
 						<xp:text
 							value="#{javascript:@DbTitle()}">
-						</xp:text>
+						</xp:text> 
+						-->
 						<xp:eventHandler
 							event="onclick"
 							submit="true"

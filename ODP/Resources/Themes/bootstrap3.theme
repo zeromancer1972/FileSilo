@@ -12,7 +12,7 @@
 	<!-- bootstrap -->
 	<resource>
 		<content-type>text/css</content-type>
-		<href>bootstrap/dist/css/bootstrap.min.css</href>
+		<href>bootstrap/dist/css/bootstrap.css</href>
 	</resource>
 	<resource>
 		<content-type>application/x-javascript</content-type>
