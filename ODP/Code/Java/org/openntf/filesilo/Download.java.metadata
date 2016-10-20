@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
 <noteinfo noteid="3a6" sequence="13" unid="DE57D39E71AAF305C1257CFA00781817">
 <created><datetime dst="true">20140617T235144,87+02</datetime></created>
@@ -10,9 +11,26 @@
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>org/openntf/filesilo/Download.java</text></item>
 
+=======
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="3a6" sequence="18" unid="DE57D39E71AAF305C1257CFA00781817">
+<created><datetime dst="true">20140617T235144,87+02</datetime></created>
+<modified><datetime dst="true">20161018T143240,12+02</datetime></modified>
+<revised><datetime dst="true">20150730T202950,27+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161018T143240,11+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150403T162305,33+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
+<item name="$Flags"><text>34567Cg~[</text></item>
+<item name="$TITLE"><text>org/openntf/filesilo/Download.java</text></item>
+>>>>>>> 4d97d2237405174425fb7f7939232050516f7037
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 <item name="$FileNames" sign="true"><text>org/openntf/filesilo/Download.java</text></item>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4d97d2237405174425fb7f7939232050516f7037
 </note>

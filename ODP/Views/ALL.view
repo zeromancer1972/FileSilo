@@ -1,11 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='view' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.7'
  replicaid='C1257BDF00312926'>
+<<<<<<< HEAD
 <noteinfo noteid='2162' unid='DAC4DA9CA6B38BC1C1257FA3002CD7CF' sequence='13'>
 <created><datetime dst='true'>20160428T100948,31+02</datetime></created>
 <modified><datetime dst='true'>20161020T105953,36+02</datetime></modified>
 <revised><datetime dst='true'>20161020T105953,35+02</datetime></revised>
 <lastaccessed><datetime dst='true'>20161020T105953,35+02</datetime></lastaccessed>
+=======
+<noteinfo noteid='2162' unid='DAC4DA9CA6B38BC1C1257FA3002CD7CF' sequence='15'>
+<created><datetime dst='true'>20160428T100948,31+02</datetime></created>
+<modified><datetime dst='true'>20161020T121255,24+02</datetime></modified>
+<revised><datetime dst='true'>20161020T121255,23+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20161020T121255,23+02</datetime></lastaccessed>
+>>>>>>> 4d97d2237405174425fb7f7939232050516f7037
 <addedtofile><datetime dst='true'>20160428T100948,32+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>

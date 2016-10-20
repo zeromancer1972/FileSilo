@@ -1,9 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<<<<<<< HEAD
 <noteinfo noteid="5d2" sequence="155" unid="CA391271E6E1B48EC1257C7A00421D5B">
 <created><datetime>20140209T130208,91+01</datetime></created>
 <modified><datetime dst="true">20161020T105812,41+02</datetime></modified>
 <revised><datetime dst="true">20161020T105812,40+02</datetime></revised>
 <lastaccessed><datetime dst="true">20161020T105812,40+02</datetime></lastaccessed>
+=======
+<noteinfo noteid="5d2" sequence="160" unid="CA391271E6E1B48EC1257C7A00421D5B">
+<created><datetime>20140209T130208,91+01</datetime></created>
+<modified><datetime dst="true">20161020T110256,75+02</datetime></modified>
+<revised><datetime dst="true">20161020T110256,74+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161020T110256,74+02</datetime></lastaccessed>
+>>>>>>> 4d97d2237405174425fb7f7939232050516f7037
 <addedtofile><datetime dst="true">20150403T162308,10+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>

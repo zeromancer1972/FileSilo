@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.3" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
 <noteinfo noteid="366" sequence="15" unid="EEB92679324BB5D1C1257C67002EA47D">
 <created><datetime>20140121T092927,65+01</datetime></created>
@@ -6,6 +7,16 @@
 <lastaccessed><datetime dst="true">20150413T114403,66+02</datetime></lastaccessed>
 <addedtofile><datetime dst="true">20150403T162305,01+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+=======
+<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.7" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
+<noteinfo noteid="366" sequence="18" unid="EEB92679324BB5D1C1257C67002EA47D">
+<created><datetime>20140121T092927,65+01</datetime></created>
+<modified><datetime dst="true">20161018T143239,21+02</datetime></modified>
+<revised><datetime dst="true">20150730T202931,17+02</datetime></revised>
+<lastaccessed><datetime dst="true">20161018T143239,20+02</datetime></lastaccessed>
+<addedtofile><datetime dst="true">20150403T162305,01+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+>>>>>>> 4d97d2237405174425fb7f7939232050516f7037
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name="$TITLE"><text>silo_small.png</text></item>
 <item name="$Flags"><text>34CiQ</text></item>

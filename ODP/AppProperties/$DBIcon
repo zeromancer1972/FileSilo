@@ -1,4 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
+<<<<<<< HEAD
 <note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.3'
  replicaid='C1257BDF00312926'>
 <noteinfo noteid='30e' unid='E6E2E21A3B755214C1257BE00074B291' sequence='34'>
@@ -8,6 +9,17 @@
 <lastaccessed><datetime dst='true'>20150413T114404,08+02</datetime></lastaccessed>
 <addedtofile><datetime dst='true'>20150403T162304,57+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=ulcbs</name><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+=======
+<note class='form' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.7'
+ replicaid='C1257BDF00312926'>
+<noteinfo noteid='30e' unid='E6E2E21A3B755214C1257BE00074B291' sequence='38'>
+<created><datetime dst='true'>20130908T231438,89+02</datetime></created>
+<modified><datetime dst='true'>20161018T143352,09+02</datetime></modified>
+<revised><datetime dst='true'>20161018T143352,08+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20161018T143352,08+02</datetime></lastaccessed>
+<addedtofile><datetime dst='true'>20150403T162304,57+02</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
+>>>>>>> 4d97d2237405174425fb7f7939232050516f7037
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
 <item name='$TITLE'><text>$DBIcon</text></item>
 <item name='$Flags'><text>34Ci~Q</text></item>

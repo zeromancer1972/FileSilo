@@ -1,11 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <note class='filter' xmlns='http://www.lotus.com/dxl' version='9.0' maintenanceversion='1.7'
  replicaid='C1257BDF00312926'>
+<<<<<<< HEAD
 <noteinfo noteid='4aa' unid='D25738EF153CB3F2C1257C7D0008D724' sequence='35'>
 <created><datetime>20140212T023633,64+01</datetime></created>
 <modified><datetime dst='true'>20161020T095706,86+02</datetime></modified>
 <revised><datetime dst='true'>20161020T095706,85+02</datetime></revised>
 <lastaccessed><datetime dst='true'>20161020T095706,85+02</datetime></lastaccessed>
+=======
+<noteinfo noteid='4aa' unid='D25738EF153CB3F2C1257C7D0008D724' sequence='37'>
+<created><datetime>20140212T023633,64+01</datetime></created>
+<modified><datetime dst='true'>20161020T121256,14+02</datetime></modified>
+<revised><datetime dst='true'>20161020T121256,13+02</datetime></revised>
+<lastaccessed><datetime dst='true'>20161020T121256,13+02</datetime></lastaccessed>
+>>>>>>> 4d97d2237405174425fb7f7939232050516f7037
 <addedtofile><datetime dst='true'>20150403T162306,62+02</datetime></addedtofile></noteinfo>
 <updatedby><name>CN=Oliver Busse/O=DEV-We4IT</name></updatedby>
 <wassignedby><name>CN=Oliver Busse/O=DEV-We4IT</name></wassignedby>
@@ -45,7 +53,11 @@ gQI=
 <item name='$DesignerVersion'><text>8.5.3</text></item>
 <item name='$AssistRunInfo' summary='true'>
 <rawitemdata type='3'>
+<<<<<<< HEAD
 BgABAAAACADaIQAAAAAAAAUAAAAwAAAAAAAAAG0EAAAAAAAA6QAAAAAAAAAAAAAAAAAAABAAAAAA
+=======
+BgABAAAACABmIgAAAAAAAAUAAAAwAAAAAAAAAG0EAAAAAAAA6QAAAAAAAAAAAAAAAAAAABAAAAAA
+>>>>>>> 4d97d2237405174425fb7f7939232050516f7037
 AAAA89F/ACp+JcEAAAAAnXg1ACZ+JcHrAU8AHH4lwQAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAMEC
 3wABAPvRfwAqfiXBASIKAAADKgsAAAQ+CwAAAVYLAAACYgsAAAFyCwAAARYZAAABShsAAAB+GwAA
 AcIbAAABzhsAAADaGwAAAOIbAAAD6hsAAAH+GwAAAgocAAAAHhwAAAEmHAAABDIcAAAARhwAAAFW
