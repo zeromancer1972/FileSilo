@@ -2,6 +2,23 @@
 	extends=""
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:noNamespaceSchemaLocation="platform:/plugin/com.ibm.designer.domino.stylekits/schema/stylekit.xsd">
+	
+	<!-- jquery -->
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>jquery/dist/jquery.min.js</href>
+	</resource>
+	
+	<!-- bootstrap -->
+	<resource>
+		<content-type>text/css</content-type>
+		<href>bootstrap/dist/css/bootstrap.min.css</href>
+	</resource>
+	<resource>
+		<content-type>application/x-javascript</content-type>
+		<href>bootstrap/dist/js/bootstrap.min.js</href>
+	</resource>
+
 	<resource>
 		<content-type>text/css</content-type>
 		<href>yeti/bootstrap.css</href>
