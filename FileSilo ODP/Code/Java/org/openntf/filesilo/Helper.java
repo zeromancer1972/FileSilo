@@ -2,7 +2,7 @@ package org.openntf.filesilo;
 
 import java.io.Serializable;
 
-import org.openntf.domino.utils.XSPUtil;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class Helper implements Serializable {
 
@@ -14,7 +14,7 @@ public class Helper implements Serializable {
 
 	public void removeLogs() {
 		try {
-			XSPUtil.getCurrentDatabase().getView("logs").getAllEntries().removeAll(false);
+			ExtLibUtil.getCurrentDatabase().getView("logs").getAllEntries().removeAll(false);
 		} catch (Exception e) {
 
 		}

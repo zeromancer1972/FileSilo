@@ -6,24 +6,28 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.Vector;
 
-import org.openntf.domino.utils.XSPUtil;
+import com.ibm.xsp.extlib.util.ExtLibUtil;
 
 public class SysInfo implements Serializable {
 
 	private static final long serialVersionUID = -6709687405993515378L;
 
-	private final int aclLevel;
-	private final int aclOptions;
-	private final String userName;
+	private int aclLevel;
+	private int aclOptions;
+	private String userName;
 	@SuppressWarnings("unchecked")
-	private final Vector userRoles;
+	private Vector userRoles;
 
 	public SysInfo() {
+		try {
+			this.userName = ExtLibUtil.getCurrentSession().getEffectiveUserName();
+			this.aclLevel = ExtLibUtil.getCurrentDatabase().queryAccess(this.userName);
+			this.aclOptions = ExtLibUtil.getCurrentDatabase().queryAccessPrivileges(this.userName);
+			this.userRoles = ExtLibUtil.getCurrentDatabase().queryAccessRoles(this.userName);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 
-		this.userName = XSPUtil.getCurrentSession().getEffectiveUserName();
-		this.aclLevel = XSPUtil.getCurrentDatabase().queryAccess(this.userName);
-		this.aclOptions = XSPUtil.getCurrentDatabase().queryAccessPrivileges(this.userName);
-		this.userRoles = XSPUtil.getCurrentDatabase().queryAccessRoles(this.userName);
 	}
 
 	public static long getSerialVersionUID() {
@@ -55,33 +59,29 @@ public class SysInfo implements Serializable {
 	@SuppressWarnings("static-access")
 	public List<String> getAclOptions() {
 		/**
-		 * •Database.DBACL_CREATE_DOCS (1) •Database.DBACL_DELETE_DOCS (2)
-		 * •Database.DBACL_CREATE_PRIV_AGENTS (4)
-		 * •Database.DBACL_CREATE_PRIV_FOLDERS_VIEWS (8)
-		 * •Database.DBACL_CREATE_SHARED_FOLDERS_VIEWS (16)
-		 * •Database.DBACL_CREATE_SCRIPT_AGENTS (32)
-		 * •Database.DBACL_READ_PUBLIC_DOCS (64)
-		 * •Database.DBACL_WRITE_PUBLIC_DOCS (128)
+		 * •Database.DBACL_CREATE_DOCS (1) •Database.DBACL_DELETE_DOCS (2) •Database.DBACL_CREATE_PRIV_AGENTS (4)
+		 * •Database.DBACL_CREATE_PRIV_FOLDERS_VIEWS (8) •Database.DBACL_CREATE_SHARED_FOLDERS_VIEWS (16)
+		 * •Database.DBACL_CREATE_SCRIPT_AGENTS (32) •Database.DBACL_READ_PUBLIC_DOCS (64) •Database.DBACL_WRITE_PUBLIC_DOCS (128)
 		 * •Database.DBACL_REPLICATE_COPY_DOCS (256)
 		 */
 		List<String> options = new ArrayList<String>();
-		if ((this.aclOptions & XSPUtil.getCurrentDatabase().DBACL_CREATE_DOCS) > 0)
+		if ((this.aclOptions & ExtLibUtil.getCurrentDatabase().DBACL_CREATE_DOCS) > 0)
 			options.add("DBACL_CREATE_DOCS");
-		if ((this.aclOptions & XSPUtil.getCurrentDatabase().DBACL_DELETE_DOCS) > 0)
+		if ((this.aclOptions & ExtLibUtil.getCurrentDatabase().DBACL_DELETE_DOCS) > 0)
 			options.add("DBACL_DELETE_DOCS");
-		if ((this.aclOptions & XSPUtil.getCurrentDatabase().DBACL_CREATE_PRIV_AGENTS) > 0)
+		if ((this.aclOptions & ExtLibUtil.getCurrentDatabase().DBACL_CREATE_PRIV_AGENTS) > 0)
 			options.add("DBACL_CREATE_PRIV_AGENTS");
-		if ((this.aclOptions & XSPUtil.getCurrentDatabase().DBACL_CREATE_PRIV_FOLDERS_VIEWS) > 0)
+		if ((this.aclOptions & ExtLibUtil.getCurrentDatabase().DBACL_CREATE_PRIV_FOLDERS_VIEWS) > 0)
 			options.add("DBACL_CREATE_PRIV_FOLDERS_VIEWS");
-		if ((this.aclOptions & XSPUtil.getCurrentDatabase().DBACL_CREATE_SCRIPT_AGENTS) > 0)
+		if ((this.aclOptions & ExtLibUtil.getCurrentDatabase().DBACL_CREATE_SCRIPT_AGENTS) > 0)
 			options.add("DBACL_CREATE_SCRIPT_AGENTS");
-		if ((this.aclOptions & XSPUtil.getCurrentDatabase().DBACL_CREATE_SHARED_FOLDERS_VIEWS) > 0)
+		if ((this.aclOptions & ExtLibUtil.getCurrentDatabase().DBACL_CREATE_SHARED_FOLDERS_VIEWS) > 0)
 			options.add("DBACL_CREATE_SHARED_FOLDERS_VIEWS");
-		if ((this.aclOptions & XSPUtil.getCurrentDatabase().DBACL_READ_PUBLIC_DOCS) > 0)
+		if ((this.aclOptions & ExtLibUtil.getCurrentDatabase().DBACL_READ_PUBLIC_DOCS) > 0)
 			options.add("DBACL_READ_PUBLIC_DOCS");
-		if ((this.aclOptions & XSPUtil.getCurrentDatabase().DBACL_WRITE_PUBLIC_DOCS) > 0)
+		if ((this.aclOptions & ExtLibUtil.getCurrentDatabase().DBACL_WRITE_PUBLIC_DOCS) > 0)
 			options.add("DBACL_WRITE_PUBLIC_DOCS");
-		if ((this.aclOptions & XSPUtil.getCurrentDatabase().DBACL_REPLICATE_COPY_DOCS) > 0)
+		if ((this.aclOptions & ExtLibUtil.getCurrentDatabase().DBACL_REPLICATE_COPY_DOCS) > 0)
 			options.add("DBACL_REPLICATE_COPY_DOCS");
 		return options;
 	}

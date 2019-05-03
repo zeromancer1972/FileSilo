@@ -3,10 +3,10 @@ package org.openntf.filesilo;
 import java.io.Serializable;
 import java.util.Vector;
 
+import com.ibm.xsp.extlib.util.ExtLibUtil;
+
 import lotus.domino.Document;
 import lotus.domino.Session;
-
-import org.openntf.domino.utils.XSPUtil;
 
 public class RightsManagement implements Serializable {
 
@@ -24,9 +24,8 @@ public class RightsManagement implements Serializable {
 	 * 
 	 * @param doc
 	 */
-	@SuppressWarnings("unchecked")
 	public void setNames(Document doc) {
-		Session session = XSPUtil.getCurrentSession();
+		Session session = ExtLibUtil.getCurrentSession();
 		Vector names = null;
 		String items[] = { "fileAdmin", "fileReaders", "fileAuthors" };
 		try {

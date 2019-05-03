@@ -169,7 +169,7 @@ var uploadtext = (uploads>0)?" ("+uploads.toString()+")":"";
 					<li>
 						<xp:link target="_blank"
 							value="http://about.me/oliverbusse">
-							<xp:this.text><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']+" | © 2013, 2014 Oliver Busse, Apache License 2.0"}]]></xp:this.text>
+							<xp:this.text><![CDATA[#{javascript:app['applicationName']+", Release "+app['release']+" | © 2013-2019 Oliver Busse, Apache License 2.0"}]]></xp:this.text>
 						</xp:link>
 					</li>
 				</ul>
