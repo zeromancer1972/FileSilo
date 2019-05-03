@@ -55,6 +55,7 @@ public class FilesJson implements Serializable {
 			ViewEntryCollection col = session.getCurrentDatabase().getView("files").getAllEntries();
 			ViewEntry ent = col.getFirstEntry();
 			while (ent != null) {
+				ViewEntry tmp = col.getNextEntry(ent);
 				Document doc = ent.getDocument();
 
 				// put only visible collections in the output (admin usage or
@@ -107,6 +108,7 @@ public class FilesJson implements Serializable {
 					collections.add(collection);
 					count++;
 				}
+				ent = tmp;
 			}
 		} catch (Exception e) {
 

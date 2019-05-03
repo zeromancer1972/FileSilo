@@ -46,6 +46,7 @@ public class ActivitiesJson implements Serializable {
 
 			ViewEntry ent = col.getFirstEntry();
 			while (ent != null) {
+				ViewEntry tmp = col.getNextEntry(ent);
 				Document doc = ent.getDocument();
 
 				// put only visible collections in the output (admin usage or
@@ -71,6 +72,7 @@ public class ActivitiesJson implements Serializable {
 					collections.add(collection);
 					count++;
 				}
+				ent = tmp;
 			}
 			// store count of all files
 		} catch (Exception e) {
