@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.2" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="6ae" sequence="106" unid="2C76BE29847670FAC1257BDF00313896">
-<created><datetime dst="true">20130907T105737,50+02</datetime></created>
-<modified><datetime dst="true">20140903T190713,45+02</datetime></modified>
-<revised><datetime dst="true">20140903T142057,47+02</datetime></revised>
-<lastaccessed><datetime dst="true">20140903T190713,45+02</datetime></lastaccessed>
-<addedtofile><datetime>20140320T005830,16+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="C1258AA700614455" version="12.0">
+<noteinfo noteid="2b6" sequence="4" unid="251120971D37903BC1258AA700614694">
+<created><datetime>20240117T184230,60+01</datetime></created>
+<modified><datetime>20240117T195230,81+01</datetime></modified>
+<revised><datetime>20240117T195230,80+01</datetime></revised>
+<lastaccessed><datetime>20240117T195230,80+01</datetime></lastaccessed>
+<addedtofile><datetime>20240117T184230,62+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=Nintera</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=Nintera</name></wassignedby>
 <item name="$TITLE" sign="true"><text>app.properties</text></item>
 <item name="$MimeCharSet"><text>UTF-8</text></item>
 <item name="$FileModDT" sign="true"><datetime>20140212T022752,28+01</datetime></item>
