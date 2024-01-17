@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="76e" sequence="32" unid="3F26D6CE90A4979EC1257C8800518AFF">
-<created><datetime>20140223T155039,99+01</datetime></created>
-<modified><datetime dst="true">20140424T200934,15+02</datetime></modified>
-<revised><datetime dst="true">20140424T200934,14+02</datetime></revised>
-<lastaccessed><datetime dst="true">20140424T200934,15+02</datetime></lastaccessed>
-<addedtofile><datetime>20140320T005831,12+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="C1258AA700614455" version="12.0">
+<noteinfo noteid="6ae" sequence="5" unid="01EB03740B2363CAC1258AA70068A6A0">
+<created><datetime>20240117T200304,00+01</datetime></created>
+<modified><datetime>20240118T005250,64+01</datetime></modified>
+<revised><datetime>20240118T005250,63+01</datetime></revised>
+<lastaccessed><datetime>20240118T005250,63+01</datetime></lastaccessed>
+<addedtofile><datetime>20240117T200303,99+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=Nintera</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=Nintera</name></wassignedby>
 <item name="$Flags"><text>gC~4;2</text></item>
 <item name="$TITLE"><text>ccAboutbox.properties</text></item>
 
