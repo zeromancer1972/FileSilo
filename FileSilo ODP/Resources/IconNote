@@ -1,13 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
-<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='9.0'
- maintenanceversion='1.1' replicaid='C1257BDF00312926'>
-<noteinfo noteid='122' unid='13E7A552113DB85BC1257BDF0031293E' sequence='0'>
-<created><datetime dst='true'>20130907T105658,22+02</datetime></created>
-<modified><datetime dst='true'>20140704T172522,93+02</datetime></modified>
-<revised><datetime dst='true'>20140704T141510,27+02</datetime></revised>
-<lastaccessed><datetime dst='true'>20140704T172522,93+02</datetime></lastaccessed>
-<addedtofile><datetime>20140320T005813,82+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
+<note default='true' class='icon' xmlns='http://www.lotus.com/dxl' version='12.0'
+ maintenanceversion='1.0' replicaid='C1258AA700614455'>
+<noteinfo noteid='11e' unid='17F15F66345194A7C1258AA700614458' sequence='15'>
+<created><datetime>20240117T184224,88+01</datetime></created>
+<modified><datetime>20240118T001007,31+01</datetime></modified>
+<revised><datetime>20240118T001007,30+01</datetime></revised>
+<lastaccessed><datetime>20240118T001007,30+01</datetime></lastaccessed>
+<addedtofile><datetime>20240117T184224,90+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=Nintera</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=Nintera</name></wassignedby>
 <item name='IconBitmap' summary='true'>
 <rawitemdata type='6'>
 AiAgAQAA///////wD///4Af//8AD//4AAH/8AAA/+AAAH/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAA
@@ -30,12 +31,13 @@ AAAAAAACICABAAD/////+A4DgA==
 <item name='$DefaultClientXPage'><text>index.xsp</text></item>
 <item name='$DBTheme'><text>bootstrap3.theme</text></item>
 <item name='$DefaultXPage'><text>index.xsp</text></item>
-<item name='$Flags'><text>J!</text></item>
 <item name='$LaunchXPageRunOnServer'><text>0</text></item>
 <item name='$FlagsNoRefresh'><text>rv</text></item>
 <item name='$AllowPost8HTML'><text>1</text></item>
 <item name='$AllowRESTDbAPI'><number>2</number></item>
-<item name='$TITLE'><text>FileSilo DEV
-#1FileSilo</text></item>
-<item name='$Daos'><text>0</text></item></note>
+<item name='$Daos'><text>0</text></item>
+<item name='$Flags'><text>J!7</text></item>
+<item name='$LargeSummary'><text>0</text></item>
+<item name='$TITLE'><text>FileSilo 3.0.2
+#1FileSilo</text></item></note>
 

@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="83e" sequence="29" unid="3D421F2151E53E00C1257C7D0075A880">
-<created><datetime>20140212T222508,48+01</datetime></created>
-<modified><datetime dst="true">20140422T194017,24+02</datetime></modified>
-<revised><datetime dst="true">20140422T194017,23+02</datetime></revised>
-<lastaccessed><datetime dst="true">20140422T194017,24+02</datetime></lastaccessed>
-<addedtofile><datetime>20140320T005832,15+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="C1258AA700614455" version="12.0">
+<noteinfo noteid="692" sequence="6" unid="B91131A2E35D6C97C1258AA70068A67F">
+<created><datetime>20240117T200303,67+01</datetime></created>
+<modified><datetime>20240117T200347,40+01</datetime></modified>
+<revised><datetime>20240117T200347,39+01</datetime></revised>
+<lastaccessed><datetime>20240117T200347,39+01</datetime></lastaccessed>
+<addedtofile><datetime>20240117T200303,66+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=Nintera</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=Nintera</name></wassignedby>
 <item name="$Flags"><text>34567Cg~[</text></item>
 <item name="$TITLE"><text>org/openntf/filesilo/Upload.java</text></item>
-
-
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
-<item name="$FileNames" sign="true"><text>org/openntf/filesilo/Upload.java</text></item></note>
+<item name="$FileNames" sign="true"><text>org/openntf/filesilo/Upload.java</text></item>
+
+
+</note>
