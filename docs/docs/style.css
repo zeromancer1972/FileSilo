@@ -6,13 +6,13 @@
   }
 
   :root {
-    --md-primary-fg-color: #ffc510;
+    --md-primary-fg-color: rgba(0, 61, 142, 1);
   }
 
   .md-typeset .headerlink:focus,
   .md-typeset .headerlink:hover,
   .md-typeset :target>.headerlink {
-    color: #ffc510;
+    color: rgba(0, 169, 255, 1);
   }
 
   .md-header__button.md-logo img {
@@ -20,7 +20,7 @@
   }
 
   .md-tabs {
-    background-color: #ffc510;
+    background-color: rgba(0, 169, 255, 1);
   }
 
   .md-content__inner p {
@@ -35,7 +35,7 @@
   }
 
   .red {
-    color: #e8381c;
+    color: rgba(0, 61, 142, 1);
   }
 
   .method {
@@ -48,7 +48,7 @@
   }
 
   .md-typeset .md-button:hover {
-    background-color: #ffc510;
+    background-color: rgba(0, 61, 142, 1);
   }
 
   .md-typeset h1 {
@@ -56,11 +56,11 @@
   }
 
   .md-typeset h2 {
-    color: #F35526;
+    color: rgba(0, 61, 142, 1);
   }
 
   .md-typeset h3 {
-    color: #F35526;
+    color: rgba(0, 61, 142, 1);
   }
 
   .md-typeset figure,
@@ -77,7 +77,7 @@
   .md-typeset figcaption {
     font-size: 0.8em;
     font-style: normal;
-    color: #ff3939;
+    color: rgba(0, 169, 255, 1);
     margin-bottom: 1em;
   }
 
@@ -91,11 +91,11 @@
   }
 
   .md-typeset a {
-    color: #F35526;
+    color: rgba(0, 169, 255, 1);
   }
 
   .md-typeset a:hover {
-    color: #ff3939;
+    color: rgba(0, 61, 142, 1);
   }
 
   .md-content__inner code {
@@ -109,7 +109,7 @@
   }
 
   .md-nav__item a:hover {
-    color: #ff3939;
+    color: rgba(0, 61, 142, 1);
   }
 }
 
@@ -152,7 +152,7 @@
   }
 
   h1 {
-    border-bottom: 3px solid #ffc510 !important;
+    border-bottom: 3px solid rgba(0, 169, 255, 1) !important;
   }
 
   .wrapper>h2 {
