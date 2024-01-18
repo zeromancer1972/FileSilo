@@ -1,4 +1,4 @@
-site_name: FileSilo Documentation
+site_name: FileSilo
 site_url: https://www.notesx.net
 nav:
   - Introduction: index.md
@@ -48,7 +48,7 @@ extra:
       link: https://www.youtube.com/@OliverBusse
 extra_css:
   - style.css
-copyright: Copyright &copy; Oliver Busse / NotesX.net
+copyright: "&copy; 2013-2024 Oliver Busse / NotesX.net"
 plugins:
   - search
   - macros
