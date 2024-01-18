@@ -122,8 +122,12 @@
   h5,
   h6,
   label,
-  body {
+  body, footer.md-typeset, .md-typeset .tx-content__footer {
     font-family: "Lato", "Arial", "Helvetica", sans-serif !important;
+  }
+
+  .md-typeset {
+    font-size: 0.9em;
   }
 
   .md-typeset h1,
@@ -164,19 +168,19 @@
     border-bottom: 1px solid #ccc !important;
   }
 
-  .md-content__inner p {
+  .md-content__inner p, .md-content__inner div {
     text-align: justify;
-    font-size: 1.2em;
+    font-size: 1.0em;
   }
 
   .md-content__inner code {
     font-family: Courier !important;
-    font-size: 1.2em;
+    font-size: 1.0em;
     background-color: #ddd;
   }
 
   .md-typeset table:not([class]) {
-    font-size: 1.1em;
+    font-size: 1.0em;
   }
 
   .md-typeset figure,
