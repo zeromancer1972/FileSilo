@@ -3,7 +3,9 @@ site_url: https://www.notesx.net
 nav:
   - Introduction: index.md
   - Setup: setup.md
-  - Using: using.md
+  - Anonymous Usage: using_anon.md
+  - Normal Usage: using.md
+  - Extras: extras.md
 theme:
   name: material
   language: en
