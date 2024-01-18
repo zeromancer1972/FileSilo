@@ -82,7 +82,7 @@
   }
 
   .md-header__button.md-logo img {
-    height: 75px;
+    /*height: 50px;*/
   }
 
   .md-header__topic {
@@ -166,12 +166,12 @@
 
   .md-content__inner p {
     text-align: justify;
-    font-size: 1em;
+    font-size: 1.2em;
   }
 
   .md-content__inner code {
     font-family: Courier !important;
-    font-size: 1em;
+    font-size: 1.2em;
     background-color: #ddd;
   }
 
