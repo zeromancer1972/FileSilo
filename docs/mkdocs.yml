@@ -9,6 +9,8 @@ theme:
   language: en
   collapse_by_default: true
   highlightjs: true
+  logo: images/silo_small.png
+  favicon: images/silo.ico
   features:
     - content.code.annotate
     - content.tabs.link
@@ -34,8 +36,8 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 extra:
   social:
     - icon: fontawesome/brands/twitter
@@ -47,3 +49,12 @@ extra_css:
 copyright: Copyright &copy; Oliver Busse / NotesX.net
 plugins:
   - search
+  - macros
+  - with-pdf:
+      cover_subtitle: Documentation
+      toc_level: 3
+      render_js: false
+      output_path: /Users/oliver/Desktop/filesilo_docs.pdf
+      author: "Version 3.0.2 as of January 2024"
+      toc_title: Table of Contents
+      enabled_if_env: ENABLE_PDF_EXPORT

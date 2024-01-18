@@ -3,7 +3,7 @@
 There are two ways of using FileSilo:
 
 - Anonymous usage
-- Logged in as a Notes web user
+- Logged-in user
 
 ## Anonymous Usage
 
@@ -25,3 +25,10 @@ The anonymous user can upload a file by clicking `Upload` in the menu bar. The i
 After the upload was successfully done, it can be accessed with the link displayed below the form.
 
 ![](images/upload.png)
+
+By clicking this link the user can see the upload and some details:
+
+![](images/upload2.png)
+
+## Logged-in User
+
