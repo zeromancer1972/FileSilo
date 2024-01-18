@@ -1,22 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?><note class="form" maintenanceversion="1.1" replicaid="C1257BDF00312926" version="9.0" xmlns="http://www.lotus.com/dxl">
-<noteinfo noteid="10ea" sequence="546" unid="19C082BF37D7FFC0C1257C05005C4CBA">
-<created><datetime dst="true">20131015T184809,54+02</datetime></created>
-<modified><datetime dst="true">20140520T184525,10+02</datetime></modified>
-<revised><datetime dst="true">20140520T184525,09+02</datetime></revised>
-<lastaccessed><datetime dst="true">20140520T184525,10+02</datetime></lastaccessed>
-<addedtofile><datetime>20140320T005833,09+01</datetime></addedtofile></noteinfo>
-<updatedby><name>CN=Oliver Busse/O=ulcbs</name></updatedby>
-<wassignedby><name>CN=Oliver Busse/O=ulcbs</name></wassignedby>
+<?xml version="1.0" encoding="utf-8" standalone="no"?><note xmlns="http://www.lotus.com/dxl" class="form" maintenanceversion="1.0" replicaid="C1258AA700614455" version="12.0">
+<noteinfo noteid="756" sequence="10" unid="7F6EC75265DF71FEC1258AA70068A763">
+<created><datetime>20240117T200305,95+01</datetime></created>
+<modified><datetime>20240118T205406,49+01</datetime></modified>
+<revised><datetime>20240118T205406,48+01</datetime></revised>
+<lastaccessed><datetime>20240118T205406,48+01</datetime></lastaccessed>
+<addedtofile><datetime>20240117T200305,95+01</datetime></addedtofile></noteinfo>
+<updatedby><name>CN=Oliver Busse/O=Nintera</name></updatedby>
+<wassignedby><name>CN=Oliver Busse/O=Nintera</name></wassignedby>
 <item name="$Flags"><text>gC~4;</text></item>
 <item name="$TITLE"><text>ccUpload.xsp</text></item>
-
-
-
-
-
 <item name="$DesignerVersion"><text>8.5.3</text></item>
 
 
 
 
-<item name="$FileNames" sign="true"><text>ccUpload.xsp</text></item></note>
+
+
+
+<item name="$FileNames" sign="true"><text>ccUpload.xsp</text></item>
+
+</note>
