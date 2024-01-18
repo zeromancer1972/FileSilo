@@ -40,4 +40,16 @@ The settings page has two tabs:
 
 ### Settings
 
+| Field                                  | Function                                                                                                                       |
+| -------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Mail address                           | Specify a recipient address for notifications. A notification will be generated everytime someone uploads a new file           |
+| Custom subject                         | You can define a subject and use the placeholder `<DB>` for this notification, e.g. ```A new file has been uploaded to <DB>``` |
+| Default number of days for expire date | An anonymous file upload automatically has a expiry date. This defines this date by the number of days from the current date   |
+
 ### Pushover
+
+If you happen to have an account on Pushover, you can provide the API data here. Using Pushover enables FileSilo to send push notifications to a mobile device after an upload was performed.
+
+The fields are self-explanatory and define all parts for utilizing Pushover.
+
+The option `For anonymous uploads only` allows you to also get notifications when an upload was performed by a logged-in user.
