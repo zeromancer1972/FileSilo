@@ -128,12 +128,14 @@ if(sessionScope.get("uploadSuccessful")!=null){
 						<xp:link escape="true" id="link1">
 							<xp:this.text><![CDATA[#{javascript:"You can find it here"}]]></xp:this.text>
 
-							<xp:eventHandler event="onclick" submit="true"
-								refreshMode="complete">
+							<xp:eventHandler
+								event="onclick"
+								refreshMode="norefresh"
+								submit="true">
 								<xp:this.action><![CDATA[#{javascript:sessionScope.put("page", "start");
-url = sessionScope.get("uploadSuccessful");
-
-context.redirectToPage(url);}]]></xp:this.action>
+}]]></xp:this.action>
+								<xp:this.script><![CDATA[var url = '#{javascript:url = sessionScope.get("uploadSuccessful")}';
+location.href = url;]]></xp:this.script>
 							</xp:eventHandler>
 						</xp:link>
 					</xp:div>
